@@ -4,5 +4,8 @@ This site contains tutorials for mini-projects which are to be run on the Edinbu
 - Self contained - the projects should be able to be run from start to finis, with no steps left implicit.
 - Useful - by completing the tutorial you will develop skills which will be useful in a more complex piece of work.
 
+### Want a tutorial run as an interactive session?
+If you want a tutorial to be run as an interactive session for multiple people, email l.headley@napier.ac.uk.
+
 ### Problems
 If you encounter any problems then please either [raise an issue](https://github.com/SCEBE-Technicians/enucc-tutorials/issues) on the github page or contact l.headley@napier.ac.uk.

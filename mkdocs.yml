@@ -1,0 +1,4 @@
+site_name: ENUCC Tutorials
+theme:
+  name: material
+dev_addr: 0.0.0.0:8000
