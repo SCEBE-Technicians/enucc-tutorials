@@ -2,9 +2,13 @@
 
 ## Description
 
+This project covers how to move long-running scripts from running on your local machine to running on ENUCC. We will learn how to run a series of unconnected jobs in parallel using `sbatch` and `srun` and then we'll use the array command to supply a range of values which will be parameters supplied to the script we're running.
+
 ---
 
 ## Prerequisites
+
+Ideally you should have run scripts using `srun` and `sbatch` before (if not check out the [hello world](/tutorials/hello-world/) project). 
 
 ---
 
@@ -39,6 +43,11 @@ output = (f"------------------------------------------------\n"
 print(output)
 ```
 
+The first thing we need to do is get the files from our local computer to enucc. Ideally you should be using git to manage your projects, with a remote repository on a hosting site such as github or gitlab. If you already have this setup it's a simple matter to clone the repository. I have put all of the code we need into a git repository so you should try cloning this now.
+
+```
+$ git clone git@github.com:SCEBE-Technicians/python-analysis-tutorial.git
+```
 
 On ENUCC, python is managed with anaconda and so we have to first load the anaconda module
 ```bash
@@ -138,7 +147,35 @@ $ cat slurm-27951.out
 This job ran in 120.238923031 seconds
 ```
 
-This has taken around 10 times longer than running the analysis once which is more or less what might be expected. ENUCC has a great deal of resources, but the script as we've written it requests only one CPU on one node and then runs the python script steps one after the other. There is no reason why we shouldn't run the python steps all at once, but we don't want to submit 10 different job. Instead we can run each python step as a separate task and assign one cpu to each task. We also have to specify how much memory each task should use since the default would request all available memory. To shorten the script and make it more readable we can also put our execution tasks in a loop.
+This has taken around 10 times longer than running the analysis once which is more or less what might be expected. ENUCC has a great deal of resources, but the script as we've written it requests only one CPU on one node and then runs the python script steps one after the other. There is no reason why we shouldn't run the python steps all at once, but we don't want to submit 10 different job. Instead we can run each python step as a separate task and assign one cpu to each task. We also have to specify how much memory each task should use since the default would request all available memory.
+
+```bash
+#!/bin/bash
+#SBATCH --ntasks 10
+#SBATCH --nodes 1
+#SBATCH --cpus-per-task 1
+
+start_time=`date +%s.%N`
+
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+
+wait
+
+end_time=`date +%s.%N`
+runtime=$(echo "$end_time - $start_time" | bc)
+printf "This job ran in %s seconds\n\n" $runtime
+```
+
+To shorten the script and make it more readable we can also put our execution tasks in a loop.
 
 ```bash
 #!/bin/bash
@@ -171,3 +208,23 @@ This job ran in 12.563785716 seconds
 ```
 
 Note that as long as we have free resources on which to run the scripts, we can easily expand beyond running 10 copies and it will still take around 12 seconds. If we go beyond 64 tasks we will require more than one node.
+
+Now let's say we want to run this same script but change the number of sides each dice take, running it for 2, 4, 6 sides. Yes we could just use bash loops, but there is a simpler way to do this using the `--array` flag. Let's see what it looks like:
+
+```bash
+#!/bin/bash
+#SBATCH --ntasks 1
+#SBATCH --array=2,4,6
+#SBATCH --cpus-per-task 1
+#SBATCH --output=variable-sided-dice-result.out
+
+python product_of_two_dice_analysis.py $SLURM_ARRAY_TASK_ID 10000000 &
+```
+
+This is much simpler than the previous script. Using the `--array` flag we specify what values we want to run the job for and we use `$SLURM_ARRAY_TASK_ID` to access those values in the script. When we submit this job it creates 3 versions of the job. We can see that the job id has an array appended with the specified values.
+
+```
+$ squeue
+         JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+ 27995_[2,4,6]     nodes job_scri 40019142 PD       0:00      1 (Priority)
+```
