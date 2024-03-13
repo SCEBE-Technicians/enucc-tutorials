@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../message-passing-programming/">
+        <link rel="prev" href="../01-hello-world/">
       
       
-        <link rel="next" href="../simple-neural-network/">
+        <link rel="next" href="../03-simple-neural-network/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -248,32 +248,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../hello-world/" class="md-nav__link">
+      <a href="../01-hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Hello World
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../message-passing-programming/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Message Passing Programming
   </span>
   
 
@@ -351,6 +330,84 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-files-onto-enucc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting files onto ENUCC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-anaconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Anaconda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallelising-the-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallelising the job
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-job-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using job array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-an-email-upon-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting an email upon completion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -369,11 +426,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-neural-network/" class="md-nav__link">
+      <a href="../03-simple-neural-network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Simple neural network
+    Simple Neural Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../message-passing-programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Message Passing Programming
   </span>
   
 
@@ -432,6 +510,84 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-files-onto-enucc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting files onto ENUCC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-anaconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Anaconda
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallelising-the-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parallelising the job
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-job-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using job array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-an-email-upon-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting an email upon completion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -456,6 +612,7 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Ideally you should have run scripts using <code>srun</code> and <code>sbatch</code> before (if not check out the <a href="/tutorials/hello-world/">hello world</a> project). </p>
 <hr />
+<h3 id="initial-script">Initial script</h3>
 <p>Let's say we have some python analysis that runs on a laptop, but takes some time to run. We want to run it 20 times with different parameters. Ideally we would set up a script to submit all 20 runs to ENUCC. We then come back in a few day and check our results. We don't need to sit and watch it and we can even configure slurm to email us when the job is finished.</p>
 <p>As a simple example, let's say we want to calculate some statistics about the product of the outcomes of two dice rolls. We also want to see how these statistics change depending on how many sides the dice have. Here is a simple script that takes the number of sides of the dice and the number of trials as command line arguments and prints the mean, mode and standard deviation of the product of the two dice rolls.</p>
 <pre><code class="language-python">import sys
@@ -483,9 +640,20 @@ output = (f&quot;------------------------------------------------\n&quot;
 
 print(output)
 </code></pre>
-<p>The first thing we need to do is get the files from our local computer to enucc. Ideally you should be using git to manage your projects, with a remote repository on a hosting site such as github or gitlab. If you already have this setup it's a simple matter to clone the repository. I have put all of the code we need into a git repository so you should try cloning this now.</p>
+<h3 id="getting-files-onto-enucc">Getting files onto ENUCC</h3>
+<p>The first thing we need to do is get the files from our local computer to enucc. Ideally you should be using git to manage your projects, with a remote repository on a hosting site such as github or gitlab. If you already have this setup it's a simple matter to clone the repository. I have put all of the code we need into a <a href="https://github.com/SCEBE-Technicians/python-analysis-tutorial">git repository</a> so you should try cloning this now.</p>
 <pre><code>$ git clone git@github.com:SCEBE-Technicians/python-analysis-tutorial.git
 </code></pre>
+<p>If you aren't using git you can transfer files from either Linux or MacOS using either <a href="https://www.man7.org/linux/man-pages/man1/scp.1.html">scp</a> or <a href="https://man7.org/linux/man-pages/man1/rsync.1.html">rsync</a>. The syntax is as follows:</p>
+<pre><code>$ scp /path/to/local/file 400XXXXX@login.enucc.napier.ac.uk:/path/to/server/file
+</code></pre>
+<p>or</p>
+<pre><code>$ rsync /path/to/local/file 400XXXXX@login.enucc.napier.ac.uk:/path/to/server/file
+</code></pre>
+<p>You can also use these programs to copy files from the server to your local machine. If you are on windows you can use scp from powershell.</p>
+<pre><code>&gt; scp \path\to\local\file 400XXXXX@login.enucc.napier.ac.uk:/path/to/server/file
+</code></pre>
+<h3 id="using-anaconda">Using Anaconda</h3>
 <p>On ENUCC, python is managed with anaconda and so we have to first load the anaconda module</p>
 <pre><code class="language-bash">$ module load apps/anaconda3
 </code></pre>
@@ -501,6 +669,7 @@ Mean: 29.4
 Median: 23.5
 Mode: 30
 </code></pre>
+<h3 id="running-the-script">Running the script</h3>
 <p>To run the same script on ENUCC we can use <code>srun</code>. Here we run it for a reasonably large number of trials.</p>
 <pre><code class="language-bash">$ srun python product_of_two_dice_analysis.py 10 10000000
 srun: job 27947 queued and waiting for resources
@@ -565,6 +734,7 @@ printf &quot;This job ran in %s seconds\n\n&quot; $runtime
 This job ran in 120.238923031 seconds
 </code></pre>
 <p>This has taken around 10 times longer than running the analysis once which is more or less what might be expected. ENUCC has a great deal of resources, but the script as we've written it requests only one CPU on one node and then runs the python script steps one after the other. There is no reason why we shouldn't run the python steps all at once, but we don't want to submit 10 different job. Instead we can run each python step as a separate task and assign one cpu to each task. We also have to specify how much memory each task should use since the default would request all available memory.</p>
+<h3 id="parallelising-the-job">Parallelising the job</h3>
 <pre><code class="language-bash">#!/bin/bash
 #SBATCH --ntasks 10
 #SBATCH --nodes 1
@@ -615,6 +785,7 @@ printf &quot;This job ran in %s seconds\n\n&quot; $runtime
 This job ran in 12.563785716 seconds 
 </code></pre>
 <p>Note that as long as we have free resources on which to run the scripts, we can easily expand beyond running 10 copies and it will still take around 12 seconds. If we go beyond 64 tasks we will require more than one node.</p>
+<h3 id="using-job-array">Using job array</h3>
 <p>Now let's say we want to run this same script but change the number of sides each dice take, running it for 2, 4, 6 sides. Yes we could just use bash loops, but there is a simpler way to do this using the <code>--array</code> flag. Let's see what it looks like:</p>
 <pre><code class="language-bash">#!/bin/bash
 #SBATCH --ntasks 1
@@ -629,6 +800,36 @@ python product_of_two_dice_analysis.py $SLURM_ARRAY_TASK_ID 10000000 &amp;
          JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
  27995_[2,4,6]     nodes job_scri 40019142 PD       0:00      1 (Priority)
 </code></pre>
+<p>The <code>--array</code> flag is not limited to specifying individual values. There are a few different options for specifying values depending on your needs.</p>
+<table>
+<thead>
+<tr>
+<th><code>--array</code></th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1,2,3</td>
+<td>1,2,3</td>
+</tr>
+<tr>
+<td>1-100</td>
+<td>1,2 ... 100</td>
+</tr>
+<tr>
+<td>1-100:2</td>
+<td>1, 3, 5 ... 99</td>
+</tr>
+<tr>
+<td>1-100%5</td>
+<td>1,2 ... 100, running 5 jobs simultaneously</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getting-an-email-upon-completion">Getting an email upon completion</h3>
+<p>Finally, if we are running a job for a few days, we don't want to have to log in to ENUCC every now and again to check whether the job has been complete. Luckily Slurm has an inbuilt functionality for emailing when the job reaches certain points. Let's see how this works.</p>
+<h3 id="conclusion">Conclusion</h3>
 
 
 
