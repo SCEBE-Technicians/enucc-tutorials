@@ -1,0 +1,685 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../message-passing-programming/">
+      
+      
+        <link rel="next" href="../simple-neural-network/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+    
+    
+      
+        <title>Running Python Analysis - ENUCC Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#running-python-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ENUCC Tutorials" class="md-header__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ENUCC Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running Python Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ENUCC Tutorials" class="md-nav__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ENUCC Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hello-world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../message-passing-programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Message Passing Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Running Python Analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Running Python Analysis
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple-neural-network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple neural network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="running-python-analysis">Running Python Analysis</h1>
+<h2 id="description">Description</h2>
+<p>This project covers how to move long-running scripts from running on your local machine to running on ENUCC. We will learn how to run a series of unconnected jobs in parallel using <code>sbatch</code> and <code>srun</code> and then we'll use the array command to supply a range of values which will be parameters supplied to the script we're running.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Ideally you should have run scripts using <code>srun</code> and <code>sbatch</code> before (if not check out the <a href="/tutorials/hello-world/">hello world</a> project). </p>
+<hr />
+<p>Let's say we have some python analysis that runs on a laptop, but takes some time to run. We want to run it 20 times with different parameters. Ideally we would set up a script to submit all 20 runs to ENUCC. We then come back in a few day and check our results. We don't need to sit and watch it and we can even configure slurm to email us when the job is finished.</p>
+<p>As a simple example, let's say we want to calculate some statistics about the product of the outcomes of two dice rolls. We also want to see how these statistics change depending on how many sides the dice have. Here is a simple script that takes the number of sides of the dice and the number of trials as command line arguments and prints the mean, mode and standard deviation of the product of the two dice rolls.</p>
+<pre><code class="language-python">import sys
+import random
+import statistics
+
+n_sides = int(sys.argv[1])
+n_trials = int(sys.argv[2])
+
+first_die_outcomes = []
+second_die_outcomes = []
+
+for i in range(n_trials):
+first_die_outcomes.append(random.randint(1, n_sides))
+second_die_outcomes.append(random.randint(1, n_sides))
+
+products = [a * b for a, b in zip(first_die_outcomes, second_die_outcomes)]
+
+output = (f&quot;------------------------------------------------\n&quot;
+      f&quot;Product of two {n_sides} sided dice. {n_trials} trials\n&quot;
+      f&quot;------------------------------------------------\n&quot;
+      f&quot;Mean: {statistics.mean(products)}\n&quot;
+      f&quot;Median: {statistics.median(products)}\n&quot;
+      f&quot;Mode: {statistics.mode(products)}\n&quot;)
+
+print(output)
+</code></pre>
+<p>The first thing we need to do is get the files from our local computer to enucc. Ideally you should be using git to manage your projects, with a remote repository on a hosting site such as github or gitlab. If you already have this setup it's a simple matter to clone the repository. I have put all of the code we need into a git repository so you should try cloning this now.</p>
+<pre><code>$ git clone git@github.com:SCEBE-Technicians/python-analysis-tutorial.git
+</code></pre>
+<p>On ENUCC, python is managed with anaconda and so we have to first load the anaconda module</p>
+<pre><code class="language-bash">$ module load apps/anaconda3
+</code></pre>
+<p>If this is the first time you've tried to use anaconda it will ask you to run a setup script.</p>
+<pre><code>TODO: FIND OUT WHAT GOES HERE
+</code></pre>
+<p>To run the script for 1000 trials of 6 sided dice we simply run</p>
+<pre><code class="language-bash">$ python product_of_two_dice_analysis.py 6 1000
+------------------------------------------------
+Product of two 10 sided dice. 10 trials
+------------------------------------------------
+Mean: 29.4
+Median: 23.5
+Mode: 30
+</code></pre>
+<p>To run the same script on ENUCC we can use <code>srun</code>. Here we run it for a reasonably large number of trials.</p>
+<pre><code class="language-bash">$ srun python product_of_two_dice_analysis.py 10 10000000
+srun: job 27947 queued and waiting for resources
+srun: job 27947 has been allocated resources
+------------------------------------------------
+Product of two 10 sided dice. 10000000 trials
+------------------------------------------------
+Mean: 30.2445156
+Median: 24.0
+Mode: 6
+</code></pre>
+<p>So now we want to run it many times, for different number of sides and different numbers of trials. For this we'll have to write a batch script.</p>
+<pre><code class="language-bash">#!/bin/bash
+
+start_time=`date +%s.%N`
+
+python product_of_two_dice_analysis.py 6 10000000
+
+
+end_time=`date +%s.%N`
+runtime=$(echo &quot;$end_time - $start_time&quot; | bc)
+printf &quot;This job ran in %s seconds\n\n&quot; $runtime
+</code></pre>
+<p>Here I've used <a href="https://www.man7.org/linux/man-pages/man1/date.1.html">date</a> and <a href="https://www.man7.org/linux/man-pages/man1/bc.1p.html">bc</a> to calculate the runtime of the of the program. This will be important later when we're trying to guage how well our script will scale.</p>
+<p>As usual, we submit it with sbatch and see our output in the output file.</p>
+<pre><code class="language-bash">$ sbatch job_script.sh
+Submitted batch job 27949
+
+$ cat slurm-27949.out
+------------------------------------------------
+Product of two 6 sided dice. 1000 trials
+------------------------------------------------
+Mean: 12.493
+Median: 10.0
+Mode: 6
+
+This job ran in 11.822068605 seconds
+</code></pre>
+<p>Great. We're now in a position that we can modify our script to run our job a few times. Let's start by running 10 identical copies of it. Modify the bash script like so:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+start_time=`date +%s.%N`
+
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+python product_of_two_dice_analysis.py 6 10000000
+
+end_time=`date +%s.%N`
+runtime=$(echo &quot;$end_time - $start_time&quot; | bc)
+printf &quot;This job ran in %s seconds\n\n&quot; $runtime
+</code></pre>
+<p>The output of the job script is quite long this time, so let's just see how long it ran for this time.</p>
+<pre><code class="language-bash">$ cat slurm-27951.out
+...
+This job ran in 120.238923031 seconds
+</code></pre>
+<p>This has taken around 10 times longer than running the analysis once which is more or less what might be expected. ENUCC has a great deal of resources, but the script as we've written it requests only one CPU on one node and then runs the python script steps one after the other. There is no reason why we shouldn't run the python steps all at once, but we don't want to submit 10 different job. Instead we can run each python step as a separate task and assign one cpu to each task. We also have to specify how much memory each task should use since the default would request all available memory.</p>
+<pre><code class="language-bash">#!/bin/bash
+#SBATCH --ntasks 10
+#SBATCH --nodes 1
+#SBATCH --cpus-per-task 1
+
+start_time=`date +%s.%N`
+
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+
+wait
+
+end_time=`date +%s.%N`
+runtime=$(echo &quot;$end_time - $start_time&quot; | bc)
+printf &quot;This job ran in %s seconds\n\n&quot; $runtime
+</code></pre>
+<p>To shorten the script and make it more readable we can also put our execution tasks in a loop.</p>
+<pre><code class="language-bash">#!/bin/bash
+#SBATCH --ntasks 10
+#SBATCH --nodes 1
+#SBATCH --cpus-per-task 1
+
+start_time=`date +%s.%N`
+
+for x in {1..10}
+do
+  srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+done
+
+wait
+
+end_time=`date +%s.%N`
+runtime=$(echo &quot;$end_time - $start_time&quot; | bc)
+printf &quot;This job ran in %s seconds\n\n&quot; $runtime
+</code></pre>
+<p>Things are getting quite complicated now so let's take stock of what's happening. In the first few lines we specify that we'll be running 10 tasks on one node with one cpu per task. Instead of simply executing our code with <code>python script.py</code> now we use <code>srun</code> which is part of the slurm ecosystem. We use <code>srun</code> because we can specify what resources we want to use by passing in different flags. The <code>--exclusive</code> flag says that this job will have exclusive access to the requested resources. <code>--ntasks</code> says that this is only a single task. Then we supply the commands to run. Finally we add the <code>&amp;</code> character which runs the <code>srun</code> command in the background. This is necessary so that it can execute the next command before the current one has finished.</p>
+<p>When we run this script we can see the runtime is massively improved.</p>
+<pre><code class="language-bash">$ sbatch job_script.sh
+...
+This job ran in 12.563785716 seconds 
+</code></pre>
+<p>Note that as long as we have free resources on which to run the scripts, we can easily expand beyond running 10 copies and it will still take around 12 seconds. If we go beyond 64 tasks we will require more than one node.</p>
+<p>Now let's say we want to run this same script but change the number of sides each dice take, running it for 2, 4, 6 sides. Yes we could just use bash loops, but there is a simpler way to do this using the <code>--array</code> flag. Let's see what it looks like:</p>
+<pre><code class="language-bash">#!/bin/bash
+#SBATCH --ntasks 1
+#SBATCH --array=2,4,6
+#SBATCH --cpus-per-task 1
+#SBATCH --output=variable-sided-dice-result.out
+
+python product_of_two_dice_analysis.py $SLURM_ARRAY_TASK_ID 10000000 &amp;
+</code></pre>
+<p>This is much simpler than the previous script. Using the <code>--array</code> flag we specify what values we want to run the job for and we use <code>$SLURM_ARRAY_TASK_ID</code> to access those values in the script. When we submit this job it creates 3 versions of the job. We can see that the job id has an array appended with the specified values.</p>
+<pre><code>$ squeue
+         JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+ 27995_[2,4,6]     nodes job_scri 40019142 PD       0:00      1 (Priority)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+    
+  </body>
+</html>

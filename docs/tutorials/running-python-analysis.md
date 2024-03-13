@@ -12,6 +12,8 @@ Ideally you should have run scripts using `srun` and `sbatch` before (if not che
 
 ---
 
+### Initial script
+
 Let's say we have some python analysis that runs on a laptop, but takes some time to run. We want to run it 20 times with different parameters. Ideally we would set up a script to submit all 20 runs to ENUCC. We then come back in a few day and check our results. We don't need to sit and watch it and we can even configure slurm to email us when the job is finished.
 
 As a simple example, let's say we want to calculate some statistics about the product of the outcomes of two dice rolls. We also want to see how these statistics change depending on how many sides the dice have. Here is a simple script that takes the number of sides of the dice and the number of trials as command line arguments and prints the mean, mode and standard deviation of the product of the two dice rolls.
@@ -43,11 +45,32 @@ output = (f"------------------------------------------------\n"
 print(output)
 ```
 
-The first thing we need to do is get the files from our local computer to enucc. Ideally you should be using git to manage your projects, with a remote repository on a hosting site such as github or gitlab. If you already have this setup it's a simple matter to clone the repository. I have put all of the code we need into a git repository so you should try cloning this now.
+### Getting files onto ENUCC
+
+The first thing we need to do is get the files from our local computer to enucc. Ideally you should be using git to manage your projects, with a remote repository on a hosting site such as github or gitlab. If you already have this setup it's a simple matter to clone the repository. I have put all of the code we need into a [git repository](https://github.com/SCEBE-Technicians/python-analysis-tutorial) so you should try cloning this now.
 
 ```
 $ git clone git@github.com:SCEBE-Technicians/python-analysis-tutorial.git
 ```
+
+If you aren't using git you can transfer files from either Linux or MacOS using either [scp](https://www.man7.org/linux/man-pages/man1/scp.1.html) or [rsync](https://man7.org/linux/man-pages/man1/rsync.1.html). The syntax is as follows:
+
+```
+$ scp /path/to/local/file 400XXXXX@login.enucc.napier.ac.uk:/path/to/server/file
+```
+or
+
+```
+$ rsync /path/to/local/file 400XXXXX@login.enucc.napier.ac.uk:/path/to/server/file
+```
+
+You can also use these programs to copy files from the server to your local machine. If you are on windows you can use scp from powershell.
+
+```
+> scp \path\to\local\file 400XXXXX@login.enucc.napier.ac.uk:/path/to/server/file
+```
+
+### Using Anaconda
 
 On ENUCC, python is managed with anaconda and so we have to first load the anaconda module
 ```bash
@@ -69,6 +92,8 @@ Mean: 29.4
 Median: 23.5
 Mode: 30
 ```
+
+### Running the script
 
 To run the same script on ENUCC we can use `srun`. Here we run it for a reasonably large number of trials.
 ```bash
@@ -149,6 +174,8 @@ This job ran in 120.238923031 seconds
 
 This has taken around 10 times longer than running the analysis once which is more or less what might be expected. ENUCC has a great deal of resources, but the script as we've written it requests only one CPU on one node and then runs the python script steps one after the other. There is no reason why we shouldn't run the python steps all at once, but we don't want to submit 10 different job. Instead we can run each python step as a separate task and assign one cpu to each task. We also have to specify how much memory each task should use since the default would request all available memory.
 
+### Parallelising the job
+
 ```bash
 #!/bin/bash
 #SBATCH --ntasks 10
@@ -209,6 +236,8 @@ This job ran in 12.563785716 seconds
 
 Note that as long as we have free resources on which to run the scripts, we can easily expand beyond running 10 copies and it will still take around 12 seconds. If we go beyond 64 tasks we will require more than one node.
 
+### Using job array
+
 Now let's say we want to run this same script but change the number of sides each dice take, running it for 2, 4, 6 sides. Yes we could just use bash loops, but there is a simpler way to do this using the `--array` flag. Let's see what it looks like:
 
 ```bash
@@ -228,3 +257,20 @@ $ squeue
          JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
  27995_[2,4,6]     nodes job_scri 40019142 PD       0:00      1 (Priority)
 ```
+
+The `--array` flag is not limited to specifying individual values. There are a few different options for specifying values depending on your needs.
+
+| `--array` | description                                 |
+| ----------|---------------------------------------------|
+| 1,2,3     |  1,2,3                                      |
+| 1-100     |  1,2 ... 100                                |
+| 1-100:2   |  1, 3, 5 ... 99                             |
+| 1-100%5   |  1,2 ... 100, running 5 jobs simultaneously |
+
+### Getting an email upon completion
+
+Finally, if we are running a job for a few days, we don't want to have to log in to ENUCC every now and again to check whether the job has been complete. Luckily Slurm has an inbuilt functionality for emailing when the job reaches certain points. Let's see how this works.
+
+
+
+### Conclusion

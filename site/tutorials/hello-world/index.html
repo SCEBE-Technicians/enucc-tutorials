@@ -1,0 +1,591 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../message-passing-programming/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+    
+    
+      
+        <title>Hello World - ENUCC Tutorials</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hello-world" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ENUCC Tutorials" class="md-header__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ENUCC Tutorials
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hello World
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ENUCC Tutorials" class="md-nav__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ENUCC Tutorials
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hello World
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Hello World
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-this-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      How is this useful?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../message-passing-programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Message Passing Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running-python-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running Python Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple-neural-network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple neural network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-this-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      How is this useful?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="hello-world">Hello World</h1>
+<h2 id="description">Description</h2>
+<p>In this project we will run a script which will write "Hello world!" to stdout. We look at running this script using <code>srun</code> and <code>sbatch</code>.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>All you need to follow is this tutorial is an account and a way of sshing to the server. If you do not yet have an account <a href="https://staff.napier.ac.uk/services/cit/Pages/ENU-Compute-Cluster.aspx">please request one</a>. To ssh from windows, we recommend using <a href="https://putty.org/">PuTTY</a> (available through AppsAnywhere).</p>
+<hr />
+<blockquote>
+<p>Code blocks in this document represent what you'll type into the terminal and show you what you should see. Lines starting with a <code>$</code> are what you'll type (no need to type the <code>$</code>, it just represents the prompt) and lines which don't start with <code>$</code> are what you should see.</p>
+</blockquote>
+<p>Let's start by logging in to ENUCC.</p>
+<pre><code class="language-bash">$ ssh USERNAME@login.enucc.napier.ac.uk
+</code></pre>
+<p>Organising your home directory is important. I recommend you make a projects directory which will contain all of your projects. </p>
+<pre><code class="language-bash">$ mkdir projects
+$ cd projects
+</code></pre>
+<p>Then you can make a directory which will contain the code for this tutorial.</p>
+<pre><code class="language-bash">$ mkdir hello-world
+$ cd hello-world
+</code></pre>
+<p>To print text to stdout (which will make it visible in your terminal) we will be using the <code>echo</code> command. Let's try it out.</p>
+<pre><code class="language-bash">$ echo Hello world!
+Hello world!
+</code></pre>
+<p>In order to make this more reproducible, we'll put it in a bash script. A bash script is a file which contains a series of bash commands, just like you would type into the terminal. To create a new file using the command line:</p>
+<pre><code>$ touch hello_world.sh
+</code></pre>
+<p>To edit your file you'll need to use a text editor. You have several options for editing a file on ENUCC. You can use either <a href="https://www.nano-editor.org/">nano</a>, <a href="https://www.vim.org/">vim</a> or <a href="https://www.gnu.org/software/emacs/">emacs</a>. nano is the easiest to get started with. Open a file with <code>nano filename</code>, edit it, using the arrow keys to navigate, "ctrl + O" to write the file (it will ask for the name, press enter to accept) and "ctrl + X" to exit the editor. Check out <a href="https://www.nano-editor.org/dist/latest/cheatsheet.html">this cheetsheet</a> for more info.</p>
+<p>Edit your <code>hello_world.sh</code> file and put the following into it:</p>
+<pre><code>#!/bin/bash
+
+echo Hello world!
+</code></pre>
+<p>At this point you might be asking yourself why we've added an extra line at the top of the file. This is called a <a href="https://en.wikipedia.org/wiki/Shebang_%28Unix%29">shebang interpreter directive</a> and it is used to tell the operating system what interpreter to use to run the script. The shebang we've used says to use the <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash shell</a>, installed at <code>/bin/bash</code>. Don't worry if this is a bit confusing, just know that you need that line at the top of the script for it to run correctly.</p>
+<p>In order to execute the file, you'll need to make it executable. We edit the file permissions using the <code>chmod</code> command.</p>
+<pre><code>$ chmod u+x hello_world.sh
+</code></pre>
+<p>This makes it executable for the current user only (hence the u+x). Now let's run the file.</p>
+<pre><code>$ ./hello_world.sh
+Hello world!
+</code></pre>
+<p>We've just run our first bit of code on ENUCC! Well done! But don't get too excited yet - we've only run it on the login node. ENUCC consists of several nodes which you can think of as separate computers with a very fast network connection between them. There are different types of node with different properties and here we'll talk about two such nodes: compute and login. There is one login node, which is used by all users as the entrypoint to the system. Login nodes however are quite minimally provisioned - they have only 4 cpus and 8gb of RAM. If lots of people were to run computationally intensive tasks on the login node it would lead to the system being unusable.</p>
+<p>Compute nodes on the other hand are built to deal with computationally intensive tasks. They have 64 cpus and 512gb of RAM. However you cannot use them directly like you used the login node. We use a program called <a href="https://slurm.schedmd.com/">slurm</a> as our cluster management and job scheduling system. Slurm provides a program called <code>srun</code> which can be used to run your scripts on the compute nodes. Let's run this now.</p>
+<pre><code>$ srun --ntasks 1 --cpus-per-task 1 ./hello_world.sh
+srun: job 27870 queued and waiting for resources
+srun: job 27870 has been allocated resources
+Hello world!
+</code></pre>
+<p>Here we've used the srun command with two flags. The first flag says we only have one task to run and the second indicates that we only want one cpu for this task. Specifying these flags means that other users will be able to run programs on the unused cpus on the same node. There are many more flags for srun which might be useful for your work. Check out <a href="https://slurm.schedmd.com/srun.html">the docs</a> for more information.</p>
+<p>It's great that we can now run programs on the compute nodes, but what if we want to leave a job running for a long time and don't want to stay logged in while it's running? This is where the <code>sbatch</code> command comes in. <code>sbatch</code> lets you write submit a job to ENUCC and slurm will run it when the resources become available. Once you submit a job with <code>sbatch</code> you do not need to stay logged in. A batch file is just like a regular bash file with some special shebang directives. Let's edit <code>hello_world.sh</code> to convert it to a batch script.</p>
+<pre><code>#!/bin/bash
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 1
+
+echo Hello world!
+</code></pre>
+<p>Now all we need to do is use the <code>sbatch</code> command to submit it to the job queue.</p>
+<pre><code>$ sbatch hello_world.sh
+Submitted batch job 27872
+</code></pre>
+<p>It's been submitted, but where is our output? Since we might not be logged in when it runs, slurm will not allow the job to print to our terminal. Instead it will redirect any output to a file. That file will be in the working directory from which you call the <code>sbatch</code> command. We can see our output by using the cat command on the output file, which by default is called <code>slurm-&lt;JOB_ID&gt;.out</code>.</p>
+<pre><code>$ cat slurm-27872.out
+Hello world!
+</code></pre>
+<h2 id="how-is-this-useful">How is this useful?</h2>
+<p>The process you used to run this simple script on the cluster is exactly the same as the process you'd use to run any script which would run on a single node. You can change the bash script to run python scripts, organise files or otherwise automate your computational workloads.</p>
+<p>Looking for a next step? Try running some scripts you'd normally run locally on ENUCC instead. Use a batch script to run them overnight.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+    
+  </body>
+</html>
