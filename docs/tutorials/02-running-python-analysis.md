@@ -2,7 +2,7 @@
 
 ## Description
 
-This project covers how to move long-running scripts from running on your local machine to running on ENUCC. We will learn how to run a series of unconnected jobs in parallel using `sbatch` and `srun` and then we'll use the array command to supply a range of values which will be parameters supplied to the script we're running.
+This project covers how to move long-running scripts from running on your local machine to running on ENUCC. We will learn how to run a series of unconnected jobs in parallel using `sbatch` and `srun` and then we'll use the array flag to supply a range of values which will be parameters supplied to the script we're running.
 
 ---
 
@@ -14,7 +14,7 @@ Ideally you should have run scripts using `srun` and `sbatch` before (if not che
 
 ### Initial script
 
-Let's say we have some python analysis that runs on a laptop, but takes some time to run. We want to run it 20 times with different parameters. Ideally we would set up a script to submit all 20 runs to ENUCC. We then come back in a few day and check our results. We don't need to sit and watch it and we can even configure slurm to email us when the job is finished.
+Let's say we have some python analysis that runs on a laptop, but takes some time to run. We want to run it 20 times with different parameters. Ideally we would set up a script to submit all 20 runs to ENUCC. We then come back in a few day and check our results.
 
 As a simple example, let's say we want to calculate some statistics about the product of the outcomes of two dice rolls. We also want to see how these statistics change depending on how many sides the dice have. Here is a simple script that takes the number of sides of the dice and the number of trials as command line arguments and prints the mean, mode and standard deviation of the product of the two dice rolls.
 
@@ -69,6 +69,11 @@ You can also use these programs to copy files from the server to your local mach
 ```
 > scp \path\to\local\file 400XXXXX@login.enucc.napier.ac.uk:/path/to/server/file
 ```
+
+#### Where should I put data files?
+
+This will be covered more thoroughly in a future project but the short answer is that you want to put large data files in `sharedscratch` for long term-storage or in `localscratch` for short-term access. `localscratch` is faster but will get wiped after 30 days.
+
 
 ### Using Anaconda
 
@@ -267,10 +272,6 @@ The `--array` flag is not limited to specifying individual values. There are a f
 | 1-100:2   |  1, 3, 5 ... 99                             |
 | 1-100%5   |  1,2 ... 100, running 5 jobs simultaneously |
 
-### Getting an email upon completion
-
-Finally, if we are running a job for a few days, we don't want to have to log in to ENUCC every now and again to check whether the job has been complete. Luckily Slurm has an inbuilt functionality for emailing when the job reaches certain points. Let's see how this works.
-
-
-
 ### Conclusion
+
+We've seen a few different ways that we can launch jobs. While launching multiple jobs with the array flag will likely be the most common usage, it is good to know how to launch individual jobs within a batch file so that we can have finer control over what scripts are running.

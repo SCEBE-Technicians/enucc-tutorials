@@ -1,5 +1,7 @@
 # Message Passing Programming
 
+<span style="color:red"> This is a work in progress. </span>
+
 ## Description
 
 Compute nodes on ENUCC each have 64 cores which have access to shared memory. When looking to run a job with more than 64 cores, we have to use multiple nodes, but separate nodes do not have shared memory. We need to use message passing programming to send information between nodes. We will be exploring the basics of message passing programming with [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface). The goal with this tutorial is to give you a taste of MPI programming along with an understanding of its capabilities so that you can understand whether it will be useful for future applications. This is not a comprehensive course.
