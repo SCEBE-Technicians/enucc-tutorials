@@ -8,18 +8,18 @@ In this project we will run a script which will write "Hello world!" to stdout. 
 
 ## Prerequisites
 
-All you need to follow is this tutorial is an account and a way of sshing to the server. If you do not yet have an account [please request one](https://staff.napier.ac.uk/services/cit/Pages/ENU-Compute-Cluster.aspx). To ssh from windows, we recommend using [PuTTY](https://putty.org/) (available through AppsAnywhere).
+All you need to follow this tutorial is an account and a way of sshing to the server. If you do not yet have an account [please request one](https://staff.napier.ac.uk/services/cit/Pages/ENU-Compute-Cluster.aspx). To ssh from windows, we recommend using [PuTTY](https://putty.org/) (available through AppsAnywhere).
 
 ---  
 
-> Code blocks in this document represent what you'll type into the terminal and show you what you should see. Lines starting with a `$` are what you'll type (no need to type the `$`, it just represents the prompt) and lines which don't start with `$` are what you should see.
+> Code blocks in this document represent what you'll type into the terminal and also show you what you should see. Lines starting with a `$` are what you'll type (no need to type the `$`, it just represents the prompt) and lines which don't start with `$` are what you should see.
 
 Let's start by logging in to ENUCC.
 ```bash
 $ ssh USERNAME@login.enucc.napier.ac.uk
 ```
 
-Organising your home directory is important. I recommend you make a projects directory which will contain all of your projects. 
+Organising your home directory is important. I recommend you make a projects directory which will contain all of your different projects. 
 ```bash
 $ mkdir projects
 $ cd projects
@@ -37,7 +37,7 @@ $ echo Hello world!
 Hello world!
 ```
 
-In order to make this more reproducible, we'll put it in a bash script. A bash script is a file which contains a series of bash commands, just like you would type into the terminal. To create a new file using the command line:
+In order to make this more reusable, we'll put it in a bash script. A bash script is a file which contains a series of bash commands, just like you would type into the terminal. To create a new file using the command line:
 ```
 $ touch hello_world.sh
 ```
@@ -79,7 +79,7 @@ Hello world!
 
 Here we've used the srun command with two flags. The first flag says we only have one task to run and the second indicates that we only want one cpu for this task. Specifying these flags means that other users will be able to run programs on the unused cpus on the same node. There are many more flags for srun which might be useful for your work. Check out [the docs](https://slurm.schedmd.com/srun.html) for more information.
 
-It's great that we can now run programs on the compute nodes, but what if we want to leave a job running for a long time and don't want to stay logged in while it's running? This is where the `sbatch` command comes in. `sbatch` lets you write submit a job to ENUCC and slurm will run it when the resources become available. Once you submit a job with `sbatch` you do not need to stay logged in. A batch file is just like a regular bash file with some special shebang directives. Let's edit `hello_world.sh` to convert it to a batch script.
+It's great that we can now run programs on the compute nodes, but what if we want to leave a job running for a long time and don't want to stay logged in while it's running? This is where the `sbatch` command comes in. `sbatch` lets you submit a job to ENUCC and slurm will run it when the resources become available. Once you submit a job with `sbatch` you do not need to stay logged in. A batch file is just like a regular bash file with some special directives. Let's edit `hello_world.sh` to convert it to a batch script.
 
 ```
 #!/bin/bash
