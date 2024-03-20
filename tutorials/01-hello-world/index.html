@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../../useful-resources/">
       
       
         <link rel="next" href="../02-running-python-analysis/">
@@ -208,6 +208,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../useful-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Useful resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -220,10 +240,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -234,8 +254,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
           </label>
@@ -472,15 +492,15 @@
 <p>In this project we will run a script which will write "Hello world!" to stdout. We look at running this script using <code>srun</code> and <code>sbatch</code>.</p>
 <hr />
 <h2 id="prerequisites">Prerequisites</h2>
-<p>All you need to follow is this tutorial is an account and a way of sshing to the server. If you do not yet have an account <a href="https://staff.napier.ac.uk/services/cit/Pages/ENU-Compute-Cluster.aspx">please request one</a>. To ssh from windows, we recommend using <a href="https://putty.org/">PuTTY</a> (available through AppsAnywhere).</p>
+<p>All you need to follow this tutorial is an account and a way of sshing to the server. If you do not yet have an account <a href="https://staff.napier.ac.uk/services/cit/Pages/ENU-Compute-Cluster.aspx">please request one</a>. To ssh from windows, we recommend using <a href="https://putty.org/">PuTTY</a> (available through AppsAnywhere).</p>
 <hr />
 <blockquote>
-<p>Code blocks in this document represent what you'll type into the terminal and show you what you should see. Lines starting with a <code>$</code> are what you'll type (no need to type the <code>$</code>, it just represents the prompt) and lines which don't start with <code>$</code> are what you should see.</p>
+<p>Code blocks in this document represent what you'll type into the terminal and also show you what you should see. Lines starting with a <code>$</code> are what you'll type (no need to type the <code>$</code>, it just represents the prompt) and lines which don't start with <code>$</code> are what you should see.</p>
 </blockquote>
 <p>Let's start by logging in to ENUCC.</p>
 <pre><code class="language-bash">$ ssh USERNAME@login.enucc.napier.ac.uk
 </code></pre>
-<p>Organising your home directory is important. I recommend you make a projects directory which will contain all of your projects. </p>
+<p>Organising your home directory is important. I recommend you make a projects directory which will contain all of your different projects. </p>
 <pre><code class="language-bash">$ mkdir projects
 $ cd projects
 </code></pre>
@@ -492,7 +512,7 @@ $ cd hello-world
 <pre><code class="language-bash">$ echo Hello world!
 Hello world!
 </code></pre>
-<p>In order to make this more reproducible, we'll put it in a bash script. A bash script is a file which contains a series of bash commands, just like you would type into the terminal. To create a new file using the command line:</p>
+<p>In order to make this more reusable, we'll put it in a bash script. A bash script is a file which contains a series of bash commands, just like you would type into the terminal. To create a new file using the command line:</p>
 <pre><code>$ touch hello_world.sh
 </code></pre>
 <p>To edit your file you'll need to use a text editor. You have several options for editing a file on ENUCC. You can use either <a href="https://www.nano-editor.org/">nano</a>, <a href="https://www.vim.org/">vim</a> or <a href="https://www.gnu.org/software/emacs/">emacs</a>. nano is the easiest to get started with. Open a file with <code>nano filename</code>, edit it, using the arrow keys to navigate, "ctrl + O" to write the file (it will ask for the name, press enter to accept) and "ctrl + X" to exit the editor. Check out <a href="https://www.nano-editor.org/dist/latest/cheatsheet.html">this cheetsheet</a> for more info.</p>
@@ -517,7 +537,7 @@ srun: job 27870 has been allocated resources
 Hello world!
 </code></pre>
 <p>Here we've used the srun command with two flags. The first flag says we only have one task to run and the second indicates that we only want one cpu for this task. Specifying these flags means that other users will be able to run programs on the unused cpus on the same node. There are many more flags for srun which might be useful for your work. Check out <a href="https://slurm.schedmd.com/srun.html">the docs</a> for more information.</p>
-<p>It's great that we can now run programs on the compute nodes, but what if we want to leave a job running for a long time and don't want to stay logged in while it's running? This is where the <code>sbatch</code> command comes in. <code>sbatch</code> lets you write submit a job to ENUCC and slurm will run it when the resources become available. Once you submit a job with <code>sbatch</code> you do not need to stay logged in. A batch file is just like a regular bash file with some special shebang directives. Let's edit <code>hello_world.sh</code> to convert it to a batch script.</p>
+<p>It's great that we can now run programs on the compute nodes, but what if we want to leave a job running for a long time and don't want to stay logged in while it's running? This is where the <code>sbatch</code> command comes in. <code>sbatch</code> lets you submit a job to ENUCC and slurm will run it when the resources become available. Once you submit a job with <code>sbatch</code> you do not need to stay logged in. A batch file is just like a regular bash file with some special directives. Let's edit <code>hello_world.sh</code> to convert it to a batch script.</p>
 <pre><code>#!/bin/bash
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 1
