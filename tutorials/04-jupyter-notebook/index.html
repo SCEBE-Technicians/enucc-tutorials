@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../02-running-python-analysis/">
+        <link rel="prev" href="../03-simple-neural-network/">
       
       
-        <link rel="next" href="../04-jupyter-notebook/">
+        <link rel="next" href="../message-passing-programming/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Simple Neural Network - ENUCC Tutorials</title>
+        <title>Jupyter Notebook - ENUCC Tutorials</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simple-neural-network" class="md-skip">
+        <a href="#jupyter-notebook" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Simple Neural Network
+              Jupyter Notebook
             
           </span>
         </div>
@@ -307,6 +307,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-simple-neural-network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Neural Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -319,29 +340,18 @@
         
       
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
   
   <span class="md-ellipsis">
-    Simple Neural Network
+    Jupyter Notebook
   </span>
   
 
-      </a>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-jupyter-notebook/" class="md-nav__link">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -350,6 +360,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring conda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -466,6 +529,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring conda
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -479,8 +583,51 @@
                   
 
 
-<h1 id="simple-neural-network">Simple Neural Network</h1>
-<p>This is yet to be implemented.</p>
+<h1 id="jupyter-notebook">Jupyter Notebook</h1>
+<h2 id="description">Description</h2>
+<p>Many people use <a href="https://jupyter.org/">jupyter notebooks</a> for writing and running python code - especially when doing data science tasks. This tutorial will show you how to take a jupyter notebook which is running on your own computer and run it on ENUCC.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You should know the basics of creating and submitting jobs to ENUCC. You should also know a bit about creating and running jupyter notebooks.</p>
+<hr />
+<p>I have set up an example notebook which can be <a href="https://github.com/SCEBE-Technicians/ENUCC-jupyter-notebook-example">obtained from github</a>. In a real usage scenario we might expect the notebook to do some heavy number crunchy, or neural network training, but here it simply generates a graph and puts it in the figures subdirectory. We're happy that the notebook works on the local machine, but it takes a long time and so we'd rather offload the effort to ENUCC. The first step is to clone the repository:</p>
+<pre><code class="language-bash">$ cd projects
+$ git clone git@github.com:SCEBE-Technicians/ENUCC-jupyter-notebook-example.git
+</code></pre>
+<p>If you've never used conda on ENUCC before then you'll need to do some setup. First load the conda module and then initialise it.</p>
+<pre><code class="language-bash">$ module load apps/anaconda3
+$ conda init bash
+</code></pre>
+<p>You'll have to restart the shell for these changes to take effect (the easiest way is to log out and back in).</p>
+<p>Now, in the repository that you cloned previously, there is a conda environment already defined. You can create a new conda environment from an <code>env.yml</code> file by running</p>
+<pre><code>$ cd ~/projects/ENUCC-jupyter-notebook-example
+$ conda env create -f env.yml
+$ conda activate jupyter-example
+</code></pre>
+<p>This environment has all the dependencies you'll need already installed, namely <a href="https://jupyter.org/">jupyter</a>, <a href="https://numpy.org/">numpy</a> and <a href="https://matplotlib.org/">matplotlib</a>.</p>
+<p>We are now in a position to execute the notebook. This is really quite straightforward. If there is a free compute node (run <code>squeue</code> to check) then we can run it as follows.</p>
+<pre><code class="language-bash">$ srun jupyter execute NoisySine.ipynb
+srun jupyter execute NoisySine.ipynb
+[NbClientApp] Executing NoisySine.ipynb
+...
+</code></pre>
+<p>You can then check in the <code>./figures</code> directory to see that a new figure has been added.</p>
+<p>As usual, <code>srun</code> is handy if there is a free compute node and your script won't take too long to run, but it's better to create a batch script if it is a long-running script, or if you expect it to be queued for a while.</p>
+<pre><code class="language-bash">#!/bin/bash
+#SBATCH --ntasks 1
+#SBATCH --nodes 1
+#SBATCH --cpus-per-task 1
+
+jupyter execute NoisySine.ipynb
+</code></pre>
+<h3 id="configuring-conda">Configuring conda</h3>
+<p>You have some options for using conda with ENUCC. If you find your environments are getting to be too big then you can move your modules to a location within shared scratch</p>
+<pre><code class="language-bash">$ conda config --add pkg_dirs sharedscratch/.conda/pkgs
+$ conda config --add envs_dirs sharedscratch/.conda/envs
+</code></pre>
+<p>You can also disable the base env being activated upon login.</p>
+<pre><code class="language-bash">$ conda config --set auto_activate_base false
+</code></pre>
 
 
 
