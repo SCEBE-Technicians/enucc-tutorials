@@ -137,6 +137,36 @@ printf "This job ran in %s seconds\n\n" $runtime
 
 ---
 
+# Using `sbatch`
+
+```
+#!/bin/bash
+#SBATCH --ntasks 10
+#SBATCH --nodes 1
+#SBATCH --cpus-per-task 1
+
+start_time=`date +%s.%N`
+
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &
+
+wait
+
+end_time=`date +%s.%N`
+runtime=$(echo "$end_time - $start_time" | bc)
+printf "This job ran in %s seconds\n\n" $runtime
+```
+
+---
+
 # Using `sarray`
 
 ```bash

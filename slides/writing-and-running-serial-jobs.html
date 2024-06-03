@@ -125,6 +125,33 @@ runtime=$(<span class="hljs-built_in">echo</span> <span class="hljs-string">&quo
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" lang="C">
+<h1 id="using-sbatch-2">Using <code>sbatch</code></h1>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>#!/bin/bash
+#SBATCH --ntasks 10
+#SBATCH --nodes 1
+#SBATCH --cpus-per-task 1
+
+start_time=`date +%s.%N`
+
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+srun --exclusive --ntasks 1 python product_of_two_dice_analysis.py 6 10000000 &amp;
+
+wait
+
+end_time=`date +%s.%N`
+runtime=$(echo &quot;$end_time - $start_time&quot; | bc)
+printf &quot;This job ran in %s seconds\n\n&quot; $runtime
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" lang="C">
 <h1 id="using-sarray">Using <code>sarray</code></h1>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-comment">#SBATCH --ntasks 1</span>
