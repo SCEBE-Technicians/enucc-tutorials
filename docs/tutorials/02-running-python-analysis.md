@@ -77,14 +77,10 @@ This will be covered more thoroughly in a future project but the short answer is
 
 ### Using Anaconda
 
-On ENUCC, python is managed with anaconda and so we have to first load the anaconda module
+On ENUCC, python is managed with anaconda and so we have to set up our system to use anaconda. You simply need to load the correct module and initialise conda. You'll have to restart your shell (by logging out and in) after running these two commands.
 ```bash
 $ module load apps/anaconda3
-```
-
-If this is the first time you've tried to use anaconda it will ask you to run a setup script.
-```
-TODO: FIND OUT WHAT GOES HERE
+$ conda init bash
 ```
 To run the script for 1000 trials of 6 sided dice we simply run
 
