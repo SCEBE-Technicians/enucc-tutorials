@@ -772,11 +772,9 @@ print(output)
 <h4 id="where-should-i-put-data-files">Where should I put data files?</h4>
 <p>This will be covered more thoroughly in a future project but the short answer is that you want to put large data files in <code>sharedscratch</code> for long term-storage or in <code>localscratch</code> for short-term access. <code>localscratch</code> is faster but will get wiped after 30 days.</p>
 <h3 id="using-anaconda">Using Anaconda</h3>
-<p>On ENUCC, python is managed with anaconda and so we have to first load the anaconda module</p>
+<p>On ENUCC, python is managed with anaconda and so we have to set up our system to use anaconda. You simply need to load the correct module and initialise conda. You'll have to restart your shell (by logging out and in) after running these two commands.</p>
 <pre><code class="language-bash">$ module load apps/anaconda3
-</code></pre>
-<p>If this is the first time you've tried to use anaconda it will ask you to run a setup script.</p>
-<pre><code>TODO: FIND OUT WHAT GOES HERE
+$ conda init bash
 </code></pre>
 <p>To run the script for 1000 trials of 6 sided dice we simply run</p>
 <pre><code class="language-bash">$ python product_of_two_dice_analysis.py 6 1000
