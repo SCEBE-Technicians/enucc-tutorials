@@ -14,10 +14,12 @@ All you need to follow this tutorial is an account and a way of sshing to the se
 
 > Code blocks in this document represent what you'll type into the terminal and also show you what you should see. Lines starting with a `$` are what you'll type (no need to type the `$`, it just represents the prompt) and lines which don't start with `$` are what you should see.
 
-Let's start by logging in to ENUCC.
+Let's start by logging in to ENUCC. If you are using Linux, you can log in using the following command in a terminal:
 ```bash
 $ ssh USERNAME@login.enucc.napier.ac.uk
 ```
+
+If you are on windows, check out [logging in with PuTTY](/useful-extras/logging-in-with-putty).
 
 Organising your home directory is important. I recommend you make a projects directory which will contain all of your different projects. 
 ```bash
