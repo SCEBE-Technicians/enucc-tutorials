@@ -319,6 +319,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Simple Neural Network
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -328,6 +339,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -487,6 +535,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -501,7 +575,61 @@
 
 
 <h1 id="simple-neural-network">Simple Neural Network</h1>
-<p>This is yet to be implemented.</p>
+<h2 id="description">Description</h2>
+<p>This is a barebones machine learning project. It involves getting some data, storing it in an appropriate location, installing packages with conda and running the training on ENUCC.</p>
+<p>This tutorial is largely based on a <a href="https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/">tutorial on machinelearningmastery.com</a>. </p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You should be familiar with writing and submitting jobs to ENUCC and also have some knowledge of python. This is not a machine learning tutorial, but meant to show you how to run a machine learning project on ENUCC.</p>
+<hr />
+<p>We start by getting the data by downloading it using the <a href="https://ftp.gnu.org/old-gnu/Manuals/wget-1.8.1/html_mono/wget.html">wget</a> program.</p>
+<pre><code class="language-bash">$ mkdir ~/sharedscratch/diabetes-dataset
+$ cd ~/sharedscratch/diabetes-dataset
+$ wget https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv
+</code></pre>
+<p>Note that I choose to store the data in the <code>sharedscratch</code> folder. This is a shared directory which does not have a storage quota. If the speed of loading data is a big factor for your work then you should use <code>localscratch</code> instead, but note that it is wiped at regular intervals and should not be used for long-term storage.</p>
+<p>We then create a folder to container our analysis</p>
+<pre><code class="language-bash">$ mkdir -p ~/projects/diabetes-analysis
+$ cd ~/projects/diabetes-analysis
+</code></pre>
+<p>In order to run the analysis we have to have python, numpy and tensorflow installed. We do this in a conda environment called <code>ml-example</code>. If you haven't used conda on ENUCC before then you'll have to set it up by running the following.</p>
+<pre><code>$ module load apps/anaconda3
+$ conda init bash
+</code></pre>
+<p>Once conda is configured, you can create the environment.</p>
+<pre><code class="language-bash">$ conda create -n ml-example
+$ conda activate ml-example
+$ conda install python=3.11 numpy tensorflow
+</code></pre>
+<p>To train the machine learning model we'll use the following script</p>
+<pre><code class="language-python">from numpy import loadtxt
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from pathlib import Path
+
+data_path = Path.home() / &quot;sharedscratch&quot; / &quot;diabetes-dataset&quot; / &quot;pima-indians-diabetes.data.csv&quot;
+dataset = loadtxt(data_path, delimiter=',')
+x = dataset[:, 0:8]
+y = dataset[:, 8]
+
+model = Sequential()
+model.add(Dense(12, input_shape=(8,), activation='relu'))
+model.add(Dense(8, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+model.fit(x, y, epochs=50, batch_size=10)
+
+_, accuracy = model.evaluate(x, y)
+print('Accuracy: %.2f' % (accuracy*100))
+</code></pre>
+<p>The batch file to submit the job is quite straightforward</p>
+<pre><code class="language-bash">#!/bin/bash
+
+python model.py
+</code></pre>
+<p>And that's it! Sin é.</p>
 
 
 
