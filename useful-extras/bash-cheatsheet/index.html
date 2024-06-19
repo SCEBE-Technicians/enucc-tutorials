@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../bash-cheatsheet/">
+        <link rel="prev" href="../../tutorials/message-passing-programming/">
       
       
-        <link rel="next" href="../logging-in-with-putty/">
+        <link rel="next" href="../git/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Using git - ENUCC Tutorials</title>
+        <title>Bash Cheatsheet - ENUCC Tutorials</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-git" class="md-skip">
+        <a href="#bash-cheatsheet" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using git
+              Bash Cheatsheet
             
           </span>
         </div>
@@ -412,27 +412,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../bash-cheatsheet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Bash Cheatsheet
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -449,7 +428,7 @@
           
   
   <span class="md-ellipsis">
-    Using git
+    Bash Cheatsheet
   </span>
   
 
@@ -460,7 +439,7 @@
         
   
   <span class="md-ellipsis">
-    Using git
+    Bash Cheatsheet
   </span>
   
 
@@ -482,28 +461,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
+  <a href="#directory-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Description
+      Directory management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directory management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#pwd" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      pwd
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#working-with-others" class="md-nav__link">
+  <a href="#cd" class="md-nav__link">
     <span class="md-ellipsis">
-      Working with others
+      cd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      mvdir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      rmdir
     </span>
   </a>
   
@@ -515,11 +530,173 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#useful-resources" class="md-nav__link">
+  <a href="#working-with-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Useful resources
+      Working with files
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Working with files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      touch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      cp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      mv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-advanced-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      More advanced operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More advanced operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#piping-" class="md-nav__link">
+    <span class="md-ellipsis">
+      piping - |
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirecting-to-a-file-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      redirecting to a file - &gt; and &gt;&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcards-" class="md-nav__link">
+    <span class="md-ellipsis">
+      wildcards - *
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    <span class="md-ellipsis">
+      Others
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Others">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      echo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      sudo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      .
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ..
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      $?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      !!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devnull" class="md-nav__link">
+    <span class="md-ellipsis">
+      /dev/null
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -527,6 +704,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using git
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -629,28 +827,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
+  <a href="#directory-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Description
+      Directory management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directory management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#pwd" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      pwd
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#working-with-others" class="md-nav__link">
+  <a href="#cd" class="md-nav__link">
     <span class="md-ellipsis">
-      Working with others
+      cd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      mvdir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      rmdir
     </span>
   </a>
   
@@ -662,11 +896,173 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#useful-resources" class="md-nav__link">
+  <a href="#working-with-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Useful resources
+      Working with files
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Working with files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      touch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      cp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      mv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-advanced-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      More advanced operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="More advanced operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#piping-" class="md-nav__link">
+    <span class="md-ellipsis">
+      piping - |
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirecting-to-a-file-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      redirecting to a file - &gt; and &gt;&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcards-" class="md-nav__link">
+    <span class="md-ellipsis">
+      wildcards - *
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    <span class="md-ellipsis">
+      Others
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Others">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      echo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      sudo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      .
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ..
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      $?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      !!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devnull" class="md-nav__link">
+    <span class="md-ellipsis">
+      /dev/null
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -685,37 +1081,121 @@
                   
 
 
-<h1 id="using-git">Using git</h1>
-<h2 id="description">Description</h2>
-<p>This tutorial will outline the basics of using git.</p>
-<hr />
-<h2 id="prerequisites">Prerequisites</h2>
-<p>None.</p>
-<hr />
-<p>Git is a general purpose tool for tracking changes in a filesystem and for collaboratively working with others. There are a few ways to use git, some more complicated than others. In this tutorial we'll first look at using git for a project on which you are the only person making changes. In this scenario git is useful for tracking changes and also for keeping a remote copy of your work as a backup. After we become comfortable working alone with git, we'll look at using git to collaborate with others.</p>
-<p>Before we get started I want to cover a few bits of terminology which are frequently used.</p>
-<ul>
-<li>git: git is the name of the tool used for version control.</li>
-<li>Repository: all of your project files, along with your git history and data.</li>
-<li>GitHub: a website which allows you to host a copy of your repository on their servers.</li>
-<li>Commit: a snapshot of your project files</li>
-</ul>
-<p>To get started you can follow the instructions on github to <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository">create a new repository</a>. Once you've created a repository, which is stored on github's servers, you can clone the repository to have a copy on your own machine.</p>
-<pre><code>$ git clone git@github.com:SCEBE-Technicians/&lt;repository-name&gt;.git
+<h1 id="bash-cheatsheet">Bash Cheatsheet</h1>
+<p>This page contains an overview of some of the most commonly used bash commands. Every bash command consists of a name which you type first, followed by a number of arguments. Some arguments start with <code>-</code> or <code>--</code> which are used to pass flags to the command which change its behaviour.</p>
+<h2 id="directory-management">Directory management</h2>
+<h3 id="ls"><code>ls</code></h3>
+<pre><code class="language-bash">ls
+ls /path/to/directory
 </code></pre>
-<p>You can then make changes or create new files in the repository. Once you are happy with the changes made, we will want to make a commit. You can think of a commit as a snapshot of your project. Committing your changes happens in two parts - first you add the changed files you want to be included in the commit to the staging area, then you create the commit from the files in the staging area.</p>
-<pre><code>$ git add file1 file2 file3
-$ git commit -m &quot;Create file2 and file3 and change file1&quot;
+<p>Lists the contents of the supplied directory. If no directory is given, it lists the contents of the current working directory.</p>
+<h3 id="pwd"><code>pwd</code></h3>
+<pre><code class="language-bash">pwd
 </code></pre>
-<p>The changes will not be visible on the remote repository (on github) yet, because we've only made the changes locally. In order to sync the remote repository with our local repository, we have to push the changes. </p>
-<pre><code>$ git push
+<p>Stands for 'print working directory'. Prints the working directory to the screen.</p>
+<h3 id="cd"><code>cd</code></h3>
+<pre><code class="language-bash">cd path/to/directory
 </code></pre>
-<h3 id="working-with-others">Working with others</h3>
-<p>So far, everything we've done has been on the main branch.</p>
-<h2 id="useful-resources">Useful resources</h2>
-<ul>
-<li>If you are looking to get deep into what git can really do and how it works then I'd recommend reading <a href="https://git-scm.com/book/en/v2">pro git</a>. It's freely available online and is one of the best resources there is.</li>
-</ul>
+<p>Stands for change directory. Changes the working directory to the specified path. If no path is given it will change directory to the home directory.</p>
+<h3 id="mkdir"><code>mkdir</code></h3>
+<pre><code class="language-bash">mkdir directory_name
+</code></pre>
+<p>Stands for make directory. Creates a new directory called <code>directory_name</code>. Note that it is recommended that you <strong>do not use spaces in filenames</strong>.</p>
+<h3 id="mvdir"><code>mvdir</code></h3>
+<pre><code>mvdir directory_name new_directory_name
+</code></pre>
+<p>Stands for move directory. Renames <code>directory_name</code> to <code>new_directory_name</code>.</p>
+<h3 id="rmdir"><code>rmdir</code></h3>
+<pre><code>rmdir empty_directory
+</code></pre>
+<p>Stands for remove directory. Deletes an empty directory. Once it's deleted, there's no way to get it back and this command won't prompt you before deleting so use with caution.</p>
+<h2 id="working-with-files">Working with files</h2>
+<h3 id="touch"><code>touch</code></h3>
+<pre><code>touch filename
+</code></pre>
+<p>touch is often used to create a new empty file. If the file already exists then it will update the date modified time to the current time.</p>
+<h3 id="cp"><code>cp</code></h3>
+<pre><code>cp oldfile newfile
+</code></pre>
+<p>cp stands for copy. It will copy oldfile to newfile. Note that if newfile already exists then this command will overwrite it and it is impossible to get the overwritten file back.</p>
+<h3 id="mv"><code>mv</code></h3>
+<pre><code>mv oldfile newfile
+</code></pre>
+<p>mv stands for move. It is similar to copy, but will delete oldfile. Similarly, if newfile exists it will be permanently overwritten.</p>
+<h3 id="cat"><code>cat</code></h3>
+<pre><code>cat file1
+cat file1 file2 file3
+</code></pre>
+<p>cat stands for concatenate. If you give it the name of one file, it will print the contents to the terminal. If you give it multiple files it will concatenate the contents together and then print that to the terminal. This is quite useful for inspecting files from the command line.</p>
+<h2 id="more-advanced-operations">More advanced operations</h2>
+<h3 id="piping-">piping - <code>|</code></h3>
+<p>Piping allows you to use the output of one command as the input for another. For example, there is a program called wc, meaning word count. If we give it a file, it will print the number of newlines, the number of words and the number of bytes in the file.</p>
+<pre><code>$ wc file
+ 3 4 24 file
+</code></pre>
+<p>Here there were 3 newlines, 4 words and 24 byes.</p>
+<p>We can use this to count the number of files and subdirectories in the current directory by piping the output of <code>ls</code> to <code>wc</code>.</p>
+<pre><code>$ ls | wc
+ 5 5 44
+</code></pre>
+<h3 id="redirecting-to-a-file-and">redirecting to a file - <code>&gt;</code> and <code>&gt;&gt;</code></h3>
+<p>The <code>&gt;</code> and <code>&gt;&gt;</code> commands redirect the output of a command to a file. For example we can save the output of ls to a file.</p>
+<pre><code>$ ls &gt; ls_output_file
+$ cat ls_output_file
+bin
+copy_projects
+ls_output_file
+miniconda3
+projects
+test2
+</code></pre>
+<p><code>&gt;</code> creates a new file if it doesn't exist and overwrites a file that does exist. The specified file will only contain the output of the redirected command.</p>
+<p><code>&gt;&gt;</code> will append the output to the specified file.</p>
+<h3 id="wildcards-">wildcards - <code>*</code></h3>
+<p>You can use <code>*</code> to work with more than one file, substituting <code>*</code> for the changing parts of filenames. Here are some examples.</p>
+<pre><code>ls *A       # List all files ending in A
+ls A*       # List all files starting with A
+cp *.txt textfiles/    # Copies all files ending in .txt to the textfiles directory
+</code></pre>
+<h2 id="others">Others</h2>
+<h3 id="echo"><code>echo</code></h3>
+<pre><code>$ echo hello
+hello
+</code></pre>
+<p>Prints any text after the echo command to the command line. Often used with <code>&gt;</code> or <code>&gt;&gt;</code> for adding text to files. For example</p>
+<pre><code>$ echo hello &gt; textfile
+$ cat textfile
+hello
+</code></pre>
+<h3 id="sudo"><code>sudo</code></h3>
+<p>Stands for superuser do. This is the linux equivalent to running as an administrator. Do not use this unless strictly necessary. You won't have sudo access on ENUCC.</p>
+<h3 id="_1"><code>.</code></h3>
+<p>Used to refer to the current directory.</p>
+<pre><code>ls ./
+</code></pre>
+<h3 id="_2"><code>..</code></h3>
+<p>Used to refer to the directory above</p>
+<pre><code>$ pwd
+/users/username/projects/directory
+$ cd ..
+$ pwd
+/users/username/projects
+</code></pre>
+<h3 id="_3"><code>$?</code></h3>
+<p>A variable which refers to the exit code of the last run command. Can be used with echo to check whether the last command ran successfully. In general an exit code of 0 is successful and anything else means the program exited with an error.</p>
+<pre><code>$ ls
+$ echo $?
+0
+$ ls /non/existent/directory
+$ echo $?
+2
+</code></pre>
+<h3 id="_4"><code>!!</code></h3>
+<p>Can be used to run the last command again.</p>
+<h3 id="devnull"><code>/dev/null</code></h3>
+<p>A psuedofile which is deleted immediately. Useful for getting rid of noisy output. For example if you want to run a program but don't want to see its output you can redirect it to /dev/null.</p>
+<pre><code>python noisyprogram.py &gt; /dev/null
+</code></pre>
 
 
 
