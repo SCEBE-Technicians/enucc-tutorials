@@ -2,6 +2,8 @@
 
 ## Description
 
+This is a short project which shows how to run a small script using matlab on ENUCC.
+
 ## Prerequisites
 
 It is highly recommended that you do the [Hello World](/tutorials/01-hello-world) tutorial before doing this tutorial. 
