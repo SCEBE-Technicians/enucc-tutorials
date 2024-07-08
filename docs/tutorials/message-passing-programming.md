@@ -188,6 +188,158 @@ int main(int arg, char** argv) {
 
 ## Scatter and Gather
 
+Lets say we have an algorithm where we need to iterate over an array and perform an independent computation on each item. Here is an example program where we calculate the sum of an array of 100 integers. I've added a sleep after each step to simulate a heavier computation.
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/time.h>
+#include <unistd.h>
+
+#define ARRAY_SIZE 100
+
+double time_diff(struct timeval* start, struct timeval* end) {
+    double elapsed_time = (double)(end->tv_sec - start->tv_sec);
+    elapsed_time += (double)(end->tv_usec - start->tv_usec) / 1000000;
+    return elapsed_time;
+}
+
+void fill_array(int *arr) {
+    for (int i = 0; i<ARRAY_SIZE; i++) {
+        arr[i] = rand();
+    }
+}
+
+int slow_sum_array(int *arr) {
+    int sum = 0;
+    for (int i = 0; i<ARRAY_SIZE; i++) {
+        sum += arr[i];
+        usleep(10000);
+    }
+    return sum;
+}
+
+int main(int argc, char* argv[]) {
+    // Seed the rng so every run gives the same result
+    srand(0);
+
+    // Create an array of random numbers
+    int list_of_random_numbers[ARRAY_SIZE];
+    fill_array(list_of_random_numbers);
+
+    // Measure the time before doing the calculation
+    struct timeval start;
+    struct timeval end;
+    gettimeofday(&start, 0);
+
+    int sum = slow_sum_array(list_of_random_numbers);
+
+    // Measure the time after doing the calculation
+    gettimeofday(&end, 0);
+    double elapsed_time = time_diff(&start, &end);
+    
+    printf("Sum: %d\n", sum);
+    printf("Elapsed time: %f\n", elapsed_time);
+
+    return 0;
+}
+```
+
+The batch script to run this can be found on the [corresponding repository](https://github.com/SCEBE-Technicians/mpi-array-sum).
+
+In order to parallelise this task, we need to split the `list_of_random_numbers` array and distribute it between the processes. We use the `MPI_Scatter` function to achieve this. We then compute the sum of the subarrays and use `MPI_Gather` to gather the results to an array on rank 0. We can sum this subarray to calculate the results. Here is the full program.
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <mpi.h>
+
+#define ARRAY_SIZE 100
+
+void mpi_setup(int *world_size, int *rank) {
+    MPI_Init(NULL, NULL);
+    MPI_Comm_rank(MPI_COMM_WORLD, rank);
+    MPI_Comm_size(MPI_COMM_WORLD, world_size);
+}
+
+double time_diff(struct timeval* start, struct timeval* end) {
+    double elapsed_time = (double)(end->tv_sec - start->tv_sec);
+    elapsed_time += (double)(end->tv_usec - start->tv_usec) / 1000000;
+    return elapsed_time;
+}
+
+void fill_array(int *arr) {
+    for (int i = 0; i<ARRAY_SIZE; i++) {
+        arr[i] = rand();
+    }
+}
+
+int slow_sum_array(int *arr, int size) {
+    int sum = 0;
+    for (int i = 0; i<size; i++) {
+        sum += arr[i];
+        usleep(10000);
+    }
+    return sum;
+}
+
+int main(int argc, char* argv[]) {
+    int rank, world_size;
+    mpi_setup(&world_size, &rank);
+    
+    // Create an array of random numbers
+    int list_of_random_numbers[ARRAY_SIZE];
+    fill_array(list_of_random_numbers);
+
+    long sum = 0;
+    
+    // Measure the time before doing the calculation
+    struct timeval start;
+    struct timeval end;
+    if (rank == 0) {
+        gettimeofday(&start, 0);
+    }
+
+    // Distribute elements to all processes
+    int elements_per_proc = ARRAY_SIZE/world_size;
+    int *sub_array = malloc(sizeof(int) * elements_per_proc);
+    MPI_Scatter(list_of_random_numbers, elements_per_proc, MPI_INT, sub_array, elements_per_proc, MPI_INT, 0, MPI_COMM_WORLD);
+
+    // Sum each subarray
+    sum = slow_sum_array(sub_array, elements_per_proc);
+
+    // Gather all sums into array
+    int *sub_sums;
+    if (rank == 0) {
+        sub_sums = (int *)malloc(sizeof(float) * world_size);
+    }
+    MPI_Gather(&sum, 1, MPI_INT, sub_sums, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    int aggregate_sum = 0;
+    if (rank == 0) {
+        for (int i = 0; i<world_size; i++) {
+            aggregate_sum += sub_sums[i];
+        }
+    }
+
+    // Measure the time after doing the calculation
+    
+    if (rank == 0) {
+        gettimeofday(&end, 0);
+        double elapsed_time = time_diff(&start, &end);
+        free(sub_sums);
+        printf("Sum: %d\n", aggregate_sum);
+        printf("Elapsed time: %f\n", elapsed_time);
+    }
+
+    MPI_Finalize();
+}
+```
+
+The same result can be achieved using `MPI_Reduce` instead.
+
 ## Asynchronous message passing
 
 ## Examples
@@ -232,8 +384,6 @@ int main(int argc, char** argv) {
 ```
 
 Challenge: implement a ring-pong program where instead of two processes, you have an arbitrary number of processes which pass a value around in a ring.
-
-## 1D Ising Model
 
 ## Next steps
 
