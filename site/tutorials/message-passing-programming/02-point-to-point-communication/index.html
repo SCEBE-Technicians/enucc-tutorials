@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../03-simple-neural-network/">
+        <link rel="prev" href="../01-hello-mpi/">
       
       
-        <link rel="next" href="../message-passing-programming/">
+        <link rel="next" href="../03-using-probe/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
-        <title>Jupyter Notebook - ENUCC Tutorials</title>
+        <title>Point to Point Communication - ENUCC Tutorials</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jupyter-notebook" class="md-skip">
+        <a href="#point-to-point-communication" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="ENUCC Tutorials" class="md-header__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
+    <a href="../../.." title="ENUCC Tutorials" class="md-header__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jupyter Notebook
+              Point to Point Communication
             
           </span>
         </div>
@@ -173,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ENUCC Tutorials" class="md-nav__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
+    <a href="../../.." title="ENUCC Tutorials" class="md-nav__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -191,7 +191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -211,7 +211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../useful-resources/" class="md-nav__link">
+      <a href="../../../useful-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -268,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-hello-world/" class="md-nav__link">
+      <a href="../../01-hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -289,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-running-python-analysis/" class="md-nav__link">
+      <a href="../../02-running-python-analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -310,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-simple-neural-network/" class="md-nav__link">
+      <a href="../../03-simple-neural-network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -328,30 +328,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Jupyter Notebook
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../04-jupyter-notebook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -360,59 +340,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuring-conda" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuring conda
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -425,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../message-passing-programming/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -481,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../matlab/05-using-matlab/" class="md-nav__link">
+      <a href="../../matlab/05-using-matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -502,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../matlab/saving-and-loading-with-matlab/" class="md-nav__link">
+      <a href="../../matlab/saving-and-loading-with-matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -528,17 +455,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
         
           
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
@@ -552,7 +481,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             Message passing programming
@@ -566,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../message-passing-programming/01-hello-mpi/" class="md-nav__link">
+      <a href="../01-hello-mpi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -584,10 +513,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../message-passing-programming/02-point-to-point-communication/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Point to Point Communication
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -596,6 +545,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -608,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../message-passing-programming/03-using-probe/" class="md-nav__link">
+      <a href="../03-using-probe/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -629,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../message-passing-programming/04-using-broadcast/" class="md-nav__link">
+      <a href="../04-using-broadcast/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -650,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../message-passing-programming/05-using-scatter-and-gather/" class="md-nav__link">
+      <a href="../05-using-scatter-and-gather/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -671,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../message-passing-programming/06-asynchronous-messages/" class="md-nav__link">
+      <a href="../06-asynchronous-messages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -742,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../useful-extras/bash-cheatsheet/" class="md-nav__link">
+      <a href="../../../useful-extras/bash-cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -763,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../useful-extras/git/" class="md-nav__link">
+      <a href="../../../useful-extras/git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -784,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../useful-extras/logging-in-with-putty/" class="md-nav__link">
+      <a href="../../../useful-extras/logging-in-with-putty/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -805,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../useful-extras/mobaxterm/" class="md-nav__link">
+      <a href="../../../useful-extras/mobaxterm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -826,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../useful-extras/technical-specs/" class="md-nav__link">
+      <a href="../../../useful-extras/technical-specs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -847,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../useful-extras/using-filezilla/" class="md-nav__link">
+      <a href="../../../useful-extras/using-filezilla/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -910,20 +906,14 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuring-conda" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring conda
+      Exercises
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -942,51 +932,149 @@
                   
 
 
-<h1 id="jupyter-notebook">Jupyter Notebook</h1>
+<h1 id="point-to-point-communication">Point to Point Communication</h1>
 <h2 id="description">Description</h2>
-<p>Many people use <a href="https://jupyter.org/">jupyter notebooks</a> for writing and running python code - especially when doing data science tasks. This tutorial will show you how to take a jupyter notebook which is running on your own computer and run it on ENUCC.</p>
-<hr />
+<p>This tutorial looks at how to send a message containing some data from one process to another.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>You should know the basics of creating and submitting jobs to ENUCC. You should also know a bit about creating and running jupyter notebooks.</p>
+<p>Complete <a href="../01-hello-mpi">part one</a> of this series if you haven't already.</p>
 <hr />
-<p>I have set up an example notebook which can be <a href="https://github.com/SCEBE-Technicians/ENUCC-jupyter-notebook-example">obtained from github</a>. In a real usage scenario we might expect the notebook to do some heavy number crunchy, or neural network training, but here it simply generates a graph and puts it in the figures subdirectory. We're happy that the notebook works on the local machine, but it takes a long time and so we'd rather offload the effort to ENUCC. The first step is to clone the repository:</p>
-<pre><code class="language-bash">$ cd projects
-$ git clone git@github.com:SCEBE-Technicians/ENUCC-jupyter-notebook-example.git
-</code></pre>
-<p>If you've never used conda on ENUCC before then you'll need to do some setup. First load the conda module and then initialise it.</p>
-<pre><code class="language-bash">$ module load apps/anaconda3
-$ conda init bash
-</code></pre>
-<p>You'll have to restart the shell for these changes to take effect (the easiest way is to log out and back in).</p>
-<p>Now, in the repository that you cloned previously, there is a conda environment already defined. You can create a new conda environment from an <code>env.yml</code> file by running</p>
-<pre><code>$ cd ~/projects/ENUCC-jupyter-notebook-example
-$ conda env create -f env.yml
-$ conda activate jupyter-example
-</code></pre>
-<p>This environment has all the dependencies you'll need already installed, namely <a href="https://jupyter.org/">jupyter</a>, <a href="https://numpy.org/">numpy</a> and <a href="https://matplotlib.org/">matplotlib</a>.</p>
-<p>We are now in a position to execute the notebook. This is really quite straightforward. If there is a free compute node (run <code>squeue</code> to check) then we can run it as follows.</p>
-<pre><code class="language-bash">$ srun jupyter execute NoisySine.ipynb
-srun jupyter execute NoisySine.ipynb
-[NbClientApp] Executing NoisySine.ipynb
-...
-</code></pre>
-<p>You can then check in the <code>./figures</code> directory to see that a new figure has been added.</p>
-<p>As usual, <code>srun</code> is handy if there is a free compute node and your script won't take too long to run, but it's better to create a batch script if it is a long-running script, or if you expect it to be queued for a while.</p>
-<pre><code class="language-bash">#!/bin/bash
-#SBATCH --ntasks 1
-#SBATCH --nodes 1
-#SBATCH --cpus-per-task 1
+<p>Now that we've got an idea on how to compile and run a trivial program using MPI, let's try and do something a bit more useful. One of the central concepts of message passing programming is of course passing messages. This means that we send some data from one process to another. We're going to look at a ping-pong program which sends a message back and forth between two processes. Let's start with the usual MPI boilerplate. Put this in a file called <code>ping_pong.c</code>.</p>
+<pre><code class="language-c">#include &lt;mpi.h&gt;
+#include &lt;stdio.h&gt;
 
-jupyter execute NoisySine.ipynb
+int main(int argc, char** argv) {
+    MPI_Init(NULL, NULL);
+    int rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &amp;size);
+
+    if (size != 2) {
+        printf(&quot;World size must be 2. Exiting...\n&quot;);
+        MPI_Abort(MPI_COMM_WORLD, 1);
+    }
+
+    printf(&quot;Hello from %d\n&quot;, rank);
+    MPI_Finalize();
+}
 </code></pre>
-<h3 id="configuring-conda">Configuring conda</h3>
-<p>You have some options for using conda with ENUCC. If you find your environments are getting to be too big then you can move your modules to a location within shared scratch</p>
-<pre><code class="language-bash">$ conda config --add pkg_dirs sharedscratch/.conda/pkgs
-$ conda config --add envs_dirs sharedscratch/.conda/envs
+<p>Compile it with</p>
+<pre><code class="language-bash">$ module load mpi
+$ mpicc ping_pong.c -o ping_pong
 </code></pre>
-<p>You can also disable the base env being activated upon login.</p>
-<pre><code class="language-bash">$ conda config --set auto_activate_base false
+<p>and the following batch file can be used to run it on ENUCC</p>
+<pre><code class="language-bash">#!/bin/bash
+#SBATCH -o ping_pong.output
+#SBATCH -J 
+#SBATCH --time=5
+#SBATCH --mem=128
+#SBATCH --ntasks=2
+
+mpirun -n 2 ping_pong
 </code></pre>
+<p>Now let's try and send a message from process 0 to process 1. Here we'll be sending an integer called ping_pong_count and later we'll increment it by one and send it back. For now we just send it from process 0 to process 1.</p>
+<pre><code>int main(int argc, char** argv) {
+    ...
+    int ping_pong_count;
+    int partner_rank = (rank + 1) % 2;
+    if (rank == 0) {
+        ping_pong_count = 0;
+        MPI_Send(&amp;ping_pong_count, 1, MPI_INT, partner_rank, 0, MPI_COMM_WORLD);
+        printf(&quot;Sent %d from process %d to process %d\n&quot;, ping_pong_count, rank, partner_rank);
+    } else {
+        MPI_Recv(&amp;ping_pong_count, 1, MPI_INT, partner_rank, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        printf(&quot;Received %d on process %d from process %d\n&quot;, ping_pong_count, rank, partner_rank);
+    }
+    ...
+}
+</code></pre>
+<p>If everything has gone right so far then when you run this you'll see the following in the output file</p>
+<pre><code>Sent 0 from process 0 to process 1
+Received 0 on process 1 from process 0
+</code></pre>
+<p>So how did we send the message? The function signature for MPI_Send is</p>
+<pre><code class="language-c">MPI_Send(
+    void *buf,
+    int count,
+    MPI_Datatype datatype,
+    int dest,
+    int tag,
+    MPI_Comm comm
+)
+</code></pre>
+<p>This is fairly complicated and it might take a while before you fully understand it. Here is a brief outline of the arguments</p>
+<ul>
+<li>buf - A pointer to the data to be sent. In our program we sent ping_pong_count.</li>
+<li>count - The size of the array to be sent. Since we are only sending one number, we set this to be 1.</li>
+<li>datatype - The type of data to be sent. Since we are sending an integer we used MPI_Int. See the list of <a href="https://www.mpich.org/static/docs/latest/www3/Constants.html">MPI datatypes</a> for more info.</li>
+<li>dest - The rank of the receiving process. Here we sent our message to <code>partner_rank</code>.</li>
+<li>tag - An identifier for this message. We don't use this, so set it to 0.</li>
+<li>comm - The communicator. We set this to <code>MPI_COMM_WORLD</code>.</li>
+</ul>
+<p>The receive message has an almost identical signature</p>
+<pre><code class="language-c">MPI_Recv(
+    void *buf,
+    int count,
+    MPI_Datatype datatype,
+    int source,
+    int tag,
+    MPI_Comm comm,
+    MPI_status *status
+)
+</code></pre>
+<p>The only difference is that we also have the status argument. This can be used to determine whether an error occurred while sending the message but for now we set this to be <code>MPI_STATUS_IGNORE</code> since we aren't using the status.</p>
+<p>Hopefully it is quite clear now how we send an integer from one process to another. We call <code>MPI_Send</code> on the sending process and <code>MPI_Recv</code> on the receiving process.</p>
+<p>We now have all the knowledge we need to implement the ping pong program. Here it is in full.</p>
+<pre><code class="language-c">#include &lt;mpi.h&gt;
+#include &lt;stdio.h&gt;
+#define PING_PONG_LIMIT 5
+
+int main(int argc, char** argv) {
+    MPI_Init(NULL, NULL);
+    int rank;
+    MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+    int size;
+    MPI_Comm_size(MPI_COMM_WORLD, &amp;size);
+
+    if (size != 2) {
+        printf(&quot;World size must be 2. Exiting...\n&quot;);
+        MPI_Abort(MPI_COMM_WORLD, 1);
+    }
+
+    int ping_pong_count = 0;
+    int partner_rank = (rank + 1) % 2;
+
+    while(ping_pong_count &lt; PING_PONG_LIMIT) {
+        if (rank == ping_pong_count % 2) {
+            ping_pong_count ++;
+            MPI_Send(&amp;ping_pong_count, 1, MPI_INT, partner_rank, 0, MPI_COMM_WORLD);
+            printf(&quot;ping\n&quot;);
+        } else {
+            MPI_Recv(&amp;ping_pong_count, 1, MPI_INT, partner_rank, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            printf(&quot;pong\n&quot;);
+        }
+    }
+
+    MPI_Finalize();
+}
+</code></pre>
+<p>Running this, you'll see the following in the output file:</p>
+<pre><code>ping
+pong
+ping
+pong
+ping
+pong
+ping
+pong
+ping
+pong
+</code></pre>
+<h2 id="exercises">Exercises</h2>
+<ul>
+<li>Implement a ring-pong program. Send a counter in a ring around an arbitrary number of processes, incrementing the counter after each send. Terminate once every process has sent a message.</li>
+<li>Send a string from one process to another. Hint - a string is an array for chars.</li>
+</ul>
 
 
 
@@ -1033,10 +1121,10 @@ $ conda config --add envs_dirs sharedscratch/.conda/envs
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>

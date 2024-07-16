@@ -485,15 +485,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1d-ising-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      1D Ising Model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next steps
@@ -612,6 +603,175 @@
   
   <span class="md-ellipsis">
     Saving and Loading your Workspace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Message passing programming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Message passing programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01-hello-mpi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello MPI!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02-point-to-point-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point to Point Communication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03-using-probe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Probe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04-using-broadcast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Broadcast
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05-using-scatter-and-gather/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Scatter and Gather
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06-asynchronous-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asynchronous methods
   </span>
   
 
@@ -918,15 +1078,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1d-ising-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      1D Ising Model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Next steps
@@ -1137,6 +1288,150 @@ int main(int arg, char** argv) {
 }
 </code></pre>
 <h2 id="scatter-and-gather">Scatter and Gather</h2>
+<p>Lets say we have an algorithm where we need to iterate over an array and perform an independent computation on each item. Here is an example program where we calculate the sum of an array of 100 integers. I've added a sleep after each step to simulate a heavier computation.</p>
+<pre><code class="language-c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;sys/time.h&gt;
+#include &lt;unistd.h&gt;
+
+#define ARRAY_SIZE 100
+
+double time_diff(struct timeval* start, struct timeval* end) {
+    double elapsed_time = (double)(end-&gt;tv_sec - start-&gt;tv_sec);
+    elapsed_time += (double)(end-&gt;tv_usec - start-&gt;tv_usec) / 1000000;
+    return elapsed_time;
+}
+
+void fill_array(int *arr) {
+    for (int i = 0; i&lt;ARRAY_SIZE; i++) {
+        arr[i] = rand();
+    }
+}
+
+int slow_sum_array(int *arr) {
+    int sum = 0;
+    for (int i = 0; i&lt;ARRAY_SIZE; i++) {
+        sum += arr[i];
+        usleep(10000);
+    }
+    return sum;
+}
+
+int main(int argc, char* argv[]) {
+    // Seed the rng so every run gives the same result
+    srand(0);
+
+    // Create an array of random numbers
+    int list_of_random_numbers[ARRAY_SIZE];
+    fill_array(list_of_random_numbers);
+
+    // Measure the time before doing the calculation
+    struct timeval start;
+    struct timeval end;
+    gettimeofday(&amp;start, 0);
+
+    int sum = slow_sum_array(list_of_random_numbers);
+
+    // Measure the time after doing the calculation
+    gettimeofday(&amp;end, 0);
+    double elapsed_time = time_diff(&amp;start, &amp;end);
+
+    printf(&quot;Sum: %d\n&quot;, sum);
+    printf(&quot;Elapsed time: %f\n&quot;, elapsed_time);
+
+    return 0;
+}
+</code></pre>
+<p>The batch script to run this can be found on the <a href="https://github.com/SCEBE-Technicians/mpi-array-sum">corresponding repository</a>.</p>
+<p>In order to parallelise this task, we need to split the <code>list_of_random_numbers</code> array and distribute it between the processes. We use the <code>MPI_Scatter</code> function to achieve this. We then compute the sum of the subarrays and use <code>MPI_Gather</code> to gather the results to an array on rank 0. We can sum this subarray to calculate the results. Here is the full program.</p>
+<pre><code class="language-c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;sys/time.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;mpi.h&gt;
+
+#define ARRAY_SIZE 100
+
+void mpi_setup(int *world_size, int *rank) {
+    MPI_Init(NULL, NULL);
+    MPI_Comm_rank(MPI_COMM_WORLD, rank);
+    MPI_Comm_size(MPI_COMM_WORLD, world_size);
+}
+
+double time_diff(struct timeval* start, struct timeval* end) {
+    double elapsed_time = (double)(end-&gt;tv_sec - start-&gt;tv_sec);
+    elapsed_time += (double)(end-&gt;tv_usec - start-&gt;tv_usec) / 1000000;
+    return elapsed_time;
+}
+
+void fill_array(int *arr) {
+    for (int i = 0; i&lt;ARRAY_SIZE; i++) {
+        arr[i] = rand();
+    }
+}
+
+int slow_sum_array(int *arr, int size) {
+    int sum = 0;
+    for (int i = 0; i&lt;size; i++) {
+        sum += arr[i];
+        usleep(10000);
+    }
+    return sum;
+}
+
+int main(int argc, char* argv[]) {
+    int rank, world_size;
+    mpi_setup(&amp;world_size, &amp;rank);
+
+    // Create an array of random numbers
+    int list_of_random_numbers[ARRAY_SIZE];
+    fill_array(list_of_random_numbers);
+
+    long sum = 0;
+
+    // Measure the time before doing the calculation
+    struct timeval start;
+    struct timeval end;
+    if (rank == 0) {
+        gettimeofday(&amp;start, 0);
+    }
+
+    // Distribute elements to all processes
+    int elements_per_proc = ARRAY_SIZE/world_size;
+    int *sub_array = malloc(sizeof(int) * elements_per_proc);
+    MPI_Scatter(list_of_random_numbers, elements_per_proc, MPI_INT, sub_array, elements_per_proc, MPI_INT, 0, MPI_COMM_WORLD);
+
+    // Sum each subarray
+    sum = slow_sum_array(sub_array, elements_per_proc);
+
+    // Gather all sums into array
+    int *sub_sums;
+    if (rank == 0) {
+        sub_sums = (int *)malloc(sizeof(float) * world_size);
+    }
+    MPI_Gather(&amp;sum, 1, MPI_INT, sub_sums, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    int aggregate_sum = 0;
+    if (rank == 0) {
+        for (int i = 0; i&lt;world_size; i++) {
+            aggregate_sum += sub_sums[i];
+        }
+    }
+
+    // Measure the time after doing the calculation
+
+    if (rank == 0) {
+        gettimeofday(&amp;end, 0);
+        double elapsed_time = time_diff(&amp;start, &amp;end);
+        free(sub_sums);
+        printf(&quot;Sum: %d\n&quot;, aggregate_sum);
+        printf(&quot;Elapsed time: %f\n&quot;, elapsed_time);
+    }
+
+    MPI_Finalize();
+}
+</code></pre>
+<p>The same result can be achieved using <code>MPI_Reduce</code> instead.</p>
 <h2 id="asynchronous-message-passing">Asynchronous message passing</h2>
 <h2 id="examples">Examples</h2>
 <h3 id="ping-pong">Ping Pong</h3>
@@ -1177,7 +1472,6 @@ int main(int argc, char** argv) {
 }
 </code></pre>
 <p>Challenge: implement a ring-pong program where instead of two processes, you have an arbitrary number of processes which pass a value around in a ring.</p>
-<h2 id="1d-ising-model">1D Ising Model</h2>
 <h2 id="next-steps">Next steps</h2>
 <h2 id="useful-resources">Useful resources</h2>
 <ul>
