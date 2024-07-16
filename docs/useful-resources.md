@@ -1,7 +1,7 @@
 # Useful resources
 
 - [Slurm docs](https://slurm.schedmd.com/documentation.html) - A useful place for learning more about how to use slurm.
-- [Tmux](https://github.com/tmux/tmux/wiki/Getting-Started) - Tmux is a useful tool for 
+- [Tmux](https://github.com/tmux/tmux/wiki/Getting-Started) - Tmux is a useful tool for managing multiple terminal sessions. It can also be left running so when you exit the ssh session, you can keep processes running and resume where you left off when you next log in.
 - [Introduction to Bash scripting](https://github.com/bobbyiliev/introduction-to-bash-scripting?tab=readme-ov-file)
 - [Command line basics](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 - [ShellCheck](https://www.shellcheck.net/) - A tool for checking the correctness of shell scripts.
