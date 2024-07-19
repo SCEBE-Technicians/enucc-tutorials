@@ -351,27 +351,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Message Passing Programming
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -380,10 +359,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -394,8 +373,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             Matlab
           </label>
@@ -467,10 +446,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -481,8 +460,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Message passing programming
           </label>
@@ -667,11 +646,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-asynchronous-messages/" class="md-nav__link">
+      <a href="../06-next-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Asynchronous methods
+    Next Steps
   </span>
   
 
@@ -934,9 +913,9 @@
 
 <h1 id="point-to-point-communication">Point to Point Communication</h1>
 <h2 id="description">Description</h2>
-<p>This tutorial looks at how to send a message containing some data from one process to another.</p>
+<p>This tutorial looks at how to send a message containing some data from one process to another. This is the key to using message passing programming to improve the performance of simulations running on ENUCC.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Complete <a href="../01-hello-mpi">part one</a> of this series if you haven't already.</p>
+<p>This is the second tutorial in a series. Complete <a href="../01-hello-mpi">part one</a> of this series if you haven't already.</p>
 <hr />
 <p>Now that we've got an idea on how to compile and run a trivial program using MPI, let's try and do something a bit more useful. One of the central concepts of message passing programming is of course passing messages. This means that we send some data from one process to another. We're going to look at a ping-pong program which sends a message back and forth between two processes. Let's start with the usual MPI boilerplate. Put this in a file called <code>ping_pong.c</code>.</p>
 <pre><code class="language-c">#include &lt;mpi.h&gt;
@@ -965,7 +944,7 @@ $ mpicc ping_pong.c -o ping_pong
 <p>and the following batch file can be used to run it on ENUCC</p>
 <pre><code class="language-bash">#!/bin/bash
 #SBATCH -o ping_pong.output
-#SBATCH -J 
+#SBATCH -J ping_pong
 #SBATCH --time=5
 #SBATCH --mem=128
 #SBATCH --ntasks=2
@@ -1004,12 +983,12 @@ Received 0 on process 1 from process 0
 </code></pre>
 <p>This is fairly complicated and it might take a while before you fully understand it. Here is a brief outline of the arguments</p>
 <ul>
-<li>buf - A pointer to the data to be sent. In our program we sent ping_pong_count.</li>
-<li>count - The size of the array to be sent. Since we are only sending one number, we set this to be 1.</li>
-<li>datatype - The type of data to be sent. Since we are sending an integer we used MPI_Int. See the list of <a href="https://www.mpich.org/static/docs/latest/www3/Constants.html">MPI datatypes</a> for more info.</li>
-<li>dest - The rank of the receiving process. Here we sent our message to <code>partner_rank</code>.</li>
-<li>tag - An identifier for this message. We don't use this, so set it to 0.</li>
-<li>comm - The communicator. We set this to <code>MPI_COMM_WORLD</code>.</li>
+<li><code>buf</code> - A pointer to the data to be sent. In our program we sent ping_pong_count.</li>
+<li><code>count</code> - The size of the array to be sent. Since we are only sending one number, we set this to be 1.</li>
+<li><code>datatype</code> - The type of data to be sent. Since we are sending an integer we used MPI_Int. See the list of <a href="https://www.mpich.org/static/docs/latest/www3/Constants.html">MPI datatypes</a> for more info.</li>
+<li><code>dest</code> - The rank of the receiving process. Here we sent our message to <code>partner_rank</code>.</li>
+<li><code>tag</code> - An identifier for this message. We don't use this, so set it to 0.</li>
+<li><code>comm</code> - The communicator. We set this to <code>MPI_COMM_WORLD</code>.</li>
 </ul>
 <p>The receive message has an almost identical signature</p>
 <pre><code class="language-c">MPI_Recv(
@@ -1073,7 +1052,7 @@ pong
 <h2 id="exercises">Exercises</h2>
 <ul>
 <li>Implement a ring-pong program. Send a counter in a ring around an arbitrary number of processes, incrementing the counter after each send. Terminate once every process has sent a message.</li>
-<li>Send a string from one process to another. Hint - a string is an array for chars.</li>
+<li>Send a string from one process to another. Hint - a string is an array of chars.</li>
 </ul>
 
 

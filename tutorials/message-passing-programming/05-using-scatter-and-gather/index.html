@@ -12,7 +12,7 @@
         <link rel="prev" href="../04-using-broadcast/">
       
       
-        <link rel="next" href="../06-asynchronous-messages/">
+        <link rel="next" href="../06-next-steps/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -351,27 +351,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Message Passing Programming
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -380,10 +359,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -394,8 +373,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             Matlab
           </label>
@@ -467,10 +446,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -481,8 +460,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Message passing programming
           </label>
@@ -642,6 +621,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -658,11 +646,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-asynchronous-messages/" class="md-nav__link">
+      <a href="../06-next-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Asynchronous methods
+    Next Steps
   </span>
   
 
@@ -899,6 +887,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -916,7 +913,9 @@
 
 <h1 id="using-scatter-and-gather">Using Scatter and Gather</h1>
 <h2 id="description">Description</h2>
+<p>Scatter and gather are two routines which are useful for pretty much any MPI program. Scatter allows an array to be distributed across all processes and gather does the inverse, taking data from all processes and storing it in a single array.</p>
 <h2 id="prerequisites">Prerequisites</h2>
+<p>This is a part of a series on MPI, it is recommended that you do the first few tutorials before this one.</p>
 <hr />
 <p>A very common use for message passing programming is in parallelising loops. Often if we are looping over an array we want to distribute the array across all processes. In order to do this, we use the <code>MPI_Scatter</code> routine. </p>
 <p>Let's say we have some code which iterates over an array.</p>
@@ -1033,6 +1032,10 @@ if (rank == 0) {
 }
 </code></pre>
 <p>One new concept from this is the use of <code>MPI_SUM</code> which is of type <a href="https://learn.microsoft.com/en-us/message-passing-interface/mpi-op-enumeration"><code>MPI_Op</code></a>. There are a few other MPI_Ops which are useful when used with <code>MPI_Reduce</code>, particularly <code>MPI_MAX</code> and <code>MPI_MIN</code>. You can read a more complete discussion on the <a href="https://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/">mpi tutorial site</a>.</p>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li>Applying a matrix to a vector is an algorithm which lends itself well to parallelisation. Write a process which applies a very large matrix to a very large vector. Confirm that your algorithm runs faster than its serial counterpart.</li>
+</ol>
 
 
 

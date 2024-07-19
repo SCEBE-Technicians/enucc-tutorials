@@ -351,27 +351,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Message Passing Programming
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -380,10 +359,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -394,8 +373,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             Matlab
           </label>
@@ -467,10 +446,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -481,8 +460,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Message passing programming
           </label>
@@ -667,11 +646,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-asynchronous-messages/" class="md-nav__link">
+      <a href="../06-next-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Asynchronous methods
+    Next Steps
   </span>
   
 
@@ -934,6 +913,7 @@
 
 <h1 id="using-probe">Using Probe</h1>
 <h2 id="description">Description</h2>
+<p>Probe is another MPI routine which allows you to know the size of a message before receiving it. This is particularly useful if receiving arrays of variable size.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>You should have already completed <a href="../02-point-to-point-communication">part two</a> of this series.</p>
 <hr />
@@ -961,7 +941,7 @@
     printf(&quot;Received %s from sender\n&quot;, message);
 }
 </code></pre>
-<p>For the code executed on rank 0 we just create the message as would normally be expected. On rank 1 we first create an <a href="https://learn.microsoft.com/en-us/message-passing-interface/mpi-status-structure"><code>MPI_Status</code></a> called stat and use <a href="https://www.mpich.org/static/docs/v3.0.x/www3/MPI_Probe.html"><code>MPI_Probe</code></a> to initialise it. We can then use the method <a href="https://www.mpich.org/static/docs/v3.0.x/www3/MPI_Get_count.html"><code>MPI_Get_count</code></a> to get the length of the message. Finally we receive the message as we normally would.</p>
+<p>For the code executed on rank 0 we just create the message as would normally be expected. On rank 1 we first create an <a href="https://learn.microsoft.com/en-us/message-passing-interface/mpi-status-structure"><code>MPI_Status</code></a> struct called stat and use <a href="https://www.mpich.org/static/docs/v3.0.x/www3/MPI_Probe.html"><code>MPI_Probe</code></a> to initialise it. We can then use the method <a href="https://www.mpich.org/static/docs/v3.0.x/www3/MPI_Get_count.html"><code>MPI_Get_count</code></a> to get the length of the message. Finally we receive the message as we normally would.</p>
 <h2 id="exercises">Exercises</h2>
 <ul>
 <li>Create a program which sends user input from one process to another.</li>
