@@ -351,27 +351,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Message Passing Programming
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -380,10 +359,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -394,8 +373,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             Matlab
           </label>
@@ -467,10 +446,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -481,8 +460,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Message passing programming
           </label>
@@ -667,11 +646,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-asynchronous-messages/" class="md-nav__link">
+      <a href="../06-next-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Asynchronous methods
+    Next Steps
   </span>
   
 
@@ -936,9 +915,9 @@
 <h2 id="description">Description</h2>
 <p>This is the first tutorial in a series which covers message passing programming. This tutorial looks at getting started with compiling and running an MPI program. All code can be found in <a href="https://github.com/SCEBE-Technicians/message-passing-programming">this repository</a>.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>You should have a good understanding of C. If not then I recommend "The C Programming Language" by Ritchie and Kernighan.</p>
+<p>You should have a good understanding of either C or C++, especially pointers and memory allocation which is important for using the OpenMPI library correctly. If not then I recommend "The C Programming Language" by Ritchie and Kernighan. All examples are written in the C programming language. It is possible to use MPI with fortran instead, but that isn't covered in this series.</p>
 <hr />
-<p>Message passing programming allows us to run a program with a very large number of cpus which do not necessarily have access to shared memory. Our program runs on several processes which can communicate with each other by sending messages which contain data. We will be using the <a href="https://www.open-mpi.org/">OpenMPI</a> implementation of the <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">Message Passing Interface (MPI)</a> standard to implement algorithms and run them on the cluster. Let's start with a basic hello world program. Create a <code>hello_world.c</code> file with the following contents</p>
+<p>Message passing programming allows us to run a program with a very large number of cpus which do not necessarily have access to shared memory. Our program runs on several processes which can communicate with each other by sending messages which contain data. We will be using the <a href="https://www.open-mpi.org/">OpenMPI</a> implementation of the <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">Message Passing Interface (MPI)</a> standard to implement algorithms and run them on ENUCC. Let's start with a basic hello world program. Create a <code>hello_world.c</code> file with the following contents</p>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 #include &lt;mpi.h&gt;
 
@@ -956,11 +935,11 @@ int main (int argc, char **argv) {
 </code></pre>
 <p>Hopefully this program is fairly self explanatory but let's see what is included. Most of what is included here is boilerplate that needs to be included in any MPI program. We first need to include the mpi header file. Then we initialise MPI with the <code>MPI_Init(NULL, NULL)</code> command. MPI works by running several copies of the same process concurrently. We can differentiate each process by its rank - a number which acts as a unique identifier for each process. We find the rank by calling <code>MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank)</code>. The first argument specifies that we are addressing all processes. The second argument is a pointer to an int where the rank will be stored. It is a very common pattern with MPI functions that we first initialize a variable and then pass a pointer to that variable to a function which will initialise it.</p>
 <p>The exact same pattern is used to get <code>world_size</code> which tells how many processes the program is running on. Finally we have to run <code>MPI_Finalize()</code> at the end of the program to ensure that the process exits correctly.</p>
-<p>in order to compile mpi programs we use the <code>mpicc</code> compiler rather than <code>gcc</code>. You'll also have to load the mpi module.</p>
+<p>In order to compile mpi programs we use the <code>mpicc</code> command rather than <code>gcc</code>. <code>mpicc</code> is simply a wrapper around another compiler which ensures that the correct command line options are added so that the mpi library is linked correctly. You'll also have to load the mpi module.</p>
 <pre><code>$ module load mpi
 $ mpicc hello_world.c -o hello_world
 </code></pre>
-<p>We use the <code>mpirun</code> command to run it. As per usual, we need to use either <code>sbatch</code> or <code>srun</code> to run programs on the compute nodes. Here's a batch file which will run the compiled <code>hello_world</code> binary.</p>
+<p>We use the <code>mpirun</code> command to run the executable, rather than executing it directly.  As per usual, we need to use either <code>sbatch</code> or <code>srun</code> to run programs on the compute nodes. Here's a batch file which will run the compiled <code>hello_world</code> binary.</p>
 <pre><code>#!/bin/bash -l
 #SBATCH -o hello_world.output
 #SBATCH -J mpi-test
