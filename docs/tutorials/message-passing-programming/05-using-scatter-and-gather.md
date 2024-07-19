@@ -2,7 +2,11 @@
 
 ## Description
 
+Scatter and gather are two routines which are useful for pretty much any MPI program. Scatter allows an array to be distributed across all processes and gather does the inverse, taking data from all processes and storing it in a single array.
+
 ## Prerequisites
+
+This is a part of a series on MPI, it is recommended that you do the first few tutorials before this one.
 
 ---
 
@@ -143,4 +147,5 @@ int main(int argc, char** argv) {
 
 One new concept from this is the use of `MPI_SUM` which is of type [`MPI_Op`](https://learn.microsoft.com/en-us/message-passing-interface/mpi-op-enumeration). There are a few other MPI_Ops which are useful when used with `MPI_Reduce`, particularly `MPI_MAX` and `MPI_MIN`. You can read a more complete discussion on the [mpi tutorial site](https://mpitutorial.com/tutorials/mpi-reduce-and-allreduce/).
 
-
+## Exercises
+1. Applying a matrix to a vector is an algorithm which lends itself well to parallelisation. Write a process which applies a very large matrix to a very large vector. Confirm that your algorithm runs faster than its serial counterpart.

@@ -1,6 +1,7 @@
 # Using Probe
 
 ## Description
+Probe is another MPI routine which allows you to know the size of a message before receiving it. This is particularly useful if receiving arrays of variable size.
 
 ## Prerequisites
 
@@ -36,7 +37,7 @@ if (rank == 0) {
 }
 ```
 
-For the code executed on rank 0 we just create the message as would normally be expected. On rank 1 we first create an [`MPI_Status`](https://learn.microsoft.com/en-us/message-passing-interface/mpi-status-structure) called stat and use [`MPI_Probe`](https://www.mpich.org/static/docs/v3.0.x/www3/MPI_Probe.html) to initialise it. We can then use the method [`MPI_Get_count`](https://www.mpich.org/static/docs/v3.0.x/www3/MPI_Get_count.html) to get the length of the message. Finally we receive the message as we normally would.
+For the code executed on rank 0 we just create the message as would normally be expected. On rank 1 we first create an [`MPI_Status`](https://learn.microsoft.com/en-us/message-passing-interface/mpi-status-structure) struct called stat and use [`MPI_Probe`](https://www.mpich.org/static/docs/v3.0.x/www3/MPI_Probe.html) to initialise it. We can then use the method [`MPI_Get_count`](https://www.mpich.org/static/docs/v3.0.x/www3/MPI_Get_count.html) to get the length of the message. Finally we receive the message as we normally would.
 
 ## Exercises
 - Create a program which sends user input from one process to another.

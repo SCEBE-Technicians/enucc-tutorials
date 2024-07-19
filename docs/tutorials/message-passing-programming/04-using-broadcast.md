@@ -2,6 +2,8 @@
 
 ##Description
 
+Broadcast is another useful routine which is used to send the same message to all proceses.
+
 ---
 
 ## Prerequisites

@@ -4,14 +4,13 @@
 
 This is the first tutorial in a series which covers message passing programming. This tutorial looks at getting started with compiling and running an MPI program. All code can be found in [this repository](https://github.com/SCEBE-Technicians/message-passing-programming).
 
-
 ## Prerequisites
 
-You should have a good understanding of C. If not then I recommend "The C Programming Language" by Ritchie and Kernighan.
+You should have a good understanding of either C or C++, especially pointers and memory allocation which is important for using the OpenMPI library correctly. If not then I recommend "The C Programming Language" by Ritchie and Kernighan. All examples are written in the C programming language. It is possible to use MPI with fortran instead, but that isn't covered in this series.
 
 ---
 
-Message passing programming allows us to run a program with a very large number of cpus which do not necessarily have access to shared memory. Our program runs on several processes which can communicate with each other by sending messages which contain data. We will be using the [OpenMPI](https://www.open-mpi.org/) implementation of the [Message Passing Interface (MPI)](https://en.wikipedia.org/wiki/Message_Passing_Interface) standard to implement algorithms and run them on the cluster. Let's start with a basic hello world program. Create a `hello_world.c` file with the following contents
+Message passing programming allows us to run a program with a very large number of cpus which do not necessarily have access to shared memory. Our program runs on several processes which can communicate with each other by sending messages which contain data. We will be using the [OpenMPI](https://www.open-mpi.org/) implementation of the [Message Passing Interface (MPI)](https://en.wikipedia.org/wiki/Message_Passing_Interface) standard to implement algorithms and run them on ENUCC. Let's start with a basic hello world program. Create a `hello_world.c` file with the following contents
 
 ```c
 #include <stdio.h>
@@ -34,14 +33,14 @@ Hopefully this program is fairly self explanatory but let's see what is included
 
 The exact same pattern is used to get `world_size` which tells how many processes the program is running on. Finally we have to run `MPI_Finalize()` at the end of the program to ensure that the process exits correctly.
 
-in order to compile mpi programs we use the `mpicc` compiler rather than `gcc`. You'll also have to load the mpi module.
+In order to compile mpi programs we use the `mpicc` command rather than `gcc`. `mpicc` is simply a wrapper around another compiler which ensures that the correct command line options are added so that the mpi library is linked correctly. You'll also have to load the mpi module.
 
 ```
 $ module load mpi
 $ mpicc hello_world.c -o hello_world
 ```
 
-We use the `mpirun` command to run it. As per usual, we need to use either `sbatch` or `srun` to run programs on the compute nodes. Here's a batch file which will run the compiled `hello_world` binary.
+We use the `mpirun` command to run the executable, rather than executing it directly.  As per usual, we need to use either `sbatch` or `srun` to run programs on the compute nodes. Here's a batch file which will run the compiled `hello_world` binary.
 
 ```
 #!/bin/bash -l

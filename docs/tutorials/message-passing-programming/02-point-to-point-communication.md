@@ -2,11 +2,11 @@
 
 ## Description
 
-This tutorial looks at how to send a message containing some data from one process to another.
+This tutorial looks at how to send a message containing some data from one process to another. This is the key to using message passing programming to improve the performance of simulations running on ENUCC.
 
 ## Prerequisites
 
-Complete [part one](../01-hello-mpi) of this series if you haven't already.
+This is the second tutorial in a series. Complete [part one](../01-hello-mpi) of this series if you haven't already.
 
 ---
 
@@ -45,7 +45,7 @@ and the following batch file can be used to run it on ENUCC
 ```bash
 #!/bin/bash
 #SBATCH -o ping_pong.output
-#SBATCH -J 
+#SBATCH -J ping_pong
 #SBATCH --time=5
 #SBATCH --mem=128
 #SBATCH --ntasks=2
@@ -92,12 +92,12 @@ MPI_Send(
 ```
 This is fairly complicated and it might take a while before you fully understand it. Here is a brief outline of the arguments
 
-- buf - A pointer to the data to be sent. In our program we sent ping_pong_count.
-- count - The size of the array to be sent. Since we are only sending one number, we set this to be 1.
-- datatype - The type of data to be sent. Since we are sending an integer we used MPI_Int. See the list of [MPI datatypes](https://www.mpich.org/static/docs/latest/www3/Constants.html) for more info.
-- dest - The rank of the receiving process. Here we sent our message to `partner_rank`.
-- tag - An identifier for this message. We don't use this, so set it to 0.
-- comm - The communicator. We set this to `MPI_COMM_WORLD`.
+- `buf` - A pointer to the data to be sent. In our program we sent ping_pong_count.
+- `count` - The size of the array to be sent. Since we are only sending one number, we set this to be 1.
+- `datatype` - The type of data to be sent. Since we are sending an integer we used MPI_Int. See the list of [MPI datatypes](https://www.mpich.org/static/docs/latest/www3/Constants.html) for more info.
+- `dest` - The rank of the receiving process. Here we sent our message to `partner_rank`.
+- `tag` - An identifier for this message. We don't use this, so set it to 0.
+- `comm` - The communicator. We set this to `MPI_COMM_WORLD`.
 
 The receive message has an almost identical signature
 ```c
@@ -169,5 +169,5 @@ pong
 ## Exercises
 
 - Implement a ring-pong program. Send a counter in a ring around an arbitrary number of processes, incrementing the counter after each send. Terminate once every process has sent a message.
-- Send a string from one process to another. Hint - a string is an array for chars.
+- Send a string from one process to another. Hint - a string is an array of chars.
 
