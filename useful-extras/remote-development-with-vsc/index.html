@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../logging-in-with-putty/">
+        <link rel="prev" href="../mobaxterm/">
       
       
-        <link rel="next" href="../remote-development-with-vsc/">
+        <link rel="next" href="../technical-specs/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Using MobaXTerm - ENUCC Tutorials</title>
+        <title>Remote Development with Visual Studio Code - ENUCC Tutorials</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-mobaxterm" class="md-skip">
+        <a href="#remote-development-with-visual-studio-code" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using MobaXTerm
+              Remote Development with Visual Studio Code
             
           </span>
         </div>
@@ -814,6 +814,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobaxterm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using MobaXTerm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -830,33 +851,12 @@
         
   
   <span class="md-ellipsis">
-    Using MobaXTerm
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../remote-development-with-vsc/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
     Remote Development with Visual Studio Code
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -944,20 +944,16 @@
                   
 
 
-<h1 id="using-mobaxterm">Using MobaXTerm</h1>
-<p>MobaXTerm is a feature rich terminal emulator which runs on windows. You can download it from the <a href="https://mobaxterm.mobatek.net/">official website</a>.</p>
-<p>To access ENUCC with MobaXTerm, first open the program.</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/OnOpen.png" /></p>
-<p>In the top right press the session button.</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/StartSSH.png" /></p>
-<p>Select SSH and fill out the host and username fields. For the Remote host you should type <code>login.enucc.napier.ac.uk</code>. Check the box which says "Specify username" then type in your staff or student number as the username.</p>
-<p>If you are accessing ENUCC from within the university then you can press OK and type in your password when prompted.</p>
-<p>If you are accessing from outside the university you'll need to use the SSH gateway. Navigate to the Network settings tab and click on the button which says "SSH gateway (jump host).</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/NetworkSettings.png" /></p>
-<p>For the Gateway host field put <code>gateway.napier.ac.uk</code>. For the username put your staff or student number. Press OK once those are filled out.</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/JumpHost.png" /></p>
-<p>Once you're connected, you'll see a filetree on the left hand side of the screen. You can upload files from your local computer to ENUCC by dragging them into this box.</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/DragToUpload.png" /></p>
+<h1 id="remote-development-with-visual-studio-code">Remote Development with Visual Studio Code</h1>
+<p><a href="https://code.visualstudio.com/docs/remote/ssh">This page</a> is generally an excellent guide to using visual studio code for remote development.</p>
+<p>The only thing you'll need to configure is a proxy jump when accessing ENUCC from outside the university network.</p>
+<p>Edit the file <code>%homepath%\.ssh\config</code> on windows or <code>~/.ssh/config</code> on unix systems, and add the following:</p>
+<pre><code>Host ext.login.enucc
+    HostName login.enucc.napier.ac.uk
+    User 40019142
+    ProxyCommand ssh -W %h:%p 40019142@gateway.napier.ac.uk
+</code></pre>
+<p>You can then ssh to the host <code>ext.login.enucc</code> and you will jump through the gateway.</p>
 
 
 
