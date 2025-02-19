@@ -9,3 +9,21 @@ If you want a tutorial to be run as an interactive session for multiple people, 
 
 ### Problems
 If you encounter any problems then please either [raise an issue](https://github.com/SCEBE-Technicians/enucc-tutorials/issues) on the github page or contact l.headley@napier.ac.uk.
+
+## Quickstart
+
+If you have a fresh account and are looking to get started as quickly as possible then follow these steps
+
+```bash
+# Activate the flight environment
+$ flight env activate gridware
+
+# Load Anaconda
+
+## Run a quick script on a compute node
+$ srun ./script
+
+## Submit a batch file
+$ sbatch batch_file.sh
+
+```

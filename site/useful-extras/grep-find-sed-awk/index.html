@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../logging-in-with-putty/">
+        <link rel="prev" href="../git/">
       
       
-        <link rel="next" href="../remote-development-with-vsc/">
+        <link rel="next" href="../logging-in-with-putty/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Using MobaXTerm - ENUCC Tutorials</title>
+        <title>Grep, Find, Sed and Awk - ENUCC Tutorials</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-mobaxterm" class="md-skip">
+        <a href="#grep-find-sed-and-awk" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using MobaXTerm
+              Grep, Find, Sed and Awk
             
           </span>
         </div>
@@ -772,10 +772,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../grep-find-sed-awk/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Grep, Find, Sed and Awk
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -784,6 +804,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-text-to-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Text to Edit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-text-with-grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding text with grep
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-files-with-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding files with find
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-text-with-sed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing text with sed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-text-with-awk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing text with AWK
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -814,19 +917,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../mobaxterm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -835,7 +929,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -931,6 +1024,77 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-text-to-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Text to Edit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-text-with-grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding text with grep
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-files-with-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding files with find
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-text-with-sed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing text with sed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-text-with-awk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing text with AWK
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -944,20 +1108,71 @@
                   
 
 
-<h1 id="using-mobaxterm">Using MobaXTerm</h1>
-<p>MobaXTerm is a feature rich terminal emulator which runs on windows. You can download it from the <a href="https://mobaxterm.mobatek.net/">official website</a>.</p>
-<p>To access ENUCC with MobaXTerm, first open the program.</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/OnOpen.png" /></p>
-<p>In the top right press the session button.</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/StartSSH.png" /></p>
-<p>Select SSH and fill out the host and username fields. For the Remote host you should type <code>login.enucc.napier.ac.uk</code>. Check the box which says "Specify username" then type in your staff or student number as the username.</p>
-<p>If you are accessing ENUCC from within the university then you can press OK and type in your password when prompted.</p>
-<p>If you are accessing from outside the university you'll need to use the SSH gateway. Navigate to the Network settings tab and click on the button which says "SSH gateway (jump host).</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/NetworkSettings.png" /></p>
-<p>For the Gateway host field put <code>gateway.napier.ac.uk</code>. For the username put your staff or student number. Press OK once those are filled out.</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/JumpHost.png" /></p>
-<p>Once you're connected, you'll see a filetree on the left hand side of the screen. You can upload files from your local computer to ENUCC by dragging them into this box.</p>
-<p><img alt="MobaXTerm open" src="../../assets/mobaxterm/DragToUpload.png" /></p>
+<h1 id="grep-find-sed-and-awk">Grep, Find, Sed and Awk</h1>
+<h2 id="description">Description</h2>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>None</p>
+<hr />
+<p>This tutorial looks at a few different tools which are useful for dealing with files in Linux environments. Here are the tools and their basic uses.</p>
+<ul>
+<li><strong>Grep</strong> - A tool for finding text within a file (or other stream). It accepts regular expressions and so is very flexible.</li>
+<li><strong>Find</strong> - A tool for finding files based on their name.</li>
+<li><strong>Sed</strong> - <strong>s</strong>tream <strong>ed</strong>itor. A utility for finding and replacing strings.</li>
+<li><strong>AWK</strong> - An extremely powerful, but tricky to use programming language for editing text data. AWK is actually turing complete so the possibilities are endless.</li>
+</ul>
+<h2 id="getting-text-to-edit">Getting Text to Edit</h2>
+<p>In order to get the most out of text editing tools, we need some text to edit. I have put the first chapter of James Joyce's Finnegan's Wake into a txt file which can be downloaded using wget.</p>
+<pre><code class="language-bash">$ wget https://raw.githubusercontent.com/SCEBE-Technicians/enucc-tutorials/refs/heads/main/docs/assets/finnegans_wake.txt
+</code></pre>
+<h2 id="finding-text-with-grep">Finding text with grep</h2>
+<p>The first tool we'll look at is grep. It is a piece of software which lets you search for strings which match a regular expression. We use grep by piping the output of another command into grep or by redirecting a file's contents. Here are the two methods in action.</p>
+<pre><code class="language-bash">cat finnegans_wake.txt | grep the
+grep the &lt;finnegans_wake.txt
+</code></pre>
+<p>Those examples are quite simple, we're searching for the word "the" in the text. Unfortunately, since "the" is interpreted as a regular expression rather than as a word, words like "other" "theology" or ""there" will also be returned. However, "The" will not be matched since regex are case sensitive. We need to do some more work.</p>
+<p>In regular expressions "\b" is used to signify the word boundary which will be either the space character, " ", the start of a line or the end of a line. We can also specify that we want to match either "t" or "T" by putting them in square brackets: "[Tt]". A better grep for the word "the" is:</p>
+<pre><code class="language-bash">grep &quot;\b[Tt]he\b&quot; &lt;finnegans_wake.txt
+</code></pre>
+<p>We can also pass flags to grep to change its behaviour. Two useful flags are "-v" and "-c". "-v" will invert the result so that only lines that don't match the provided regex are shown. "-c" will suppress the normal output and return a count of the number of lines in which the pattern occurs. Here is a grep command to count the number of lines which don't contain the word "the".</p>
+<pre><code class="language-bash">grep -v &quot;\b[Tt]he\b&quot; &lt;finnegans_wake.txt -c
+</code></pre>
+<pre><code class="language-bash">grep another finnegans_wake.txt
+</code></pre>
+<pre><code class="language-bash">grep -v &quot;\b[Tt]he\b&quot; &lt;finnegans_wake.txt | grep another
+</code></pre>
+<h2 id="finding-files-with-find">Finding files with find</h2>
+<pre><code class="language-bash">find ./ -name &quot;*.txt&quot;
+</code></pre>
+<h2 id="editing-text-with-sed">Editing text with sed</h2>
+<pre><code>grep Edenborough &lt;finnegans_wake.txt | sed s/Edenborough/Edinburgh/
+</code></pre>
+<pre><code class="language-bash">sed s/Edenborough/Edinburgh/g &lt;finnegans_wake.txt &gt;finnegans_new.txt
+</code></pre>
+<pre><code class="language-bash">grep Edinburgh &lt;finnegans_new.txt
+</code></pre>
+<pre><code class="language-bash">head -n 1 &lt;finnegans_wake.txt | sed s/e/a/
+</code></pre>
+<pre><code class="language-bash">head -n 1 &lt;finnegans_wake.txt | sed s/e/a/g
+</code></pre>
+<h2 id="editing-text-with-awk">Editing text with AWK</h2>
+<pre><code class="language-bash">$ awk 'BEGIN { print &quot;Hello world!&quot; }'
+</code></pre>
+<pre><code class="language-bash">$ awk 'NR &lt; 10 {print $0}' &lt;finnegans_wake.txt
+</code></pre>
+<pre><code class="language-bash">$ awk 'NF &lt; 10 {print $0}' &lt;finnegans_wake.txt
+</code></pre>
+<pre><code class="language-bash">$ awk 'NF &lt; 10 {print NR &quot;: &quot; $0}' &lt;finnegans_wake.txt
+</code></pre>
+<pre><code class="language-bash">$ awk 'NF &lt; 10 &amp;&amp; NF &gt; 0 {print NR &quot;: &quot; $0}' &lt;finnegans_wake.txt
+</code></pre>
+<pre><code class="language-bash">$ awk '\
+BEGIN { count = 0 }
+NF &lt; 10 &amp;&amp; NF &gt; 0 { count += 1}
+END { print count }
+` &lt; finnegans_wake.txt
+</code></pre>
+<pre><code class="language-bash">$ grep place &lt;finnegans_wake.txt -n | awk -F ':' '1 { print $1}'
+</code></pre>
 
 
 

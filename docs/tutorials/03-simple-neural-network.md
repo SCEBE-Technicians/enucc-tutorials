@@ -35,6 +35,8 @@ $ cd ~/projects/diabetes-analysis
 In order to run the analysis we have to have python, numpy and tensorflow installed. We do this in a conda environment called `ml-example`. If you haven't used conda on ENUCC before then you'll have to set it up by running the following.
 
 ```
+$ flight start
+$ flight env activate gridware
 $ module load apps/anaconda3
 $ conda init bash
 ```
