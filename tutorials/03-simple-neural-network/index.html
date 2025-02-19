@@ -1037,7 +1037,9 @@ $ wget https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-
 $ cd ~/projects/diabetes-analysis
 </code></pre>
 <p>In order to run the analysis we have to have python, numpy and tensorflow installed. We do this in a conda environment called <code>ml-example</code>. If you haven't used conda on ENUCC before then you'll have to set it up by running the following.</p>
-<pre><code>$ module load apps/anaconda3
+<pre><code>$ flight start
+$ flight env activate gridware
+$ module load apps/anaconda3
 $ conda init bash
 </code></pre>
 <p>Once conda is configured, you can create the environment.</p>
