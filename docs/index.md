@@ -19,6 +19,7 @@ If you have a fresh account and are looking to get started as quickly as possibl
 $ flight env activate gridware
 
 # Load Anaconda
+$ module load apps/anaconda3
 
 ## Run a quick script on a compute node
 $ srun ./script
