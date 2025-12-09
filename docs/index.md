@@ -21,8 +21,8 @@ $ flight env activate gridware
 # Load Anaconda
 $ module load apps/anaconda3
 
-## Run a quick script on a compute node
-$ srun ./script
+## Run a quick script on a compute node, time limits are required by the scheduling policy
+$ srun --time=00:01:20 ./script
 
 ## Submit a batch file
 $ sbatch batch_file.sh
