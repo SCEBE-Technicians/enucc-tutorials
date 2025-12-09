@@ -8,7 +8,7 @@ In this project we will run a script which will write "Hello world!" to stdout. 
 
 ## Prerequisites
 
-All you need to follow this tutorial is an account and a way of sshing to the server. If you do not yet have an account [please request one](https://staff.napier.ac.uk/services/cit/Pages/ENU-Compute-Cluster.aspx). To ssh from windows, we recommend using [PuTTY](https://putty.org/) (available through AppsAnywhere).
+All you need to follow this tutorial is an account and a way of sshing to the server. If you do not yet have an account [please request one](https://napier.unidesk.ac.uk/tas/public/ssp/content/detail/service?unid=d9e5b57bcd5748ad88cb09322905c9a6). To ssh from windows, we recommend using [PuTTY](https://putty.org/) (available through AppsAnywhere).
 
 ---  
 
