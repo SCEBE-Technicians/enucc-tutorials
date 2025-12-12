@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../grep-find-sed-awk/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../mobaxterm/">
+        <link rel="next" href="../useful-resources/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Logging in with PuTTY - ENUCC Tutorials</title>
+        <title>Slurm Scheduling and FairShare - ENUCC Tutorials</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#logging-in-with-putty" class="md-skip">
+        <a href="#slurm-scheduling-and-fairshare" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="ENUCC Tutorials" class="md-header__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
+    <a href=".." title="ENUCC Tutorials" class="md-header__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logging in with PuTTY
+              Slurm Scheduling and FairShare
             
           </span>
         </div>
@@ -178,7 +178,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ENUCC Tutorials" class="md-nav__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
+    <a href=".." title="ENUCC Tutorials" class="md-nav__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -196,7 +196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -220,10 +220,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../slurm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slurm Scheduling and FairShare
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -239,6 +266,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changes-to-the-slurm-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes to the Slurm system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-assign-a-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Assign a partition
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -250,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../useful-resources/" class="md-nav__link">
+      <a href="../useful-resources/" class="md-nav__link">
         
   
   
@@ -324,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/01-hello-world/" class="md-nav__link">
+      <a href="../tutorials/01-hello-world/" class="md-nav__link">
         
   
   
@@ -352,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/02-running-python-analysis/" class="md-nav__link">
+      <a href="../tutorials/02-running-python-analysis/" class="md-nav__link">
         
   
   
@@ -380,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/03-simple-neural-network/" class="md-nav__link">
+      <a href="../tutorials/03-simple-neural-network/" class="md-nav__link">
         
   
   
@@ -408,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/04-jupyter-notebook/" class="md-nav__link">
+      <a href="../tutorials/04-jupyter-notebook/" class="md-nav__link">
         
   
   
@@ -436,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/05-using-apptainer/" class="md-nav__link">
+      <a href="../tutorials/05-using-apptainer/" class="md-nav__link">
         
   
   
@@ -511,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/matlab/05-using-matlab/" class="md-nav__link">
+      <a href="../tutorials/matlab/05-using-matlab/" class="md-nav__link">
         
   
   
@@ -539,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/matlab/saving-and-loading-with-matlab/" class="md-nav__link">
+      <a href="../tutorials/matlab/saving-and-loading-with-matlab/" class="md-nav__link">
         
   
   
@@ -622,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/message-passing-programming/01-hello-mpi/" class="md-nav__link">
+      <a href="../tutorials/message-passing-programming/01-hello-mpi/" class="md-nav__link">
         
   
   
@@ -650,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/message-passing-programming/02-point-to-point-communication/" class="md-nav__link">
+      <a href="../tutorials/message-passing-programming/02-point-to-point-communication/" class="md-nav__link">
         
   
   
@@ -678,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/message-passing-programming/03-using-probe/" class="md-nav__link">
+      <a href="../tutorials/message-passing-programming/03-using-probe/" class="md-nav__link">
         
   
   
@@ -706,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/message-passing-programming/04-using-broadcast/" class="md-nav__link">
+      <a href="../tutorials/message-passing-programming/04-using-broadcast/" class="md-nav__link">
         
   
   
@@ -734,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/message-passing-programming/05-using-scatter-and-gather/" class="md-nav__link">
+      <a href="../tutorials/message-passing-programming/05-using-scatter-and-gather/" class="md-nav__link">
         
   
   
@@ -762,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/message-passing-programming/06-next-steps/" class="md-nav__link">
+      <a href="../tutorials/message-passing-programming/06-next-steps/" class="md-nav__link">
         
   
   
@@ -845,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/using-openmp/01-hello-openmp/" class="md-nav__link">
+      <a href="../tutorials/using-openmp/01-hello-openmp/" class="md-nav__link">
         
   
   
@@ -885,20 +954,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -919,7 +986,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -937,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bash-cheatsheet/" class="md-nav__link">
+      <a href="../useful-extras/bash-cheatsheet/" class="md-nav__link">
         
   
   
@@ -965,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
+      <a href="../useful-extras/git/" class="md-nav__link">
         
   
   
@@ -993,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../grep-find-sed-awk/" class="md-nav__link">
+      <a href="../useful-extras/grep-find-sed-awk/" class="md-nav__link">
         
   
   
@@ -1018,19 +1085,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../useful-extras/logging-in-with-putty/" class="md-nav__link">
         
   
   
@@ -1046,7 +1104,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1059,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mobaxterm/" class="md-nav__link">
+      <a href="../useful-extras/mobaxterm/" class="md-nav__link">
         
   
   
@@ -1087,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../remote-development-with-vsc/" class="md-nav__link">
+      <a href="../useful-extras/remote-development-with-vsc/" class="md-nav__link">
         
   
   
@@ -1115,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../technical-specs/" class="md-nav__link">
+      <a href="../useful-extras/technical-specs/" class="md-nav__link">
         
   
   
@@ -1143,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-filezilla/" class="md-nav__link">
+      <a href="../useful-extras/using-filezilla/" class="md-nav__link">
         
   
   
@@ -1191,6 +1248,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changes-to-the-slurm-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes to the Slurm system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-assign-a-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Assign a partition
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1206,17 +1293,52 @@
 
 
 
-<h1 id="logging-in-with-putty">Logging in with PuTTY</h1>
-<p>To log in with putty, first install it via apps anywhere. When you launch the application it should look like so:</p>
-<p><img alt="putty startup screen" src="../../assets/putty/putty-startup.png" /></p>
-<p>Into the input box labelled Host Name (or IP address) type <code>4XXXXXXX@login.enucc.napier.ac.uk</code>, replacing the X's with your staff or student number.</p>
-<p><img alt="entering hostname" src="../../assets/putty/putty-with-hostname.png" /></p>
-<p>The first time you do this, you'll be presented with the following warning. Press accept.</p>
-<p><img alt="putty warning" src="../../assets/putty/putty-warning.png" /></p>
-<p>You'll then be prompted to type in your password. Nothing will show on screen as you type, this is normal.</p>
-<p><img alt="putty password prompt" src="../../assets/putty/putty-password-prompt.png" /></p>
-<p>Press enter, and you're now connected to a bash shell on the login node.</p>
-<p><img alt="putty success" src="../../assets/putty/putty-success.png" /></p>
+<h1 id="slurm-scheduling-and-fairshare">Slurm Scheduling and FairShare</h1>
+<p>From December 2025 Alces Flight have initiated a new scheduling system (The Run Length Partitions scheduler configuration set) based on a <a href="http://focus.m.alces-flight.com/c/eJwUyrFuwyAQANCvga0IDgzcwNDFvxFhfARUSKMzrtS_r7q_MyHCJimZ4B24gFbLlny1aLcaXSBvtDnIBf_vCiKCsVr25BGiw5DDAcE9jD-jrybCFuIhnK6jP9v6KPRaxGrmPuRIba33JeyngF3Afo2bp7pKo3OeqnxPAXvNnR-LiVRbc0hOQ83yzMy_wulXfndilYu6v-RPgr8AAAD__761N_w">Fair Tree Fairshare algorithm</a>.</p>
+<h2 id="changes-to-the-slurm-system">Changes to the Slurm system</h2>
+<hr />
+<ol>
+<li>
+<p>Fairshare scheduling
+    Jobs are now scheduled using the Fair Tree Fairshare Algorithm rather than simple first-come, first-served queueing.</p>
+</li>
+<li>
+<p>Required job run times
+    All job submissions must now include an estimated run time ( e.g. --time:00:20:00). This helps the scheduler allocate resources more efficiently.</p>
+</li>
+<li>
+<p>Updated time limits for existing partitions</p>
+<ul>
+<li>Node, GPU and Himem partitions now have a maximum run time of 3 days.
+Jobs exceeding this limit will be terminated, so users running long simulations should employ appropriate checkpointing.</li>
+</ul>
+</li>
+<li>
+<p>‎New partitions: short and long 
+    Short: up to 1 day maximum run time
+    Long: up to 7 days maximum run time
+    Scheduling priority is: short &gt; nodes &gt; long, helping shorter jobs complete faster.</p>
+</li>
+<li>
+<p>Per-user resource limits (standard compute nodes)
+    long partition: up to 3 nodes per user (≈37.5% of standard compute capacity – 192 cores, 1506 GiB RAM).
+    nodes partition: up to 6 nodes per user (≈75% of capacity – 384 cores, 3012 GiB RAM).
+    These limits prevent individuals from monopolising the cluster for extended periods.</p>
+</li>
+<li>
+<p>GPU and Himem resource limits unchanged
+    There are no usage limits on these partitions.</p>
+</li>
+</ol>
+<h2 id="how-to-assign-a-partition">How to Assign a partition</h2>
+<p>In order to best utilise the new system you will need to explicitly assign one of these partitions (short,long,nodes) when submitting a job.</p>
+<p>Your Fairshare score is the score assigned to your account based on your usage from 0.01 (high usage) to 1.0 (low usage). Users with lowest usage will have higher priorities when jobs are queued. You can check your Fairshare score with the sshare -l command. Your score will improve if you submit less jobs.</p>
+<p>In terms of partition type, short have the highest priority (max 1 day), nodes medium priority (max 3 days) and long lowest priority (max 7 days). You can check your job status and the partition with the squeue command. </p>
+<p>If you have a job that you expect to be finished in under one day you can increase the priority by running it on the short partition with these options, though be aware that the time limit is 1 day: </p>
+<pre><code>#SBATCH --time=00:01:20
+#SBATCH --nodelist=node07
+#SBATCH --partition=short
+</code></pre>
 
 
 
@@ -1266,10 +1388,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
