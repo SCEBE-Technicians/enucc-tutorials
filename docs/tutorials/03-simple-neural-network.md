@@ -77,8 +77,9 @@ print('Accuracy: %.2f' % (accuracy*100))
 The batch file to submit the job is quite straightforward
 
 ```bash
-#!/bin/bash
 
+#!/bin/bash
+#SBATCH --time=00:10:30
 python model.py
 ```
 
