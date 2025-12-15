@@ -41,8 +41,8 @@ This environment has all the dependencies you'll need already installed, namely 
 We are now in a position to execute the notebook. This is really quite straightforward. If there is a free compute node (run `squeue` to check) then we can run it as follows.
 
 ```bash
-$ srun jupyter execute NoisySine.ipynb
-srun jupyter execute NoisySine.ipynb
+$ srun --time=00:15:00 jupyter execute NoisySine.ipynb
+srun --time=00:15:00 jupyter execute NoisySine.ipynb
 [NbClientApp] Executing NoisySine.ipynb
 ...
 ```
@@ -56,6 +56,7 @@ As usual, `srun` is handy if there is a free compute node and your script won't 
 #SBATCH --ntasks 1
 #SBATCH --nodes 1
 #SBATCH --cpus-per-task 1
+#SBATCH --time=00:15:00
 
 jupyter execute NoisySine.ipynb
 ```
