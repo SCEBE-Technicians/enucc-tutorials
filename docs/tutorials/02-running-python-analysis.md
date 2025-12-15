@@ -96,9 +96,9 @@ Mode: 30
 
 ### Running the script
 
-To run the same script on ENUCC we can use `srun`. Here we run it for a reasonably large number of trials.
+To run the same script on ENUCC we can use `srun`. Here we run it for a reasonably large number of trials with an estimated time limit (required by slurm) of under two minutes.
 ```bash
-$ srun python product_of_two_dice_analysis.py 10 10000000
+$ srun --time:00:02:00 python product_of_two_dice_analysis.py 10 10000000
 srun: job 27947 queued and waiting for resources
 srun: job 27947 has been allocated resources
 ------------------------------------------------
@@ -113,6 +113,7 @@ So now we want to run it many times, for different number of sides and different
 
 ```bash
 #!/bin/bash
+#SBATCH --time=00:02:00
 
 start_time=`date +%s.%N`
 
@@ -147,6 +148,7 @@ Great. We're now in a position that we can modify our script to run our job a fe
 
 ```bash
 #!/bin/bash
+#SBATCH --time=00:02:00
 
 start_time=`date +%s.%N`
 
@@ -179,6 +181,7 @@ This has taken around 10 times longer than running the analysis once which is mo
 
 ```bash
 #!/bin/bash
+#SBATCH --time=00:02:00
 #SBATCH --ntasks 10
 #SBATCH --nodes 1
 #SBATCH --cpus-per-task 1
@@ -207,6 +210,7 @@ To shorten the script and make it more readable we can also put our execution ta
 
 ```bash
 #!/bin/bash
+#SBATCH --time=00:02:00
 #SBATCH --ntasks 10
 #SBATCH --nodes 1
 #SBATCH --cpus-per-task 1
@@ -243,6 +247,7 @@ Now let's say we want to run this same script but change the number of sides eac
 
 ```bash
 #!/bin/bash
+#SBATCH --time=00:02:00
 #SBATCH --ntasks 1
 #SBATCH --array=2,4,6
 #SBATCH --cpus-per-task 1
