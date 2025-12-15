@@ -1560,8 +1560,8 @@ Median: 23.5
 Mode: 30
 </code></pre>
 <h3 id="running-the-script">Running the script</h3>
-<p>To run the same script on ENUCC we can use <code>srun</code>. Here we run it for a reasonably large number of trials.</p>
-<pre><code class="language-bash">$ srun python product_of_two_dice_analysis.py 10 10000000
+<p>To run the same script on ENUCC we can use <code>srun</code>. Here we run it for a reasonably large number of trials with an estimated time limit (required by slurm) of under two minutes.</p>
+<pre><code class="language-bash">$ srun --time:00:02:00 python product_of_two_dice_analysis.py 10 10000000
 srun: job 27947 queued and waiting for resources
 srun: job 27947 has been allocated resources
 ------------------------------------------------
@@ -1573,6 +1573,7 @@ Mode: 6
 </code></pre>
 <p>So now we want to run it many times, for different number of sides and different numbers of trials. For this we'll have to write a batch script.</p>
 <pre><code class="language-bash">#!/bin/bash
+#SBATCH --time=00:02:00
 
 start_time=`date +%s.%N`
 
@@ -1600,6 +1601,7 @@ This job ran in 11.822068605 seconds
 </code></pre>
 <p>Great. We're now in a position that we can modify our script to run our job a few times. Let's start by running 10 identical copies of it. Modify the bash script like so:</p>
 <pre><code class="language-bash">#!/bin/bash
+#SBATCH --time=00:02:00
 
 start_time=`date +%s.%N`
 
@@ -1626,6 +1628,7 @@ This job ran in 120.238923031 seconds
 <p>This has taken around 10 times longer than running the analysis once which is more or less what might be expected. ENUCC has a great deal of resources, but the script as we've written it requests only one CPU on one node and then runs the python script steps one after the other. There is no reason why we shouldn't run the python steps all at once, but we don't want to submit 10 different job. Instead we can run each python step as a separate task and assign one cpu to each task. We also have to specify how much memory each task should use since the default would request all available memory.</p>
 <h3 id="parallelising-the-job">Parallelising the job</h3>
 <pre><code class="language-bash">#!/bin/bash
+#SBATCH --time=00:02:00
 #SBATCH --ntasks 10
 #SBATCH --nodes 1
 #SBATCH --cpus-per-task 1
@@ -1651,6 +1654,7 @@ printf &quot;This job ran in %s seconds\n\n&quot; $runtime
 </code></pre>
 <p>To shorten the script and make it more readable we can also put our execution tasks in a loop.</p>
 <pre><code class="language-bash">#!/bin/bash
+#SBATCH --time=00:02:00
 #SBATCH --ntasks 10
 #SBATCH --nodes 1
 #SBATCH --cpus-per-task 1
@@ -1678,6 +1682,7 @@ This job ran in 12.563785716 seconds
 <h3 id="using-job-array">Using job array</h3>
 <p>Now let's say we want to run this same script but change the number of sides each dice take, running it for 2, 4, 6 sides. Yes we could just use bash loops, but there is a simpler way to do this using the <code>--array</code> flag. Let's see what it looks like:</p>
 <pre><code class="language-bash">#!/bin/bash
+#SBATCH --time=00:02:00
 #SBATCH --ntasks 1
 #SBATCH --array=2,4,6
 #SBATCH --cpus-per-task 1

@@ -1348,8 +1348,9 @@ _, accuracy = model.evaluate(x, y)
 print('Accuracy: %.2f' % (accuracy*100))
 </code></pre>
 <p>The batch file to submit the job is quite straightforward</p>
-<pre><code class="language-bash">#!/bin/bash
-
+<pre><code class="language-bash">
+#!/bin/bash
+#SBATCH --time=00:10:30
 python model.py
 </code></pre>
 <p>And that's it! Sin é.</p>

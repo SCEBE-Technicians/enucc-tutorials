@@ -1352,8 +1352,8 @@ $ conda activate jupyter-example
 </code></pre>
 <p>This environment has all the dependencies you'll need already installed, namely <a href="https://jupyter.org/">jupyter</a>, <a href="https://numpy.org/">numpy</a> and <a href="https://matplotlib.org/">matplotlib</a>.</p>
 <p>We are now in a position to execute the notebook. This is really quite straightforward. If there is a free compute node (run <code>squeue</code> to check) then we can run it as follows.</p>
-<pre><code class="language-bash">$ srun jupyter execute NoisySine.ipynb
-srun jupyter execute NoisySine.ipynb
+<pre><code class="language-bash">$ srun --time=00:15:00 jupyter execute NoisySine.ipynb
+srun --time=00:15:00 jupyter execute NoisySine.ipynb
 [NbClientApp] Executing NoisySine.ipynb
 ...
 </code></pre>
@@ -1363,6 +1363,7 @@ srun jupyter execute NoisySine.ipynb
 #SBATCH --ntasks 1
 #SBATCH --nodes 1
 #SBATCH --cpus-per-task 1
+#SBATCH --time=00:15:00
 
 jupyter execute NoisySine.ipynb
 </code></pre>
