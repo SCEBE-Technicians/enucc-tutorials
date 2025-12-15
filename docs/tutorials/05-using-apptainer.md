@@ -29,5 +29,5 @@ $ apptainer build node.sif docker://node
 You can see that the image is stored in a file in your current directory called node.sif. We now need to run our application on the container.
 
 ```bash
-$ srun apptainer run node.sif hello.js
+$ srun --time=00:15:00 apptainer run node.sif hello.js
 ```
