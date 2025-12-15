@@ -73,13 +73,13 @@ We've just run our first bit of code on ENUCC! Well done! But don't get too exci
 Compute nodes on the other hand are built to deal with computationally intensive tasks. They have 64 cpus and 512gb of RAM. However you cannot use them directly like you used the login node. We use a program called [slurm](https://slurm.schedmd.com/) as our cluster management and job scheduling system. Slurm provides a program called `srun` which can be used to run your scripts on the compute nodes. Let's run this now.
 
 ```
-$ srun --ntasks 1 --cpus-per-task 1 ./hello_world.sh
+$ srun --ntasks 1 --cpus-per-task 1 --time=00:00:30 ./hello_world.sh
 srun: job 27870 queued and waiting for resources
 srun: job 27870 has been allocated resources
 Hello world!
 ```
 
-Here we've used the srun command with two flags. The first flag says we only have one task to run and the second indicates that we only want one cpu for this task. Specifying these flags means that other users will be able to run programs on the unused cpus on the same node. There are many more flags for srun which might be useful for your work. Check out [the docs](https://slurm.schedmd.com/srun.html) for more information.
+Here we've used the srun command with two flags. The first flag says we only have one task to run and the second indicates that we only want one cpu for this task, the third flag is a required time limit for the job. Specifying these flags means that other users will be able to run programs on the unused cpus on the same node. There are many more flags for srun which might be useful for your work. Check out [the docs](https://slurm.schedmd.com/srun.html) for more information.
 
 It's great that we can now run programs on the compute nodes, but what if we want to leave a job running for a long time and don't want to stay logged in while it's running? This is where the `sbatch` command comes in. `sbatch` lets you submit a job to ENUCC and slurm will run it when the resources become available. Once you submit a job with `sbatch` you do not need to stay logged in. A batch file is just like a regular bash file with some special directives. Let's edit `hello_world.sh` to convert it to a batch script.
 
@@ -87,11 +87,12 @@ It's great that we can now run programs on the compute nodes, but what if we wan
 #!/bin/bash
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 1
+#SBATCH --time=00:00:30
 
 echo Hello world!
 ```
 
-Now all we need to do is use the `sbatch` command to submit it to the job queue.
+Now all we need to do is use the `sbatch` command to submit it to the job queue. The script has a time limit of 30 seconds, though it should be finished nearly instantly. Time limits are required to run jobs using the scheduler, you can assign any limit you like but there may be upper limits depending on the partition (24 hours for the short partition, 7 days for the long partition and 3 days for the rest).
 
 ```
 $ sbatch hello_world.sh
