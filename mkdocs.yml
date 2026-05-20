@@ -1,7 +1,8 @@
 site_name: ENUCC Tutorials
 theme:
   name: material
-  markdown_extensions:
+markdown_extensions:
+    - admonition
     - pymdownx.highlight:
         anchor_linenums: true
         line_spans: __span
@@ -9,4 +10,6 @@ theme:
     - pymdownx.inlinehilite
     - pymdownx.snippets
     - pymdownx.superfences
+    - attr_list
+    - md_in_html
 dev_addr: 0.0.0.0:8000
