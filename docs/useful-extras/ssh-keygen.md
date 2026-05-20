@@ -161,6 +161,6 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQ... HPC key
     
 To copy the public key:
 
-    - Login to the server
-    - Create/edit `.ssh/authorized_keys`
-    - Add the public key
+- Login to the server
+- Create/edit `.ssh/authorized_keys`
+- Add the public key
