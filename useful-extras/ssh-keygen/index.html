@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../bash-cheatsheet/">
+        <link rel="prev" href="../remote-development-with-vsc/">
       
       
-        <link rel="next" href="../grep-find-sed-awk/">
+        <link rel="next" href="../technical-specs/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Using git - ENUCC Tutorials</title>
+        <title>Generating an SSH Key Pair - ENUCC Tutorials</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-git" class="md-skip">
+        <a href="#generating-an-ssh-key-pair" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using git
+              Generating an SSH Key Pair
             
           </span>
         </div>
@@ -989,37 +989,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Using git
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../git/" class="md-nav__link">
         
   
   
@@ -1035,76 +1008,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Description
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#working-with-others" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Working with others
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1226,10 +1129,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ssh-keygen/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generating an SSH Key Pair
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1245,6 +1175,87 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-the-public-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copying the Public Key
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copying the Public Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#never-share-the-private-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Never share the private key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1340,10 +1351,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
+  <a href="#linux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Description
+        Linux
       
     </span>
   </a>
@@ -1351,22 +1362,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#windows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Windows
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copying-the-public-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copying the Public Key
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Copying the Public Key">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#working-with-others" class="md-nav__link">
+  <a href="#never-share-the-private-key" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Working with others
+        Never share the private key
       
     </span>
   </a>
@@ -1375,17 +1408,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful resources
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1406,36 +1428,115 @@
 
 
 
-<h1 id="using-git">Using git</h1>
-<h2 id="description">Description</h2>
-<p>This tutorial will outline the basics of using git.</p>
-<hr />
-<h2 id="prerequisites">Prerequisites</h2>
-<p>None.</p>
-<hr />
-<p>Git is a general purpose tool for tracking changes in a filesystem and for collaboratively working with others. There are a few ways to use git, some more complicated than others. In this tutorial we'll first look at using git for a project on which you are the only person making changes. In this scenario git is useful for tracking changes and also for keeping a remote copy of your work as a backup. After we become comfortable working alone with git, we'll look at using git to collaborate with others.</p>
-<p>Before we get started I want to cover a few bits of terminology which are frequently used.</p>
+<h1 id="generating-an-ssh-key-pair">Generating an SSH Key Pair</h1>
+<h2 id="linux">Linux</h2>
+<p>Generate a new SSH key pair:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;Optional comment e.g. HPC key&quot;</span>
+</span></code></pre></div>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>a_hallard@scebe-gpu-server:~$ ssh-keygen -t rsa -C &quot;HPC key&quot;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Generating public/private rsa key pair.
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Enter file in which to save the key (/home/a_hallard/.ssh/id_rsa):
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Enter passphrase (empty for no passphrase):
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Enter same passphrase again:
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Your identification has been saved in /home/a_hallard/.ssh/id_rsa
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Your public key has been saved in /home/a_hallard/.ssh/id_rsa.pub
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>The key fingerprint is:
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>SHA256:vZJ79gZe+SB0Drnx3xyYZ75qmu9asB4aLljj5xq90Wc HPC key
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>The key&#39;s randomart image is:
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>+------[RSA]------+
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>|                 |
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>|                 |
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>|           .     |
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>|         .= .    |
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>|        S..O .o  |
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>|       o..=.Oo + |
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>|      +.+=.B E+o.|
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>|     . oo+X B.o.o|
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>|       .*B BB+...|
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>+----[SHA256]-----+
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>a_hallard@scebe-gpu-server:~$
+</span></code></pre></div>
+<p>The SSH key pair will be stored in:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/home/&lt;username&gt;/.ssh/
+</span></code></pre></div>
+<p>Typically:</p>
 <ul>
-<li>git: git is the name of the tool used for version control.</li>
-<li>Repository: all of your project files, along with your git history and data.</li>
-<li>GitHub: a website which allows you to host a copy of your repository on their servers.</li>
-<li>Commit: a snapshot of your project files</li>
+<li>
+<p>Private key:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>~/.ssh/id_rsa
+</span></code></pre></div>
+</li>
+<li>
+<p>Public key:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>~/.ssh/id_rsa.pub
+</span></code></pre></div>
+</li>
 </ul>
-<p>To get started you can follow the instructions on github to <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository">create a new repository</a>. Once you've created a repository, which is stored on github's servers, you can clone the repository to have a copy on your own machine.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ git clone git@github.com:SCEBE-Technicians/&lt;repository-name&gt;.git
+<p>To display the public key:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
 </span></code></pre></div>
-<p>You can then make changes or create new files in the repository. Once you are happy with the changes made, we will want to make a commit. You can think of a commit as a snapshot of your project. Committing your changes happens in two parts - first you add the changed files you want to be included in the commit to the staging area, then you create the commit from the files in the staging area.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ git add file1 file2 file3
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ git commit -m &quot;Create file2 and file3 and change file1&quot;
+<hr />
+<h2 id="windows">Windows</h2>
+<p>Open PowerShell and run:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">ssh-keygen</span> <span class="n">-t</span> <span class="n">rsa</span> <span class="n">-C</span> <span class="s2">&quot;Optional comment e.g. HPC key&quot;</span>
 </span></code></pre></div>
-<p>The changes will not be visible on the remote repository (on github) yet, because we've only made the changes locally. In order to sync the remote repository with our local repository, we have to push the changes. </p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ git push
+<p>Example:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Alex</span><span class="p">&gt;</span> <span class="n">ssh-keygen</span> <span class="n">-t</span> <span class="n">rsa</span> <span class="n">-C</span> <span class="s2">&quot;HPC key&quot;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">Generating</span> <span class="n">public</span><span class="p">/</span><span class="n">private</span> <span class="n">rsa</span> <span class="n">key</span> <span class="n">pair</span><span class="p">.</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">Enter</span> <span class="n">file</span> <span class="k">in</span> <span class="n">which</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Alex</span><span class="p">/.</span><span class="n">ssh</span><span class="p">/</span><span class="n">id_rsa</span><span class="p">):</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">Enter</span> <span class="n">passphrase</span> <span class="p">(</span><span class="n">empty</span> <span class="k">for</span> <span class="n">no</span> <span class="n">passphrase</span><span class="p">):</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">Enter</span> <span class="n">same</span> <span class="n">passphrase</span> <span class="n">again</span><span class="p">:</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">Your</span> <span class="n">identification</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="k">in</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Alex</span><span class="p">\.</span><span class="n">ssh</span><span class="p">\</span><span class="n">id_rsa</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">Your</span> <span class="n">public</span> <span class="n">key</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="k">in</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">Alex</span><span class="p">\.</span><span class="n">ssh</span><span class="p">\</span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span>
 </span></code></pre></div>
-<h3 id="working-with-others">Working with others</h3>
-<p>So far, everything we've done has been on the main branch.</p>
-<h2 id="useful-resources">Useful resources</h2>
+<p>The SSH key pair will usually be stored in:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>C:\Users\&lt;username&gt;\.ssh\
+</span></code></pre></div>
+<p>To display the public key:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Get-Content</span> <span class="nv">$env:USERPROFILE</span><span class="p">\.</span><span class="n">ssh</span><span class="p">\</span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span>
+</span></code></pre></div>
+<hr />
+<h2 id="macos">macOS</h2>
+<p>Open the Terminal application and run:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;Optional comment e.g. HPC key&quot;</span>
+</span></code></pre></div>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>alex@MacBook-Pro ~ % ssh-keygen -t rsa -C &quot;HPC key&quot;
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Generating public/private rsa key pair.
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Enter file in which to save the key (/Users/alex/.ssh/id_rsa):
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Enter passphrase (empty for no passphrase):
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Enter same passphrase again:
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Your identification has been saved in /Users/alex/.ssh/id_rsa
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Your public key has been saved in /Users/alex/.ssh/id_rsa.pub
+</span></code></pre></div>
+<p>The SSH key pair will usually be stored in:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/Users/&lt;username&gt;/.ssh/
+</span></code></pre></div>
+<p>To display the public key:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cat<span class="w"> </span>~/.ssh/id_rsa.pub
+</span></code></pre></div>
+<hr />
+<h2 id="copying-the-public-key">Copying the Public Key</h2>
+<p>You normally copy the contents of the <code>.pub</code> file to the remote server or service.</p>
+<p>If using linux you can use <code>ssh-copy-id [server]</code> that will complete the public key transfer for you.</p>
+<p>Example public key:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQ... HPC key
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<h4 id="never-share-the-private-key">Never share the private key</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>id_rsa
+</span></code></pre></div>
+<p>Only share:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>id_rsa.pub
+</span></code></pre></div>
+</div>
+<p>To copy the public key:</p>
 <ul>
-<li>If you are looking to get deep into what git can really do and how it works then I'd recommend reading <a href="https://git-scm.com/book/en/v2">pro git</a>. It's freely available online and is one of the best resources there is.</li>
+<li>Login to the server</li>
+<li>Create/edit <code>.ssh/authorized_keys</code></li>
+<li>Add the public key</li>
 </ul>
 
 
