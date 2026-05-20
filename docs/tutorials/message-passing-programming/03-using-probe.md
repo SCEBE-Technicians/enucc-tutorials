@@ -5,7 +5,7 @@ Probe is another MPI routine which allows you to know the size of a message befo
 
 ## Prerequisites
 
-You should have already completed [part two](../02-point-to-point-communication) of this series.
+You should have already completed [part two](02-point-to-point-communication.md) of this series.
 
 ---
 

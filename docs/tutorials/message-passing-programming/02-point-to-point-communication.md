@@ -6,7 +6,7 @@ This tutorial looks at how to send a message containing some data from one proce
 
 ## Prerequisites
 
-This is the second tutorial in a series. Complete [part one](../01-hello-mpi) of this series if you haven't already.
+This is the second tutorial in a series. Complete [part one](01-hello-mpi.md) of this series if you haven't already.
 
 ---
 

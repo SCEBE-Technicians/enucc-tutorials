@@ -8,7 +8,7 @@ This project covers how to move long-running scripts from running on your local 
 
 ## Prerequisites
 
-Ideally you should have run scripts using `srun` and `sbatch` before (if not check out the [hello world](/tutorials/hello-world/) project). 
+Ideally you should have run scripts using `srun` and `sbatch` before (if not check out the [hello world](../tutorials/01-hello-world.md) project). 
 
 ---
 

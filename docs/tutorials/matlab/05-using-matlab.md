@@ -6,7 +6,7 @@ This is a short project which shows how to run a small script using matlab on EN
 
 ## Prerequisites
 
-It is highly recommended that you do the [Hello World](/tutorials/01-hello-world) tutorial before doing this tutorial. 
+It is highly recommended that you do the [Hello World](../01-hello-world.md) tutorial before doing this tutorial. 
 
 ---
 

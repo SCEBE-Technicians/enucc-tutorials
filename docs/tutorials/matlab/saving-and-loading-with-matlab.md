@@ -75,7 +75,7 @@ Queue the batch file to be executed using `sbatch batch.sh`.
 
 You can see the output has been saved by running `ls output`. You can also see the printed statements in a file called `slurm-xxxx.out`.
 
-We can move the output file from the server to the local machine either using the [MobaXTerm](../../../useful-extras/mobaxterm/) file browser or something like rsync or scp. Move the file to a Matlab workspace and you can use the following script to plot a histogram showing the density of primes. 
+We can move the output file from the server to the local machine either using the [MobaXTerm](../../useful-extras/mobaxterm.md) file browser or something like rsync or scp. Move the file to a Matlab workspace and you can use the following script to plot a histogram showing the density of primes. 
 
 ```matlab
 function [] = plot()

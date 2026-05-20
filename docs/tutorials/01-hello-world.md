@@ -19,7 +19,7 @@ Let's start by logging in to ENUCC. If you are using Linux, you can log in using
 $ ssh USERNAME@login.enucc.napier.ac.uk
 ```
 
-If you are on windows, check out [logging in with PuTTY](/useful-extras/logging-in-with-putty).
+If you are on windows, check out [logging in with PuTTY](../useful-extras/logging-in-with-putty.md).
 
 Organising your home directory is important. I recommend you make a projects directory which will contain all of your different projects. 
 ```bash
