@@ -5,19 +5,16 @@ This site contains tutorials for mini-projects which are to be run on the Edinbu
 - Useful - by completing the tutorial you will develop skills which will be useful in a more complex piece of work.
 
 ### Want a tutorial run as an interactive session?
-If you want a tutorial to be run as an interactive session for multiple people, email l.headley@napier.ac.uk.
+If you want a tutorial to be run as an interactive session for multiple people, email a.hallard@napier.ac.uk.
 
 ### Problems
-If you encounter any problems then please either [raise an issue](https://github.com/SCEBE-Technicians/enucc-tutorials/issues) on the github page or contact l.headley@napier.ac.uk.
+If you encounter any problems then please either [raise an issue](https://github.com/SCEBE-Technicians/enucc-tutorials/issues) on the github page or contact a.hallard@napier.ac.uk.
 
 ## Quickstart
 
 If you have a fresh account and are looking to get started as quickly as possible then follow these steps
 
 ```bash
-# Activate the flight environment
-$ flight env activate gridware
-
 # Load Anaconda
 $ module load apps/anaconda3
 
