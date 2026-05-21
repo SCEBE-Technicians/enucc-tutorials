@@ -1378,7 +1378,7 @@
 <h2 id="description">Description</h2>
 <p>Probe is another MPI routine which allows you to know the size of a message before receiving it. This is particularly useful if receiving arrays of variable size.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>You should have already completed <a href="../02-point-to-point-communication">part two</a> of this series.</p>
+<p>You should have already completed <a href="../02-point-to-point-communication/">part two</a> of this series.</p>
 <hr />
 <p>If we want to send a message where the length cannot be known at compile time then how do we handle receiving it? <code>MPI_Recv</code> requires that the amount of data be specified. The answer is that we need to use <code>MPI_Probe</code> to get the message length before we receive it. </p>
 <p>Here is a snippet illustrating how probe works. See the <a href="https://github.com/SCEBE-Technicians/message-passing-programming/blob/main/tutorials/03-using-probe/send_animal.c">full program</a> on github.</p>

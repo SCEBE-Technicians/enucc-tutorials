@@ -1378,7 +1378,7 @@
 <h2 id="description">Description</h2>
 <p>This tutorial looks at how to send a message containing some data from one process to another. This is the key to using message passing programming to improve the performance of simulations running on ENUCC.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>This is the second tutorial in a series. Complete <a href="../01-hello-mpi">part one</a> of this series if you haven't already.</p>
+<p>This is the second tutorial in a series. Complete <a href="../01-hello-mpi/">part one</a> of this series if you haven't already.</p>
 <hr />
 <p>Now that we've got an idea on how to compile and run a trivial program using MPI, let's try and do something a bit more useful. One of the central concepts of message passing programming is of course passing messages. This means that we send some data from one process to another. We're going to look at a ping-pong program which sends a message back and forth between two processes. Let's start with the usual MPI boilerplate. Put this in a file called <code>ping_pong.c</code>.</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span>
