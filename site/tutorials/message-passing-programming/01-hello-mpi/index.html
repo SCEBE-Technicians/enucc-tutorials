@@ -15,8 +15,11 @@
         <link rel="next" href="../02-point-to-point-communication/">
       
       
+        
+      
+      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -24,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -43,11 +46,10 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
-    
     
     
   </head>
@@ -81,12 +83,12 @@
     <a href="../../.." title="ENUCC Tutorials" class="md-header__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -106,36 +108,38 @@
     </div>
     
     
-      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -146,6 +150,7 @@
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -176,7 +181,7 @@
     <a href="../../.." title="ENUCC Tutorials" class="md-nav__button md-logo" aria-label="ENUCC Tutorials" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     ENUCC Tutorials
@@ -194,9 +199,70 @@
       <a href="../../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Getting%20started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slurm Scheduling and FairShare
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -214,9 +280,16 @@
       <a href="../../../useful-resources/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Useful resources
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -236,28 +309,40 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Tutorials
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Tutorials
+            
+  
+    Tutorials
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -271,9 +356,16 @@
       <a href="../../01-hello-world/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Hello World
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -292,9 +384,16 @@
       <a href="../../02-running-python-analysis/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Running Python Analysis
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -313,9 +412,16 @@
       <a href="../../03-simple-neural-network/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Simple Neural Network
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -334,9 +440,16 @@
       <a href="../../04-jupyter-notebook/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Jupyter Notebook
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -355,9 +468,16 @@
       <a href="../../05-using-apptainer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using Apptainer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -376,28 +496,40 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Matlab
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
-            Matlab
+            
+  
+    Matlab
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -411,9 +543,16 @@
       <a href="../../matlab/05-using-matlab/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using Matlab
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -432,9 +571,16 @@
       <a href="../../matlab/saving-and-loading-with-matlab/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Saving and Loading your Workspace
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -463,28 +609,40 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Message passing programming
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_7">
             <span class="md-nav__icon md-icon"></span>
-            Message passing programming
+            
+  
+    Message passing programming
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -507,9 +665,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     Hello MPI!
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -518,9 +683,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Hello MPI!
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -543,7 +715,9 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Description
+      
+        Description
+      
     </span>
   </a>
   
@@ -552,7 +726,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -561,7 +737,9 @@
         <li class="md-nav__item">
   <a href="#exercises" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercises
+      
+        Exercises
+      
     </span>
   </a>
   
@@ -586,9 +764,16 @@
       <a href="../02-point-to-point-communication/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Point to Point Communication
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -607,9 +792,16 @@
       <a href="../03-using-probe/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using Probe
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -628,9 +820,16 @@
       <a href="../04-using-broadcast/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using Broadcast
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -649,9 +848,16 @@
       <a href="../05-using-scatter-and-gather/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using Scatter and Gather
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -670,9 +876,16 @@
       <a href="../06-next-steps/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Next Steps
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -699,28 +912,40 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Using openmp
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
             <span class="md-nav__icon md-icon"></span>
-            Using openmp
+            
+  
+    Using openmp
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -734,9 +959,16 @@
       <a href="../../using-openmp/01-hello-openmp/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Hello OpenMP
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -770,28 +1002,40 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Useful extras
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Useful extras
+            
+  
+    Useful extras
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -805,9 +1049,16 @@
       <a href="../../../useful-extras/bash-cheatsheet/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Bash Cheatsheet
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -826,9 +1077,16 @@
       <a href="../../../useful-extras/git/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using git
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -847,9 +1105,16 @@
       <a href="../../../useful-extras/grep-find-sed-awk/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Grep, Find, Sed and Awk
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -868,9 +1133,16 @@
       <a href="../../../useful-extras/logging-in-with-putty/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Logging in with PuTTY
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -889,9 +1161,16 @@
       <a href="../../../useful-extras/mobaxterm/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using MobaXTerm
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -910,9 +1189,44 @@
       <a href="../../../useful-extras/remote-development-with-vsc/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Remote Development with Visual Studio Code
+  
+
+    
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../useful-extras/ssh-keygen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generating an SSH Key Pair
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -931,9 +1245,16 @@
       <a href="../../../useful-extras/technical-specs/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Technical Specs
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -952,9 +1273,16 @@
       <a href="../../../useful-extras/using-filezilla/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using FileZilla
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -999,7 +1327,9 @@
         <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
-      Description
+      
+        Description
+      
     </span>
   </a>
   
@@ -1008,7 +1338,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -1017,7 +1349,9 @@
         <li class="md-nav__item">
   <a href="#exercises" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercises
+      
+        Exercises
+      
     </span>
   </a>
   
@@ -1033,9 +1367,11 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
+
 
 
 <h1 id="hello-mpi">Hello MPI!</h1>
@@ -1045,38 +1381,38 @@
 <p>You should have a good understanding of either C or C++, especially pointers and memory allocation which is important for using the OpenMPI library correctly. If not then I recommend "The C Programming Language" by Ritchie and Kernighan. All examples are written in the C programming language. It is possible to use MPI with fortran instead, but that isn't covered in this series.</p>
 <hr />
 <p>Message passing programming allows us to run a program with a very large number of cpus which do not necessarily have access to shared memory. Our program runs on several processes which can communicate with each other by sending messages which contain data. We will be using the <a href="https://www.open-mpi.org/">OpenMPI</a> implementation of the <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">Message Passing Interface (MPI)</a> standard to implement algorithms and run them on ENUCC. Let's start with a basic hello world program. Create a <code>hello_world.c</code> file with the following contents</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;mpi.h&gt;
-
-int main (int argc, char **argv) {
-    MPI_Init(NULL, NULL);
-    int rank;
-    MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
-    int world_size;
-    MPI_Comm_size(MPI_COMM_WORLD, &amp;world_size);
-
-    printf(&quot;Hello world from rank %d of %d\n&quot;, rank, world_size);
-
-    return MPI_Finalize();
-}
-</code></pre>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">MPI_Init</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rank</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rank</span><span class="p">);</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">world_size</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">world_size</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world from rank %d of %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">world_size</span><span class="p">);</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MPI_Finalize</span><span class="p">();</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</span></code></pre></div>
 <p>Hopefully this program is fairly self explanatory but let's see what is included. Most of what is included here is boilerplate that needs to be included in any MPI program. We first need to include the mpi header file. Then we initialise MPI with the <code>MPI_Init(NULL, NULL)</code> command. MPI works by running several copies of the same process concurrently. We can differentiate each process by its rank - a number which acts as a unique identifier for each process. We find the rank by calling <code>MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank)</code>. The first argument specifies that we are addressing all processes. The second argument is a pointer to an int where the rank will be stored. It is a very common pattern with MPI functions that we first initialize a variable and then pass a pointer to that variable to a function which will initialise it.</p>
 <p>The exact same pattern is used to get <code>world_size</code> which tells how many processes the program is running on. Finally we have to run <code>MPI_Finalize()</code> at the end of the program to ensure that the process exits correctly.</p>
 <p>In order to compile mpi programs we use the <code>mpicc</code> command rather than <code>gcc</code>. <code>mpicc</code> is simply a wrapper around another compiler which ensures that the correct command line options are added so that the mpi library is linked correctly. You'll also have to load the mpi module.</p>
-<pre><code>$ module load mpi
-$ mpicc hello_world.c -o hello_world
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ module load mpi
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ mpicc hello_world.c -o hello_world
+</span></code></pre></div>
 <p>We use the <code>mpirun</code> command to run the executable, rather than executing it directly.  As per usual, we need to use either <code>sbatch</code> or <code>srun</code> to run programs on the compute nodes. Here's a batch file which will run the compiled <code>hello_world</code> binary.</p>
-<pre><code>#!/bin/bash -l
-#SBATCH -o hello_world.output
-#SBATCH -J mpi-test
-#SBATCH --time=5
-#SBATCH --mem=256
-#SBATCH --nodes=1
-#SBATCH --ntasks=4
-
-mpirun hello_world
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>#!/bin/bash -l
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>#SBATCH -o hello_world.output
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>#SBATCH -J mpi-test
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>#SBATCH --time=5
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>#SBATCH --mem=256
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>#SBATCH --nodes=1
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>#SBATCH --ntasks=4
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>mpirun hello_world
+</span></code></pre></div>
 <h2 id="exercises">Exercises</h2>
 <p>Here are some simple ideas for getting practice with MPI:</p>
 <ul>
@@ -1129,10 +1465,13 @@ mpirun hello_world
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
