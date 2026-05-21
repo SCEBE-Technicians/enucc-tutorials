@@ -15,9 +15,6 @@ If you encounter any problems then please either [raise an issue](https://github
 If you have a fresh account and are looking to get started as quickly as possible then follow these steps
 
 ```bash
-# Activate the flight environment
-$ flight env activate gridware
-
 # Load Anaconda
 $ module load apps/anaconda3
 
