@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../tutorials/using-openmp/01-hello-openmp/">
+        <link rel="prev" href="../../useful-resources/">
       
       
-        <link rel="next" href="../git/">
+        <link rel="next" href="../../tutorials/01-hello-world/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Bash Cheatsheet - ENUCC Tutorials</title>
+        <title>Apptainer - ENUCC Tutorials</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bash-cheatsheet" class="md-skip">
+        <a href="#using-apptainer" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bash Cheatsheet
+              Apptainer
             
           </span>
         </div>
@@ -301,18 +301,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -333,7 +335,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -348,10 +350,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../software/apptainer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apptainer
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -367,6 +396,231 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activating-gridware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activating Gridware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-the-apptainer-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading the Apptainer Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading a Container
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Downloading a Container">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading-from-docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading from Docker Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-storage-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a Storage Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspecting-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inspecting a Container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-commands-inside-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Commands Inside a Container
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Commands Inside a Container">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Bash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-sh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-apptainer-in-a-slurm-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Apptainer in a Slurm Job
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-software-inside-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Software Inside a Container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-will-not-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container Will Not Download
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command Not Found
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -994,20 +1248,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1028,7 +1280,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1043,37 +1295,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Bash Cheatsheet
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../useful-extras/bash-cheatsheet/" class="md-nav__link">
         
   
   
@@ -1089,314 +1314,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#directory-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Directory management
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Directory management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ls" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ls
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pwd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        pwd
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cd
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mkdir
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mvdir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mvdir
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rmdir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        rmdir
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#working-with-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Working with files
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Working with files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#touch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        touch
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cp
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mv
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cat
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-advanced-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        More advanced operations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="More advanced operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#piping-" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        piping - |
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redirecting-to-a-file-and" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        redirecting to a file - &gt; and &gt;&gt;
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wildcards-" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        wildcards - *
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#others" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Others
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Others">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#echo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        echo
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sudo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        sudo
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        .
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ..
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        $?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        !!
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#devnull" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /dev/null
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1409,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
+      <a href="../../useful-extras/git/" class="md-nav__link">
         
   
   
@@ -1437,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../grep-find-sed-awk/" class="md-nav__link">
+      <a href="../../useful-extras/grep-find-sed-awk/" class="md-nav__link">
         
   
   
@@ -1465,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logging-in-with-putty/" class="md-nav__link">
+      <a href="../../useful-extras/logging-in-with-putty/" class="md-nav__link">
         
   
   
@@ -1493,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mobaxterm/" class="md-nav__link">
+      <a href="../../useful-extras/mobaxterm/" class="md-nav__link">
         
   
   
@@ -1521,7 +1438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../remote-development-with-vsc/" class="md-nav__link">
+      <a href="../../useful-extras/remote-development-with-vsc/" class="md-nav__link">
         
   
   
@@ -1549,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh-keygen/" class="md-nav__link">
+      <a href="../../useful-extras/ssh-keygen/" class="md-nav__link">
         
   
   
@@ -1577,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../technical-specs/" class="md-nav__link">
+      <a href="../../useful-extras/technical-specs/" class="md-nav__link">
         
   
   
@@ -1605,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-filezilla/" class="md-nav__link">
+      <a href="../../useful-extras/using-filezilla/" class="md-nav__link">
         
   
   
@@ -1660,22 +1577,66 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#directory-management" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Directory management
+        Description
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Directory management">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activating-gridware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activating Gridware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-the-apptainer-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading the Apptainer Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading a Container
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Downloading a Container">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ls" class="md-nav__link">
+  <a href="#downloading-from-docker-hub" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ls
+        Downloading from Docker Hub
       
     </span>
   </a>
@@ -1683,54 +1644,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pwd" class="md-nav__link">
+  <a href="#choosing-a-storage-location" class="md-nav__link">
     <span class="md-ellipsis">
       
-        pwd
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cd
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mkdir
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mvdir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mvdir
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rmdir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        rmdir
+        Choosing a Storage Location
       
     </span>
   </a>
@@ -1743,22 +1660,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#working-with-files" class="md-nav__link">
+  <a href="#inspecting-a-container" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Working with files
+        Inspecting a Container
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Working with files">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-commands-inside-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Commands Inside a Container
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Commands Inside a Container">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#touch" class="md-nav__link">
+  <a href="#using-bash" class="md-nav__link">
     <span class="md-ellipsis">
       
-        touch
+        Using Bash
       
     </span>
   </a>
@@ -1766,32 +1694,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cp" class="md-nav__link">
+  <a href="#using-sh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        cp
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mv
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cat
+        Using sh
       
     </span>
   </a>
@@ -1804,22 +1710,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#more-advanced-operations" class="md-nav__link">
+  <a href="#using-apptainer-in-a-slurm-job" class="md-nav__link">
     <span class="md-ellipsis">
       
-        More advanced operations
+        Using Apptainer in a Slurm Job
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="More advanced operations">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-software-inside-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Software Inside a Container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#piping-" class="md-nav__link">
+  <a href="#container-will-not-download" class="md-nav__link">
     <span class="md-ellipsis">
       
-        piping - |
+        Container Will Not Download
       
     </span>
   </a>
@@ -1827,21 +1755,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#redirecting-to-a-file-and" class="md-nav__link">
+  <a href="#command-not-found" class="md-nav__link">
     <span class="md-ellipsis">
       
-        redirecting to a file - &gt; and &gt;&gt;
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wildcards-" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        wildcards - *
+        Command Not Found
       
     </span>
   </a>
@@ -1854,96 +1771,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#others" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Others
+        Summary
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Others">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#echo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        echo
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sudo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        sudo
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        .
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ..
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        $?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        !!
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#devnull" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        /dev/null
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1964,121 +1798,163 @@
 
 
 
-<h1 id="bash-cheatsheet">Bash Cheatsheet</h1>
-<p>This page contains an overview of some of the most commonly used bash commands. Every bash command consists of a name which you type first, followed by a number of arguments. Some arguments start with <code>-</code> or <code>--</code> which are used to pass flags to the command which change its behaviour.</p>
-<h2 id="directory-management">Directory management</h2>
-<h3 id="ls"><code>ls</code></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ls<span class="w"> </span>/path/to/directory
+<hr />
+<h1 id="using-apptainer">Using Apptainer</h1>
+<h2 id="description">Description</h2>
+<p>Apptainer allows you to run software inside containers on ENUCC. Containers package applications together with their dependencies, making it possible to run software that may not be available through Gridware modules or that requires a newer operating system environment.</p>
+<p>A common use case is running software that requires newer versions of libraries, Python packages that are not available on the cluster, or applications distributed as Docker containers.</p>
+<p>Containers run as your own user account and integrate cleanly with the Slurm scheduler.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before using Apptainer you should:</p>
+<ul>
+<li>Have an ENUCC account</li>
+<li>Be familiar with submitting Slurm jobs using <code>srun</code> or <code>sbatch</code></li>
+<li>Have sufficient storage available in your home directory or scratch space</li>
+</ul>
+<p>If you are new to Slurm, complete the introductory hello world tutorial first. </p>
+<hr />
+<h2 id="activating-gridware">Activating Gridware</h2>
+<p>Most software on ENUCC is provided through Gridware modules.</p>
+<p>Check whether Gridware is active by looking at your shell prompt. If the prompt does not contain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;gridware{+}&gt;
 </span></code></pre></div>
-<p>Lists the contents of the supplied directory. If no directory is given, it lists the contents of the current working directory.</p>
-<h3 id="pwd"><code>pwd</code></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">pwd</span>
+<p>activate it using:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flight<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>gridware
 </span></code></pre></div>
-<p>Stands for 'print working directory'. Prints the working directory to the screen.</p>
-<h3 id="cd"><code>cd</code></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>path/to/directory
+<hr />
+<h2 id="loading-the-apptainer-module">Loading the Apptainer Module</h2>
+<p>Load the Apptainer module:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module<span class="w"> </span>load<span class="w"> </span>apps/apptainer
 </span></code></pre></div>
-<p>Stands for change directory. Changes the working directory to the specified path. If no path is given it will change directory to the home directory.</p>
-<h3 id="mkdir"><code>mkdir</code></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdir<span class="w"> </span>directory_name
+<p>Verify the installation:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>apptainer<span class="w"> </span>--version
 </span></code></pre></div>
-<p>Stands for make directory. Creates a new directory called <code>directory_name</code>. Note that it is recommended that you <strong>do not use spaces in filenames</strong>.</p>
-<h3 id="mvdir"><code>mvdir</code></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvdir directory_name new_directory_name
+<p>Example output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>apptainer version 1.2.4
 </span></code></pre></div>
-<p>Stands for move directory. Renames <code>directory_name</code> to <code>new_directory_name</code>.</p>
-<h3 id="rmdir"><code>rmdir</code></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rmdir empty_directory
+<hr />
+<h2 id="downloading-a-container">Downloading a Container</h2>
+<p>Before a container can be used on nodes it must be downloaded locally.</p>
+<p>Containers are stored as <code>.sif</code> (Singularity Image Format) files.</p>
+<h3 id="downloading-from-docker-hub">Downloading from Docker Hub</h3>
+<p>The most common method is pulling directly from Docker Hub:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apptainer<span class="w"> </span>pull<span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>docker://ubuntu:22.04
 </span></code></pre></div>
-<p>Stands for remove directory. Deletes an empty directory. Once it's deleted, there's no way to get it back and this command won't prompt you before deleting so use with caution.</p>
-<h2 id="working-with-files">Working with files</h2>
-<h3 id="touch"><code>touch</code></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>touch filename
+<p>This creates:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ubuntu-22.04.sif
 </span></code></pre></div>
-<p>touch is often used to create a new empty file. If the file already exists then it will update the date modified time to the current time.</p>
-<h3 id="cp"><code>cp</code></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cp oldfile newfile
+<p>in the current directory.</p>
+<h3 id="choosing-a-storage-location">Choosing a Storage Location</h3>
+<p>Container images can be large. It is recommended that you store them in:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>~/sharedscratch
 </span></code></pre></div>
-<p>cp stands for copy. It will copy oldfile to newfile. Note that if newfile already exists then this command will overwrite it and it is impossible to get the overwritten file back.</p>
-<h3 id="mv"><code>mv</code></h3>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mv oldfile newfile
+<p>For example:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mkdir<span class="w"> </span>~/sharedscratch/containers
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>apptainer<span class="w"> </span>pull<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span>~/sharedscratch/containers/ubuntu-22.04.sif<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span>docker://ubuntu:22.04
 </span></code></pre></div>
-mv stands for move. It is similar to copy, but will delete oldfile. Similarly, if newfile exists it will be permanently overwritten.</p>
-<h3 id="cat"><code>cat</code></h3>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cat file1
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>cat file1 file2 file3
+<hr />
+<h2 id="inspecting-a-container">Inspecting a Container</h2>
+<p>You can view information about a container image:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>apptainer<span class="w"> </span>inspect<span class="w"> </span>ubuntu-22.04.sif
 </span></code></pre></div>
-cat stands for concatenate. If you give it the name of one file, it will print the contents to the terminal. If you give it multiple files it will concatenate the contents together and then print that to the terminal. This is quite useful for inspecting files from the command line.</p>
-<h2 id="more-advanced-operations">More advanced operations</h2>
-<h3 id="piping-">piping - <code>|</code></h3>
-<p>Piping allows you to use the output of one command as the input for another. For example, there is a program called wc, meaning word count. If we give it a file, it will print the number of newlines, the number of words and the number of bytes in the file.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ wc file
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a> 3 4 24 file
+<p>To see the operating system inside the container:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>cat<span class="w"> </span>/etc/os-release
 </span></code></pre></div>
-Here there were 3 newlines, 4 words and 24 byes.</p>
-<p>We can use this to count the number of files and subdirectories in the current directory by piping the output of <code>ls</code> to <code>wc</code>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ ls | wc
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a> 5 5 44
+<p>Example output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>PRETTY_NAME=&quot;Ubuntu 22.04.05 LTS&quot;
 </span></code></pre></div>
-<h3 id="redirecting-to-a-file-and">redirecting to a file - <code>&gt;</code> and <code>&gt;&gt;</code></h3>
-<p>The <code>&gt;</code> and <code>&gt;&gt;</code> commands redirect the output of a command to a file. For example we can save the output of ls to a file.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$ ls &gt; ls_output_file
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>$ cat ls_output_file
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>bin
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>copy_projects
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>ls_output_file
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>miniconda3
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>projects
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>test2
+<hr />
+<h2 id="running-commands-inside-a-container">Running Commands Inside a Container</h2>
+<p>To execute multiple commands, start a shell inside the container.</p>
+<h3 id="using-bash">Using Bash</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>bash<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="s1">hostname</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="s1">whoami</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="s1">&#39;</span>
 </span></code></pre></div>
-<p><code>&gt;</code> creates a new file if it doesn't exist and overwrites a file that does exist. The specified file will only contain the output of the redirected command.</p>
-<p><code>&gt;&gt;</code> will append the output to the specified file.</p>
-<h3 id="wildcards-">wildcards - <code>*</code></h3>
-<p>You can use <code>*</code> to work with more than one file, substituting <code>*</code> for the changing parts of filenames. Here are some examples.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ls *A       # List all files ending in A
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>ls A*       # List all files starting with A
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>cp *.txt textfiles/    # Copies all files ending in .txt to the textfiles directory
-</span></code></pre></div></p>
-<h2 id="others">Others</h2>
-<h3 id="echo"><code>echo</code></h3>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ echo hello
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>hello
+<p>The single quotes (<code>'</code>) mark the beginning and end of the commands that will run inside the container.</p>
+<p>The <code>-l</code> option starts a login shell and <code>-c</code> tells Bash to execute the supplied commands.</p>
+<h3 id="using-sh">Using sh</h3>
+<p>Some minimal containers do not include Bash.</p>
+<p>In that case:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>alpine.sif<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="s1">uname -a</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="s1">cat /etc/os-release</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="s1">&#39;</span>
 </span></code></pre></div>
-Prints any text after the echo command to the command line. Often used with <code>&gt;</code> or <code>&gt;&gt;</code> for adding text to files. For example
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$ echo hello &gt; textfile
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$ cat textfile
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>hello
-</span></code></pre></div></p>
-<h3 id="sudo"><code>sudo</code></h3>
-<p>Stands for superuser do. This is the linux equivalent to running as an administrator. Do not use this unless strictly necessary. You won't have sudo access on ENUCC.</p>
-<h3 id="_1"><code>.</code></h3>
-<p>Used to refer to the current directory.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ls ./
+<hr />
+<h2 id="using-apptainer-in-a-slurm-job">Using Apptainer in a Slurm Job</h2>
+<p>Containers should be run inside Slurm jobs rather than on login nodes.</p>
+<p>Example batch script:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">#SBATCH --job-name=apptainer-test</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">#SBATCH --partition=short</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">#SBATCH --ntasks=1</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="c1">#SBATCH --time=00:05:00</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>module<span class="w"> </span>load<span class="w"> </span>apps/apptainer
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span>~/sharedscratch/containers/ubuntu-22.04.sif<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span>bash<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="s1">echo &quot;Hostname: $(hostname)&quot;&#39;</span>
 </span></code></pre></div>
-<h3 id="_2"><code>..</code></h3>
-<p>Used to refer to the directory above</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$ pwd
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>/users/username/projects/directory
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>$ cd ..
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>$ pwd
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>/users/username/projects
+<p>Submit the job:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sbatch<span class="w"> </span>apptainer-test.sh
 </span></code></pre></div>
-<h3 id="_3"><code>$?</code></h3>
-<p>A variable which refers to the exit code of the last run command. Can be used with echo to check whether the last command ran successfully. In general an exit code of 0 is successful and anything else means the program exited with an error.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ ls
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>$ echo $?
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>0
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>$ ls /non/existent/directory
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>$ echo $?
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>2
-</span></code></pre></div></p>
-<h3 id="_4"><code>!!</code></h3>
-<p>Can be used to run the last command again.</p>
-<h3 id="devnull"><code>/dev/null</code></h3>
-<p>A psuedofile which is deleted immediately. Useful for getting rid of noisy output. For example if you want to run a program but don't want to see its output you can redirect it to /dev/null.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>python noisyprogram.py &gt; /dev/null
+<hr />
+<h2 id="using-software-inside-a-container">Using Software Inside a Container</h2>
+<p>Applications installed inside the container can be executed directly.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only use this for testing. Do not run jobs on the login node.</p>
+</div>
+<p>For example, if Python is installed in the image:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>python3<span class="w"> </span>--version
 </span></code></pre></div>
+<p>Or to run a script:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>python3<span class="w"> </span>myscript.py
+</span></code></pre></div>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="container-will-not-download">Container Will Not Download</h3>
+<p>Container downloads require internet access.</p>
+<p>If compute nodes do not have internet access, download the container from the login node:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>apptainer<span class="w"> </span>pull<span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>docker://ubuntu:22.04
+</span></code></pre></div>
+<p>and then use the resulting <code>.sif</code> file within your Slurm jobs.</p>
+<h3 id="command-not-found">Command Not Found</h3>
+<p>Check whether the software exists inside the container:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>which<span class="w"> </span>python3
+</span></code></pre></div>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>Apptainer provides a convenient way to run software in a portable, reproducible environment on ENUCC. The general workflow is:</p>
+<ol>
+<li>Activate Gridware.</li>
+<li>Load the Apptainer module.</li>
+<li>Download a container image.</li>
+<li>Run commands using <code>apptainer exec</code>.</li>
+<li>Submit containerised workloads through Slurm.</li>
+</ol>
+<p>For most users, a typical workflow looks like:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>flight<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>gridware
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>module<span class="w"> </span>load<span class="w"> </span>apps/apptainer
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>apptainer<span class="w"> </span>pull<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span>~/sharedscratch/containers/ubuntu-22.04.sif<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span>docker://ubuntu:22.04
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span>~/sharedscratch/containers/ubuntu-22.04.sif<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span>bash<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;ldd --version&#39;</span>
+</span></code></pre></div>
+<p>This provides an isolated environment while still using ENUCC resources and Slurm scheduling.</p>
 
 
 
