@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../grep-find-sed-awk/">
+        <link rel="prev" href="../apptainer/">
       
       
-        <link rel="next" href="../mobaxterm/">
+        <link rel="next" href="../../tutorials/01-hello-world/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Logging in with PuTTY - ENUCC Tutorials</title>
+        <title>Blender - ENUCC Tutorials</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#logging-in-with-putty" class="md-skip">
+        <a href="#using-blender-with-enucc" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logging in with PuTTY
+              Blender
             
           </span>
         </div>
@@ -301,18 +301,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -333,7 +335,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -351,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/apptainer/" class="md-nav__link">
+      <a href="../apptainer/" class="md-nav__link">
         
   
   
@@ -376,10 +378,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../software/blender/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blender
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -395,6 +424,198 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading-the-add-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading the Add-on
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-add-on-in-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the Add-on in Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#following-the-setup-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Following the Setup Wizard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-a-render-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submitting a Render Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-and-downloading-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking and Downloading Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-add-on-cannot-connect-to-enucc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Add-on Cannot Connect to ENUCC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies-are-not-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies Are Not Installed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts-are-not-installed-on-enucc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts Are Not Installed on ENUCC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jobs-stay-queued" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jobs Stay Queued
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1022,20 +1243,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1056,7 +1275,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1074,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bash-cheatsheet/" class="md-nav__link">
+      <a href="../../useful-extras/bash-cheatsheet/" class="md-nav__link">
         
   
   
@@ -1102,7 +1321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
+      <a href="../../useful-extras/git/" class="md-nav__link">
         
   
   
@@ -1130,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../grep-find-sed-awk/" class="md-nav__link">
+      <a href="../../useful-extras/grep-find-sed-awk/" class="md-nav__link">
         
   
   
@@ -1155,19 +1374,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../useful-extras/logging-in-with-putty/" class="md-nav__link">
         
   
   
@@ -1183,7 +1393,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1196,7 +1405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mobaxterm/" class="md-nav__link">
+      <a href="../../useful-extras/mobaxterm/" class="md-nav__link">
         
   
   
@@ -1224,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../remote-development-with-vsc/" class="md-nav__link">
+      <a href="../../useful-extras/remote-development-with-vsc/" class="md-nav__link">
         
   
   
@@ -1252,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh-keygen/" class="md-nav__link">
+      <a href="../../useful-extras/ssh-keygen/" class="md-nav__link">
         
   
   
@@ -1280,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../technical-specs/" class="md-nav__link">
+      <a href="../../useful-extras/technical-specs/" class="md-nav__link">
         
   
   
@@ -1308,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-filezilla/" class="md-nav__link">
+      <a href="../../useful-extras/using-filezilla/" class="md-nav__link">
         
   
   
@@ -1356,6 +1565,186 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading-the-add-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading the Add-on
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-add-on-in-blender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the Add-on in Blender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#following-the-setup-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Following the Setup Wizard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-a-render-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submitting a Render Job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-and-downloading-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checking and Downloading Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-add-on-cannot-connect-to-enucc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Add-on Cannot Connect to ENUCC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies-are-not-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies Are Not Installed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts-are-not-installed-on-enucc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts Are Not Installed on ENUCC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jobs-stay-queued" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jobs Stay Queued
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1371,17 +1760,140 @@
 
 
 
-<h1 id="logging-in-with-putty">Logging in with PuTTY</h1>
-<p>To log in with putty, first install it via apps anywhere. When you launch the application it should look like so:</p>
-<p><img alt="putty startup screen" src="../../assets/putty/putty-startup.png" /></p>
-<p>Into the input box labelled Host Name (or IP address) type <code>4XXXXXXX@login.enucc.napier.ac.uk</code>, replacing the X's with your staff or student number.</p>
-<p><img alt="entering hostname" src="../../assets/putty/putty-with-hostname.png" /></p>
-<p>The first time you do this, you'll be presented with the following warning. Press accept.</p>
-<p><img alt="putty warning" src="../../assets/putty/putty-warning.png" /></p>
-<p>You'll then be prompted to type in your password. Nothing will show on screen as you type, this is normal.</p>
-<p><img alt="putty password prompt" src="../../assets/putty/putty-password-prompt.png" /></p>
-<p>Press enter, and you're now connected to a bash shell on the login node.</p>
-<p><img alt="putty success" src="../../assets/putty/putty-success.png" /></p>
+<hr />
+<h1 id="using-blender-with-enucc">Using Blender with ENUCC</h1>
+<h2 id="description">Description</h2>
+<p>The <a href="https://github.com/SCEBE-Technicians/blender-hpc">blender-hpc add-on</a> lets you submit Blender render jobs from your local Blender session to ENUCC.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before using the add-on you should:</p>
+<ul>
+<li>Have an ENUCC account</li>
+<li>Have Blender installed on your local computer</li>
+<li>Be able to connect to ENUCC using SSH</li>
+</ul>
+<p>You can connect using either an SSH key or your ENUCC password. SSH keys are usually more convenient. If you have not used SSH keys before, see the <a href="../../useful-extras/ssh-keygen/">SSH key generation guide</a>.</p>
+<hr />
+<h2 id="installation">Installation</h2>
+<h3 id="downloading-the-add-on">Downloading the Add-on</h3>
+<p>Download the latest add-on ZIP file from the releases page:</p>
+<p><a href="https://github.com/SCEBE-Technicians/blender-hpc/releases/download/main-latest/blender-hpc.zip">Download blender-hpc.zip</a></p>
+<p>Keep the downloaded ZIP file somewhere you can find it from Blender.</p>
+<hr />
+<h3 id="installing-the-add-on-in-blender">Installing the Add-on in Blender</h3>
+<p>Open Blender, then go to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Edit &gt; Preferences &gt; Add-ons
+</span></code></pre></div>
+<p>Open the add-ons menu in the top-right corner and select <strong>Install from Disk...</strong>.</p>
+<p><img alt="Install Blender add-on from disk" src="../../assets/blender/addon_install_from_disk.png" /></p>
+<p>Select the downloaded <code>blender-hpc</code> ZIP file.</p>
+<p>After installation, search for:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>blender-hpc
+</span></code></pre></div>
+<p>Enable the add-on using the checkbox next to its name.</p>
+<hr />
+<h3 id="following-the-setup-wizard">Following the Setup Wizard</h3>
+<p>After enabling the add-on, follow the setup wizard.</p>
+<p><img alt="Blender HPC setup wizard" src="../../assets/blender/setup_wizard_start.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Blender may stop responding while dependencies or scripts are installed. This is expected. Wait for the setup wizard to finish before closing Blender.</p>
+</div>
+<details>
+<summary>Configure Advanced preferences</summary>
+<p><strong>Initial Preferences</strong></p>
+<p>After enabling the add-on, the preferences panel should show the <code>blender-hpc</code> settings.</p>
+<p>At first, the cluster settings, Blender dependencies, and cluster scripts may not yet be configured.</p>
+<p><img alt="Blender HPC preferences before setup" src="../../assets/blender/preferences_non_set.png" /></p>
+<p>The preferences contain three main areas:</p>
+<ul>
+<li>Cluster settings</li>
+<li>Local Blender dependencies</li>
+<li>Scripts and Blender installation on the cluster</li>
+</ul>
+<hr />
+<p><strong>Installing Dependencies</strong></p>
+<p>The add-on uses local dependencies to communicate with ENUCC. Install these before setting up the cluster connection.</p>
+<p>In the <strong>Blender dependencies</strong> section, press:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Install dependencies
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Blender may stop responding while the dependencies are being installed. This is expected. Wait for the installation to finish ~1 minute.</p>
+</div>
+<hr />
+<p><strong>Adding ENUCC as a Cluster</strong></p>
+<p>In the <strong>Cluster settings</strong> section, press <strong>Add a new cluster</strong>.</p>
+<p>Use the following settings:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Cluster: ENUCC
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Partition/Queue: gpu
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Dir: /users/your-username
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Enabled: checked
+</span></code></pre></div>
+<p>You can also use <strong>Find Working Dirs</strong> to check which remote directories are available.</p>
+<p>If you are using an SSH key, set <strong>Private Key Path</strong> to the path of your local private key.</p>
+<p>If you are using your ENUCC password, enable <strong>Use Password</strong> and enter your password in the password field.</p>
+<p>For example, if your ENUCC username is <code>40021033</code>, the remote directory would usually be:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/users/40021033
+</span></code></pre></div>
+<p>If you are using an SSH key, the private key is normally stored on your local computer. On Windows it is commonly in:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>C:\Users\your-username\.ssh\id_rsa
+</span></code></pre></div>
+<p>After entering the details, use <strong>Test Connections</strong> to check that Blender can connect to ENUCC.</p>
+<p><img alt="Blender HPC ENUCC cluster setup" src="../../assets/blender/pref_enucc_setup.png" /></p>
+<hr />
+<p><strong>Installing Scripts and Blender on ENUCC</strong></p>
+<p>The add-on also needs supporting scripts, and a Blender installation, to be available on ENUCC.</p>
+<p>In the <strong>Install scripts and Blender</strong> section press:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Install scripts and Blender on the cluster(s)
+</span></code></pre></div>
+<p>If the scripts have already been installed, select <strong>Manual Installation / Scripts already installed</strong></p>
+<p><img alt="Blender HPC preferences fully configured" src="../../assets/blender/pref_all_setup.png" /></p>
+</details>
+<hr />
+<h2 id="usage">Usage</h2>
+<h3 id="submitting-a-render-job">Submitting a Render Job</h3>
+<p>Once the add-on is configured, open the Blender render tab then select Render Engine <strong>Cycles</strong> find the <code>blender-hpc</code> tab in the side panel.</p>
+<p>In the <strong>New Job</strong> section:</p>
+<ol>
+<li>Select the ENUCC cluster entry.</li>
+<li>Set the walltime in minutes. (Max time)</li>
+<li>Choose the frame or animation settings.</li>
+<li>Press <strong>Submit Job</strong>.</li>
+</ol>
+<p>When the job is submitted, it will appear in the job list.</p>
+<hr />
+<h3 id="checking-and-downloading-results">Checking and Downloading Results</h3>
+<p>Use <strong>Refresh</strong> to update the job list.</p>
+<p>When the job has completed, its state should show as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>FINISHED
+</span></code></pre></div>
+<p>Select the job and use <strong>Download results</strong> to copy the rendered output back to your local computer then select the file explorer icon to view output.</p>
+<p><img alt="Finished Blender HPC job" src="../../assets/blender/job_finished.png" /></p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="the-add-on-cannot-connect-to-enucc">The Add-on Cannot Connect to ENUCC</h3>
+<p>Check that:</p>
+<ul>
+<li>Your username is correct</li>
+<li>If using an SSH key, the private key path points to the correct local SSH key</li>
+<li>If using password authentication, <strong>Use Password</strong> is enabled</li>
+<li>Your SSH key or password works outside Blender using a normal SSH connection</li>
+<li>The cluster entry is enabled</li>
+</ul>
+<h3 id="dependencies-are-not-installed">Dependencies Are Not Installed</h3>
+<p>Return to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Edit &gt; Preferences &gt; Add-ons &gt; blender-hpc
+</span></code></pre></div>
+<p>Then use <strong>Install dependencies</strong> or <strong>Update dependencies</strong>.</p>
+<h3 id="scripts-are-not-installed-on-enucc">Scripts Are Not Installed on ENUCC</h3>
+<p>Return to the add-on preferences and use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Install scripts and Blender on the cluster(s)
+</span></code></pre></div>
+<p>If you have already installed the scripts manually, enable <strong>Manual Installation / Scripts already installed</strong>.</p>
+<h3 id="jobs-stay-queued">Jobs Stay Queued</h3>
+<p>If the GPU partition is busy, your job may wait in the queue before starting.</p>
+<hr />
 
 
 
