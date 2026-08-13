@@ -1,5 +1,7 @@
 # Slurm Scheduling and FairShare
 
+For a quick command reference, see the [Slurm cheat sheet](slurm-cheat-sheet.md).
+
 From December 2025 Alces Flight have initiated a new scheduling system (The Run Length Partitions scheduler configuration set) based on a [Fair Tree Fairshare algorithm](http://focus.m.alces-flight.com/c/eJwUyrFuwyAQANCvga0IDgzcwNDFvxFhfARUSKMzrtS_r7q_MyHCJimZ4B24gFbLlny1aLcaXSBvtDnIBf_vCiKCsVr25BGiw5DDAcE9jD-jrybCFuIhnK6jP9v6KPRaxGrmPuRIba33JeyngF3Afo2bp7pKo3OeqnxPAXvNnR-LiVRbc0hOQ83yzMy_wulXfndilYu6v-RPgr8AAAD__761N_w).
 
 ## Changes to the Slurm system
