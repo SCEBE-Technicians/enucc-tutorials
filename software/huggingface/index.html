@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../useful-resources/">
+        <link rel="prev" href="../blender/">
       
       
-        <link rel="next" href="../blender/">
+        <link rel="next" href="../ollama/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Apptainer - ENUCC Tutorials</title>
+        <title>Huggingface - ENUCC Tutorials</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-apptainer" class="md-skip">
+        <a href="#huggingface" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Apptainer
+              Huggingface
             
           </span>
         </div>
@@ -377,37 +377,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Apptainer
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../apptainer/" class="md-nav__link">
         
   
   
@@ -423,231 +396,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Description
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#activating-gridware" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Activating Gridware
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loading-the-apptainer-module" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Loading the Apptainer Module
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#downloading-a-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Downloading a Container
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Downloading a Container">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#downloading-from-docker-hub" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Downloading from Docker Hub
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#choosing-a-storage-location" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing a Storage Location
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inspecting-a-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inspecting a Container
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-commands-inside-a-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running Commands Inside a Container
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Running Commands Inside a Container">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-bash" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Bash
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-sh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using sh
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-apptainer-in-a-slurm-job" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Apptainer in a Slurm Job
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-software-inside-a-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Software Inside a Container
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#container-will-not-download" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Container Will Not Download
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#command-not-found" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Command Not Found
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -685,10 +433,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../huggingface/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Huggingface
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -704,6 +479,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-the-python-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Install the Python API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-log-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Log in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-download-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Download a model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-use-it-again-later" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Use it again later
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1688,10 +1527,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#description" class="md-nav__link">
+  <a href="#1-install-the-python-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Description
+        1. Install the Python API
       
     </span>
   </a>
@@ -1699,10 +1538,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#2-log-in" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        2. Log in
       
     </span>
   </a>
@@ -1710,10 +1549,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#activating-gridware" class="md-nav__link">
+  <a href="#3-download-a-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Activating Gridware
+        3. Download a model
       
     </span>
   </a>
@@ -1721,171 +1560,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loading-the-apptainer-module" class="md-nav__link">
+  <a href="#4-use-it-again-later" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Loading the Apptainer Module
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#downloading-a-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Downloading a Container
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Downloading a Container">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#downloading-from-docker-hub" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Downloading from Docker Hub
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#choosing-a-storage-location" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing a Storage Location
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inspecting-a-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inspecting a Container
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-commands-inside-a-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running Commands Inside a Container
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Running Commands Inside a Container">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-bash" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Bash
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-sh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using sh
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-apptainer-in-a-slurm-job" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Apptainer in a Slurm Job
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-software-inside-a-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Software Inside a Container
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#container-will-not-download" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Container Will Not Download
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#command-not-found" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Command Not Found
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
+        4. Use it again later
       
     </span>
   </a>
@@ -1909,163 +1587,50 @@
 
 
 
-<hr />
-<h1 id="using-apptainer">Using Apptainer</h1>
-<h2 id="description">Description</h2>
-<p>Apptainer allows you to run software inside containers on ENUCC. Containers package applications together with their dependencies, making it possible to run software that may not be available through Gridware modules or that requires a newer operating system environment.</p>
-<p>A common use case is running software that requires newer versions of libraries, Python packages that are not available on the cluster, or applications distributed as Docker containers.</p>
-<p>Containers run as your own user account and integrate cleanly with the Slurm scheduler.</p>
-<hr />
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Before using Apptainer you should:</p>
-<ul>
-<li>Have an ENUCC account</li>
-<li>Be familiar with submitting Slurm jobs using <code>srun</code> or <code>sbatch</code></li>
-<li>Have sufficient storage available in your home directory or scratch space</li>
-</ul>
-<p>If you are new to Slurm, complete the introductory hello world tutorial first. </p>
-<hr />
-<h2 id="activating-gridware">Activating Gridware</h2>
-<p>Most software on ENUCC is provided through Gridware modules.</p>
-<p>Check whether Gridware is active by looking at your shell prompt. If the prompt does not contain:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;gridware{+}&gt;
+<h1 id="huggingface">Huggingface</h1>
+<p>Install the Hugging Face Python API and command-line tool, log in, and download a model on ENUCC.</p>
+<h2 id="1-install-the-python-api">1. Install the Python API</h2>
+<p>Use a dedicated Python virtual environment for the API and command-line tool. This keeps the packages in your own account and avoids changing the shared Python installation. No administrator access is needed.</p>
+<p>If Gridware is not already active (your prompt does not show <code>&lt;gridware{+}&gt;</code>), activate it first:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flight<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>gridware
 </span></code></pre></div>
-<p>activate it using:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flight<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>gridware
+<p>Load the Anaconda module to make its Python interpreter available:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>module<span class="w"> </span>load<span class="w"> </span>apps/anaconda3/2024.10/bin
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python3<span class="w"> </span>--version
 </span></code></pre></div>
-<hr />
-<h2 id="loading-the-apptainer-module">Loading the Apptainer Module</h2>
-<p>Load the Apptainer module:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module<span class="w"> </span>load<span class="w"> </span>apps/apptainer
+<p>Here Anaconda supplies Python; package installation uses Python's built-in <code>venv</code> and <code>pip</code>. You do not need to run <code>conda init</code> or create a Conda environment. The current <code>huggingface_hub</code> requires Python 3.10 or newer.</p>
+<p>Create the environment in <code>~/venvs/huggingface</code>, separate from your project and model downloads:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/venvs
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>~/venvs/huggingface
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>~/venvs/huggingface/bin/activate
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>huggingface_hub
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>hf<span class="w"> </span>--help
 </span></code></pre></div>
-<p>Verify the installation:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>apptainer<span class="w"> </span>--version
+<p>Activation makes this environment's Python and <code>hf</code> commands available in your current shell. Using <code>python -m pip</code> ensures packages are installed into that environment.</p>
+<p>Keep the module loaded while using the environment. A virtual environment still depends on the Python installation used to create it; unloading a module may also remove environment settings needed by that Python. Packages installed here remain separate from Anaconda's shared packages.</p>
+<h2 id="2-log-in">2. Log in</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>hf<span class="w"> </span>auth<span class="w"> </span>login
 </span></code></pre></div>
-<p>Example output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>apptainer version 1.2.4
+<p>Follow the prompts to sign in to your Hugging Face account. If prompted for an access token, create one in your <a href="https://huggingface.co/settings/tokens">Hugging Face token settings</a> with read access to the model you want to download.</p>
+<h2 id="3-download-a-model">3. Download a model</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>hf<span class="w"> </span>download<span class="w"> </span><span class="o">[</span>model<span class="o">]</span><span class="w"> </span>--local-dir<span class="w"> </span><span class="o">[</span>model<span class="o">]</span>
 </span></code></pre></div>
-<hr />
-<h2 id="downloading-a-container">Downloading a Container</h2>
-<p>Before a container can be used on nodes it must be downloaded locally.</p>
-<p>Containers are stored as <code>.sif</code> (Singularity Image Format) files.</p>
-<h3 id="downloading-from-docker-hub">Downloading from Docker Hub</h3>
-<p>The most common method is pulling directly from Docker Hub:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apptainer<span class="w"> </span>pull<span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>docker://ubuntu:22.04
+<p>Replace the first <code>[model]</code> with the model's repository ID (usually <code>owner/model-name</code>) and the second with the folder where you want to save it. For example:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>hf<span class="w"> </span>download<span class="w"> </span>openai-community/gpt2<span class="w"> </span>--local-dir<span class="w"> </span>gpt2
 </span></code></pre></div>
-<p>This creates:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ubuntu-22.04.sif
+<p>This downloads the repository's files into the chosen folder. For a gated model, first obtain access through its Hugging Face model page.</p>
+<h2 id="4-use-it-again-later">4. Use it again later</h2>
+<p>In a new login session, activate Gridware if needed, then load the same module and activate the existing environment:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>module<span class="w"> </span>load<span class="w"> </span>apps/anaconda3/2024.10/bin
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">source</span><span class="w"> </span>~/venvs/huggingface/bin/activate
 </span></code></pre></div>
-<p>in the current directory.</p>
-<h3 id="choosing-a-storage-location">Choosing a Storage Location</h3>
-<p>Container images can be large. It is recommended that you store them in:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>~/sharedscratch
+<p>You can now use <code>hf</code> from any working directory. You do not need to recreate the environment or reinstall the package each time.</p>
+<p>When finished:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>deactivate
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>module<span class="w"> </span>unload<span class="w"> </span>apps/anaconda3/2024.10/bin
 </span></code></pre></div>
-<p>For example:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mkdir<span class="w"> </span>~/sharedscratch/containers
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>apptainer<span class="w"> </span>pull<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span>~/sharedscratch/containers/ubuntu-22.04.sif<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span>docker://ubuntu:22.04
-</span></code></pre></div>
-<hr />
-<h2 id="inspecting-a-container">Inspecting a Container</h2>
-<p>You can view information about a container image:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>apptainer<span class="w"> </span>inspect<span class="w"> </span>ubuntu-22.04.sif
-</span></code></pre></div>
-<p>To see the operating system inside the container:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>cat<span class="w"> </span>/etc/os-release
-</span></code></pre></div>
-<p>Example output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>PRETTY_NAME=&quot;Ubuntu 22.04.05 LTS&quot;
-</span></code></pre></div>
-<hr />
-<h2 id="running-commands-inside-a-container">Running Commands Inside a Container</h2>
-<p>To execute multiple commands, start a shell inside the container.</p>
-<h3 id="using-bash">Using Bash</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>bash<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="s1">hostname</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="s1">whoami</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="s1">&#39;</span>
-</span></code></pre></div>
-<p>The single quotes (<code>'</code>) mark the beginning and end of the commands that will run inside the container.</p>
-<p>The <code>-l</code> option starts a login shell and <code>-c</code> tells Bash to execute the supplied commands.</p>
-<h3 id="using-sh">Using sh</h3>
-<p>Some minimal containers do not include Bash.</p>
-<p>In that case:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>alpine.sif<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="s1">uname -a</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="s1">cat /etc/os-release</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="s1">&#39;</span>
-</span></code></pre></div>
-<hr />
-<h2 id="using-apptainer-in-a-slurm-job">Using Apptainer in a Slurm Job</h2>
-<p>Containers should be run inside Slurm jobs rather than on login nodes.</p>
-<p>Example batch script:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">#SBATCH --job-name=apptainer-test</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">#SBATCH --partition=short</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">#SBATCH --ntasks=1</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="c1">#SBATCH --time=00:05:00</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>module<span class="w"> </span>load<span class="w"> </span>apps/apptainer
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span>~/sharedscratch/containers/ubuntu-22.04.sif<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span>bash<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;</span>
-</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="s1">echo &quot;Hostname: $(hostname)&quot;&#39;</span>
-</span></code></pre></div>
-<p>Submit the job:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sbatch<span class="w"> </span>apptainer-test.sh
-</span></code></pre></div>
-<hr />
-<h2 id="using-software-inside-a-container">Using Software Inside a Container</h2>
-<p>Applications installed inside the container can be executed directly.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Only use this for testing. Do not run jobs on the login node.</p>
-</div>
-<p>For example, if Python is installed in the image:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>python3<span class="w"> </span>--version
-</span></code></pre></div>
-<p>Or to run a script:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>python3<span class="w"> </span>myscript.py
-</span></code></pre></div>
-<hr />
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="container-will-not-download">Container Will Not Download</h3>
-<p>Container downloads require internet access.</p>
-<p>If compute nodes do not have internet access, download the container from the login node:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>apptainer<span class="w"> </span>pull<span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>docker://ubuntu:22.04
-</span></code></pre></div>
-<p>and then use the resulting <code>.sif</code> file within your Slurm jobs.</p>
-<h3 id="command-not-found">Command Not Found</h3>
-<p>Check whether the software exists inside the container:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>ubuntu-22.04.sif<span class="w"> </span>which<span class="w"> </span>python3
-</span></code></pre></div>
-<hr />
-<h2 id="summary">Summary</h2>
-<p>Apptainer provides a convenient way to run software in a portable, reproducible environment on ENUCC. The general workflow is:</p>
-<ol>
-<li>Activate Gridware.</li>
-<li>Load the Apptainer module.</li>
-<li>Download a container image.</li>
-<li>Run commands using <code>apptainer exec</code>.</li>
-<li>Submit containerised workloads through Slurm.</li>
-</ol>
-<p>For most users, a typical workflow looks like:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>flight<span class="w"> </span>env<span class="w"> </span>activate<span class="w"> </span>gridware
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>module<span class="w"> </span>load<span class="w"> </span>apps/apptainer
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>apptainer<span class="w"> </span>pull<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span>~/sharedscratch/containers/ubuntu-22.04.sif<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span>docker://ubuntu:22.04
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span>~/sharedscratch/containers/ubuntu-22.04.sif<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span>bash<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;ldd --version&#39;</span>
-</span></code></pre></div>
-<p>This provides an isolated environment while still using ENUCC resources and Slurm scheduling.</p>
+<p>For more options, see the <a href="https://huggingface.co/docs/huggingface_hub/guides/cli">Hugging Face command-line guide</a> and <a href="https://huggingface.co/docs/huggingface_hub/installation">installation guide</a>.</p>
 
 
 
