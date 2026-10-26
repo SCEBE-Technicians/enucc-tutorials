@@ -10,6 +10,8 @@ A common use case is running software that requires newer versions of libraries,
 
 Containers run as your own user account and integrate cleanly with the Slurm scheduler.
 
+To package your own software, see [Packaging Software for Apptainer](packaging-for-apptainer.md) for a brief overview of the Docker-to-Apptainer workflow.
+
 ---
 
 ## Prerequisites
